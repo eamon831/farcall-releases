@@ -1,0 +1,20 @@
+# Farcall releases
+
+Farcall lets you chat with Claude Code sessions running on your Mac from your phone, privately: the phone reaches the Mac over your own Tailscale network, not through a public server.
+
+This repository only holds the builds. Download from **[Releases](https://github.com/eamon831/farcall-releases/releases/latest)**.
+
+## Install
+
+**Mac** (Apple Silicon, macOS 13 or later)
+1. Download `Farcall.dmg`, open it, drag Farcall to Applications.
+2. Open Farcall. The first time macOS says it cannot verify the app: click Done, then System Settings › Privacy & Security › **Open Anyway**. (Farcall is not yet signed with an Apple Developer ID.)
+3. Follow the setup in the Farcall window. It installs and signs in what is needed, one step at a time, and updates itself afterwards.
+
+**Phone** (Android)
+1. Download `farcall.apk` on the phone (the Mac's setup shows a QR code for it) and install it.
+2. In the app: Add a Mac, and scan the code from the Mac's "Pair phone".
+
+## What is inside
+
+Farcall includes Tailscale's open-source client (`tailscaled`, BSD-3-Clause, © Tailscale Inc & contributors) to connect your devices without the Tailscale app. Its license is in `Farcall.app/Contents/Resources/tailscale/LICENSE`.
