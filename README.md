@@ -7,9 +7,18 @@ This repository only holds the builds. Download from **[Releases](https://github
 ## Install
 
 **Mac** (Apple Silicon, macOS 13 or later)
-1. Download `Farcall.dmg`, open it, drag Farcall to Applications.
-2. Open Farcall. The first time macOS says it cannot verify the app: click Done, then System Settings › Privacy & Security › **Open Anyway**. (Farcall is not yet signed with an Apple Developer ID.)
-3. Follow the setup in the Farcall window. It installs and signs in what is needed, one step at a time, and updates itself afterwards.
+
+In Terminal:
+
+```sh
+curl -fsSL https://github.com/eamon831/farcall-releases/releases/latest/download/install.sh | bash
+```
+
+It downloads the newest Farcall, checks it against the release's checksum, installs it into Applications and opens it. [Read the script](https://github.com/eamon831/farcall-releases/releases/latest/download/install.sh) first if you like.
+
+Then follow the setup in the Farcall window. It installs and signs in what is needed, one step at a time, and updates itself afterwards.
+
+Or with the disk image: download `Farcall.dmg`, open it, drag Farcall to Applications, open it. The first time macOS says it cannot verify the app: click Done, then System Settings › Privacy & Security › **Open Anyway** (Farcall is not yet signed with an Apple Developer ID; the Terminal way avoids this).
 
 **Phone** (Android)
 1. Download `farcall.apk` on the phone (the Mac's setup shows a QR code for it) and install it.
