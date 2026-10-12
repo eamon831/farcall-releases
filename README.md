@@ -8,7 +8,7 @@ This repository holds the builds only. **[Download the latest release](https://g
 
 ## What you need
 
-- **A computer** that stays on while you use it: a Mac (Apple Silicon, macOS 13+), a Windows PC (64-bit Windows 10 or 11) or a Linux machine (x64, a desktop with GTK 3 and systemd).
+- **A computer** that stays on while you use it: a Mac (Apple Silicon, macOS 13+), a Windows PC (64-bit Windows 10 or 11) or a Linux machine (x64, Ubuntu 22.04 or newer or a similar distribution, with a desktop and systemd).
 - **An Android phone.**
 - **A Claude account** for Claude Code. Farcall's setup installs Claude Code and signs you in.
 - **A Tailscale account**, free for personal use. You sign in from inside Farcall on both devices; the Tailscale app itself is not needed.
