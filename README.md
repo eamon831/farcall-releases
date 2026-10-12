@@ -1,12 +1,24 @@
-# Farcall releases
+# Farcall
 
-Farcall lets you chat with Claude Code sessions running on your Mac, Windows PC or Linux machine from your phone, privately: the phone reaches the computer over your own Tailscale network, not through a public server.
+Chat with Claude Code on your computer from your phone. Start a session in one of your projects, follow the replies as they stream in, and approve or deny each command before it runs, from anywhere.
 
-This repository only holds the builds. Download from **[Releases](https://github.com/eamon831/farcall-releases/releases/latest)**.
+Your phone talks to your computer over your own private [Tailscale](https://tailscale.com) network. There is no Farcall server in between: your chats and code stay on your machines.
 
-## Install
+This repository holds the builds only. **[Download the latest release](https://github.com/eamon831/farcall-releases/releases/latest)**
 
-**Mac** (Apple Silicon, macOS 13 or later)
+## What you need
+
+- **A computer** that stays on while you use it: a Mac (Apple Silicon, macOS 13+), a Windows PC (64-bit Windows 10 or 11) or a Linux machine (x64, a desktop with GTK 3 and systemd).
+- **An Android phone.**
+- **A Claude account** for Claude Code. Farcall's setup installs Claude Code and signs you in.
+- **A Tailscale account**, free for personal use. You sign in from inside Farcall on both devices; the Tailscale app itself is not needed.
+
+## Getting started
+
+**1. Install Farcall on the computer.** Pick your system below. Each installer downloads the newest build, checks it against the release's checksum, installs it for your account only and opens it.
+
+<details open>
+<summary><b>Mac</b></summary>
 
 In Terminal:
 
@@ -14,40 +26,66 @@ In Terminal:
 curl -fsSL https://github.com/eamon831/farcall-releases/releases/latest/download/install.sh | bash
 ```
 
-It downloads the newest Farcall, checks it against the release's checksum, installs it into Applications and opens it. [Read the script](https://github.com/eamon831/farcall-releases/releases/latest/download/install.sh) first if you like.
+Prefer a disk image? Download `Farcall.dmg` from the release, drag Farcall to Applications and open it. The first time, macOS says it can't verify the app (Farcall isn't signed with an Apple Developer ID yet): click Done, then System Settings › Privacy & Security › **Open Anyway**. The Terminal way skips this.
+</details>
 
-Then follow the setup in the Farcall window. It installs and signs in what is needed, one step at a time, and updates itself afterwards.
+<details>
+<summary><b>Windows</b> (new)</summary>
 
-Or with the disk image: download `Farcall.dmg`, open it, drag Farcall to Applications, open it. The first time macOS says it cannot verify the app: click Done, then System Settings › Privacy & Security › **Open Anyway** (Farcall is not yet signed with an Apple Developer ID; the Terminal way avoids this).
-
-**Windows** (64-bit Windows 10 or 11). New, not yet tried on many PCs.
-
-In PowerShell:
+In PowerShell (no administrator needed):
 
 ```powershell
 irm https://github.com/eamon831/farcall-releases/releases/latest/download/install.ps1 | iex
 ```
 
-It downloads the newest Farcall, checks it against the release's checksum, installs it for your account only (no administrator needed) into `%LOCALAPPDATA%\Programs\Farcall`, adds it to the Start menu and opens it. [Read the script](https://github.com/eamon831/farcall-releases/releases/latest/download/install.ps1) first if you like. Then follow the setup in the Farcall window, as on the Mac.
+Installs into `%LOCALAPPDATA%\Programs\Farcall` and adds Farcall to the Start menu.
+</details>
 
-**Linux** (x64, a desktop with GTK 3; systemd for the background service). New, not yet tried on many machines.
+<details>
+<summary><b>Linux</b> (new)</summary>
 
-In a terminal:
+In a terminal (no sudo):
 
 ```sh
 curl -fsSL https://github.com/eamon831/farcall-releases/releases/latest/download/install-linux.sh | bash
 ```
 
-It downloads the newest Farcall, checks it against the release's checksum, installs it for your account only (no sudo) into `~/.local/opt/farcall`, adds a menu entry and opens it. [Read the script](https://github.com/eamon831/farcall-releases/releases/latest/download/install-linux.sh) first if you like. Then follow the setup in the Farcall window.
+Installs into `~/.local/opt/farcall` and adds a menu entry.
+</details>
 
-**Phone** (Android)
-1. Download `farcall.apk` on the phone (the Mac's setup shows a QR code for it) and install it.
-2. In the app: Add a Mac, and scan the code from the Mac's "Pair phone".
+You can read each script before running it: [install.sh](https://github.com/eamon831/farcall-releases/releases/latest/download/install.sh), [install.ps1](https://github.com/eamon831/farcall-releases/releases/latest/download/install.ps1), [install-linux.sh](https://github.com/eamon831/farcall-releases/releases/latest/download/install-linux.sh).
+
+**2. Follow the setup in the Farcall window.** It goes one step at a time and checks each one: the background service, Tailscale sign-in, Claude Code and its login, a short approval test, and the folder your projects live in. About ten minutes.
+
+**3. Install the phone app.** The setup's phone step shows a QR code; scan it with the phone's camera, or download `farcall.apk` from the release. Allow installing from your browser when Android asks.
+
+**4. Connect and pair.** Open Farcall on the phone. Under **Connect this phone**, tap **Sign in** and use the same Tailscale account as the computer. Then tap **Pair phone** in the computer's window and scan its code with **Scan the code** on the phone.
+
+That's it. On the phone, tap **Start a new session**, pick a project folder, and chat.
+
+## Privacy and security
+
+- **No middleman.** The phone reaches the computer directly over your Tailscale network. Farcall runs no server and never sees your chats, code or files.
+- **Paired devices only.** The computer listens only on its Tailscale address and accepts only phones that scanned its pairing code.
+- **You approve each command.** By default Claude asks before it runs a command or edits a file, and the request comes to your phone. You can choose looser modes per session.
+- **Crash reports** are on by default and can be turned off any time (phone: Settings › Privacy; computer: **Check setup** in the Farcall window). They contain only the error and where in Farcall it happened, with folder names, network addresses and keys removed: never your chats or files. They go to [Sentry](https://sentry.io).
+
+## Updating and uninstalling
+
+Farcall checks for updates itself: **Check for update** in the computer window and in the phone's Settings. Updates install in place and keep your sessions and pairing.
+
+To remove it from a computer, use **Uninstall…** in the Farcall window. It stops the background service and removes the app, and with it Farcall's data and pairing (untick the box to keep those). Your Claude Code install and conversations are left alone. On the phone, uninstall the app as usual.
+
+## When something doesn't work
+
+- **The phone can't reach the computer:** check that the computer is awake, that its Farcall setup shows Tailscale ✓, and that the phone is signed in to the **same** Tailscale account (phone: Settings › Connection).
+- **The first connection after an update takes a few seconds:** the built-in Tailscale is starting up. It settles by itself.
+- **macOS won't open the app:** see the Mac section above (Open Anyway), or install from Terminal.
 
 ## Feedback
 
-Something broken, or an idea? [Report a problem or suggest a feature](https://github.com/eamon831/farcall-releases/issues/new/choose) (a GitHub account is needed). In the app, **Report a problem** / **Suggest a feature** in the menu opens the same form with your versions filled in. Issues are public: look before pasting logs.
+[Report a problem or suggest a feature](https://github.com/eamon831/farcall-releases/issues/new/choose). In the app, **Report a problem / Suggest a feature** opens the same form with your versions filled in. A GitHub account is needed, and reports are public, so look through any log lines before pasting them.
 
-## What is inside
+## Third-party software
 
-Farcall includes Tailscale's open-source client (`tailscaled`, BSD-3-Clause, © Tailscale Inc & contributors) to connect your devices without the Tailscale app. Its license is in `Farcall.app/Contents/Resources/tailscale/LICENSE` (Windows and Linux: `tailscale/LICENSE` in the install folder).
+Farcall includes Tailscale's open-source client (`tailscaled`, BSD-3-Clause, © Tailscale Inc & contributors) so your devices can connect without the Tailscale app. Its license is in `Farcall.app/Contents/Resources/tailscale/LICENSE` on a Mac, and in `tailscale/LICENSE` inside the install folder on Windows and Linux.
