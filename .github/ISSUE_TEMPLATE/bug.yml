@@ -1,0 +1,47 @@
+name: Report a problem
+description: Something in Farcall does not work as it should.
+labels: [bug]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for reporting. Farcall's **Report a problem** menu item fills in the versions below for you.
+        Issues here are **public**: anyone can read them.
+  - type: textarea
+    id: what
+    attributes:
+      label: What happened?
+      description: What you did, and what you saw. A screenshot helps.
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: What did you expect?
+  - type: input
+    id: version
+    attributes:
+      label: Farcall version
+      description: In the app (menu, or the line at the top of the computer window).
+      placeholder: "1.0.0 (66)"
+    validations:
+      required: true
+  - type: input
+    id: computer
+    attributes:
+      label: Computer
+      description: Mac, Windows or Linux, with its version.
+      placeholder: "macOS 26.6, Windows 11, Ubuntu 24.04..."
+  - type: input
+    id: phone
+    attributes:
+      label: Phone
+      placeholder: "Android 15, Pixel 8"
+  - type: textarea
+    id: logs
+    attributes:
+      label: Log lines (optional)
+      description: |
+        Look before you paste: logs contain your project folder names, file names and bits of your chats.
+        Computer: Show log in the Farcall window. Logs folder: macOS ~/Library/Logs/farcall, Windows %LOCALAPPDATA%\farcall, Linux ~/.local/state/farcall.
+      render: text

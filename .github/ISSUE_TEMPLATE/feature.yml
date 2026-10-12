@@ -1,0 +1,23 @@
+name: Suggest a feature
+description: Something Farcall should do, or do differently.
+labels: [enhancement]
+body:
+  - type: markdown
+    attributes:
+      value: "Issues here are **public**. Search first: someone may have asked already, then a 👍 on theirs helps."
+  - type: textarea
+    id: want
+    attributes:
+      label: What would you like to do?
+      description: Describe it from your side, not as a solution (for example "start a session from my phone in a folder I used last week").
+    validations:
+      required: true
+  - type: textarea
+    id: why
+    attributes:
+      label: Why does it matter to you?
+  - type: input
+    id: version
+    attributes:
+      label: Farcall version
+      placeholder: "1.0.0 (66)"

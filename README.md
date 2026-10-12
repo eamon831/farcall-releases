@@ -44,6 +44,10 @@ It downloads the newest Farcall, checks it against the release's checksum, insta
 1. Download `farcall.apk` on the phone (the Mac's setup shows a QR code for it) and install it.
 2. In the app: Add a Mac, and scan the code from the Mac's "Pair phone".
 
+## Feedback
+
+Something broken, or an idea? [Report a problem or suggest a feature](https://github.com/eamon831/farcall-releases/issues/new/choose) (a GitHub account is needed). In the app, **Report a problem** / **Suggest a feature** in the menu opens the same form with your versions filled in. Issues are public: look before pasting logs.
+
 ## What is inside
 
 Farcall includes Tailscale's open-source client (`tailscaled`, BSD-3-Clause, © Tailscale Inc & contributors) to connect your devices without the Tailscale app. Its license is in `Farcall.app/Contents/Resources/tailscale/LICENSE` (Windows and Linux: `tailscale/LICENSE` in the install folder).
