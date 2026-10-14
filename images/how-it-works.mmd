@@ -1,0 +1,9 @@
+flowchart LR
+    phone["📱 Phone<br/>Farcall app"]
+    subgraph computer["💻 Your computer"]
+        farcall["Farcall<br/>(background service)"]
+        agent["Your coding agent<br/>(Claude Code or Codex)<br/>in your project folder"]
+        farcall <--> agent
+    end
+    agent <-->|"your login or API key"| provider["☁️ AI provider<br/>Anthropic, OpenAI,<br/>Z.ai, Moonshot"]
+    phone <-->|"messages, replies, approvals<br/>over your private Tailscale network"| farcall

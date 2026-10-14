@@ -7,17 +7,7 @@
 - **You stay in charge.** When the agent wants to run a command or edit a file, your phone asks first.
 - **Mac, Windows and Linux** on the computer side, Android on the phone.
 
-```mermaid
-flowchart LR
-    phone["📱 Phone<br/>Farcall app"]
-    subgraph computer["💻 Your computer"]
-        farcall["Farcall<br/>(background service)"]
-        agent["Your coding agent<br/>(Claude Code or Codex)<br/>in your project folder"]
-        farcall <--> agent
-    end
-    agent <-->|"your login or API key"| provider["☁️ AI provider<br/>Anthropic, OpenAI,<br/>Z.ai, Moonshot"]
-    phone <-->|"messages, replies, approvals<br/>over your private Tailscale network"| farcall
-```
+<p align="center"><img src="images/how-it-works.png" alt="How Farcall connects: phone, over your private Tailscale network, to Farcall on your computer, which runs your coding agent, which talks to your AI provider" width="800"></p>
 
 This repository holds the builds only. **[Download the latest release](https://github.com/eamon831/farcall-releases/releases/latest)**
 
