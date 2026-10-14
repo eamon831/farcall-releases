@@ -1,6 +1,10 @@
 # Farcall
 
-**Run your AI coding agents from your phone.** They work on your computer, in your projects. You chat, watch the replies stream in, and approve every command before it runs, from anywhere.
+**Run your coding agents from your phone. Every agent, your choice of model, your own computer, no cloud relay.**
+
+*Like having your terminal's Claude Code or Codex in your pocket, minus the tiny keyboard.*
+
+They work on your computer, in your projects. You chat, watch the replies stream in, and approve every command before it runs, from anywhere.
 
 - **Your agent, your model.** Claude Code on your Claude login, or on Z.ai's GLM or Moonshot's Kimi. Codex on OpenAI (preview). Pick per session.
 - **No server in the middle.** Your phone reaches your computer over your own private [Tailscale](https://tailscale.com) network. Your chats and code stay on your machines.
