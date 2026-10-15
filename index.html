@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Farcall: run your coding agents from your phone</title>
+<meta name="description" content="Run your coding agents from your phone. Every agent, your choice of model, your own computer, no cloud relay. Claude Code and Codex, on Mac, Windows and Linux, with an Android app.">
+<meta property="og:title" content="Farcall: run your coding agents from your phone">
+<meta property="og:description" content="Every agent, your choice of model, your own computer, no cloud relay.">
+<meta property="og:image" content="https://farcall.app/images/how-it-works.png">
+<meta property="og:url" content="https://farcall.app/">
+<meta name="twitter:card" content="summary_large_image">
+<style>
+  :root { --bg: #fbf8f6; --fg: #1d1a18; --muted: #6b625c; --card: #ffffff; --line: #e8e1dc; --accent: #c4673f; --accent-fg: #ffffff; }
+  @media (prefers-color-scheme: dark) {
+    :root { --bg: #181412; --fg: #f2ece8; --muted: #a99d95; --card: #221d1a; --line: #3a322d; --accent: #f0a582; --accent-fg: #2a1309; }
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--bg); color: var(--fg); font: 17px/1.55 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; }
+  main { max-width: 880px; margin: 0 auto; padding: 56px 22px 40px; }
+  .brand { font-weight: 700; font-size: 20px; letter-spacing: .2px; }
+  .brand span { color: var(--accent); }
+  h1 { font-size: clamp(30px, 5.4vw, 48px); line-height: 1.12; margin: 28px 0 14px; letter-spacing: -.5px; }
+  .lead { font-size: clamp(18px, 2.4vw, 21px); color: var(--muted); margin: 0 0 8px; }
+  .aside { font-style: italic; color: var(--muted); margin: 0 0 28px; }
+  .buttons { display: flex; flex-wrap: wrap; gap: 12px; margin: 0 0 40px; }
+  .btn { display: inline-block; padding: 12px 20px; border-radius: 999px; text-decoration: none; font-weight: 600; border: 1px solid var(--line); color: var(--fg); background: var(--card); }
+  .btn.primary { background: var(--accent); color: var(--accent-fg); border-color: var(--accent); }
+  figure { margin: 0 0 44px; background: #fff; border: 1px solid var(--line); border-radius: 16px; padding: 14px; }
+  figure img { width: 100%; height: auto; display: block; }
+  .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 16px; margin: 0 0 44px; }
+  .card { background: var(--card); border: 1px solid var(--line); border-radius: 16px; padding: 20px; }
+  .card h2 { font-size: 18px; margin: 0 0 6px; }
+  .card p { margin: 0; color: var(--muted); }
+  h3 { font-size: 22px; margin: 0 0 12px; }
+  ol { padding-left: 22px; margin: 0 0 40px; }
+  ol li { margin: 6px 0; }
+  code { font: 14px/1.4 ui-monospace, SFMono-Regular, Menlo, monospace; background: var(--card); border: 1px solid var(--line); border-radius: 6px; padding: 2px 6px; }
+  footer { border-top: 1px solid var(--line); padding-top: 18px; color: var(--muted); font-size: 15px; display: flex; flex-wrap: wrap; gap: 18px; }
+  footer a { color: var(--muted); }
+</style>
+</head>
+<body>
+<main>
+  <div class="brand">Far<span>call</span></div>
+
+  <h1>Run your coding agents from your phone.</h1>
+  <p class="lead">Every agent, your choice of model, your own computer, no cloud relay.</p>
+  <p class="aside">Like having your terminal's Claude Code or Codex in your pocket, minus the tiny keyboard.</p>
+
+  <div class="buttons">
+    <a class="btn primary" href="https://github.com/eamon831/farcall-releases/releases/latest">Download</a>
+    <a class="btn" href="https://github.com/eamon831/farcall-releases#getting-started">How to install</a>
+  </div>
+
+  <figure>
+    <img src="images/how-it-works.png" width="1568" height="306"
+         alt="Your phone talks to Farcall on your computer over your private Tailscale network; Farcall runs your coding agent, which talks to your AI provider.">
+  </figure>
+
+  <div class="grid">
+    <div class="card">
+      <h2>Your agent, your model</h2>
+      <p>Claude Code on your Claude login, or on Z.ai's GLM or Moonshot's Kimi. Codex on OpenAI (preview). Pick per session.</p>
+    </div>
+    <div class="card">
+      <h2>No server in the middle</h2>
+      <p>Your phone reaches your computer over your own private Tailscale network. Your chats and code stay on your machines.</p>
+    </div>
+    <div class="card">
+      <h2>You stay in charge</h2>
+      <p>When an agent wants to run a command or edit a file, your phone asks first. Allow or deny from anywhere.</p>
+    </div>
+    <div class="card">
+      <h2>Ask a panel</h2>
+      <p>Put two or three agents in one chat, read-only. They answer side by side and can discuss each other's answers.</p>
+    </div>
+  </div>
+
+  <h3>Get started</h3>
+  <ol>
+    <li>Install Farcall on your Mac, Windows PC or Linux machine. On a Mac:<br><code>curl -fsSL https://github.com/eamon831/farcall-releases/releases/latest/download/install.sh | bash</code></li>
+    <li>Follow the setup in the Farcall window: Tailscale, Claude Code, a short approval test, your projects folder.</li>
+    <li>Install the Android app from the QR code in setup, sign in to the same Tailscale account, and pair.</li>
+  </ol>
+
+  <footer>
+    <span>Mac, Windows and Linux · Android</span>
+    <a href="https://github.com/eamon831/farcall-releases">GitHub</a>
+    <a href="https://github.com/eamon831/farcall-releases/issues/new/choose">Feedback</a>
+  </footer>
+</main>
+</body>
+</html>
