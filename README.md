@@ -13,7 +13,7 @@ They work on your computer, in your projects. You chat, watch the replies stream
 
 <p align="center"><img src="images/how-it-works.png" alt="How Farcall connects: phone, over your private Tailscale network, to Farcall on your computer, which runs your coding agent, which talks to your AI provider" width="800"></p>
 
-This repository holds the builds only. **[Download the latest release](https://github.com/eamon831/farcall-releases/releases/latest)**
+**Website: [farcall.app](https://farcall.app)** · This repository holds the builds only. **[Download the latest release](https://github.com/eamon831/farcall-releases/releases/latest)**
 
 ## What you need
 
