@@ -23,7 +23,7 @@ Remote apps for coding agents usually tie you to one agent, one account, or a cl
 - **Can put two or three agents in one chat** (a panel): they answer side by side and can discuss each other's answers.
 - **Updates your computer from your phone:** Settings › Update Farcall on that computer.
 
-<p align="center"><img src="images/how-it-works.png" alt="How Farcall connects: phone, over your private Tailscale network, to Farcall on your computer, which runs your coding agent, which talks to your AI provider" width="800"></p>
+<p align="center"><picture><source media="(prefers-color-scheme: dark)" srcset="images/diagram-wide-dark.svg"><img src="images/diagram-wide-light.svg" alt="How Farcall connects: phone, over your private Tailscale network, to Farcall on your computer, which runs your coding agent, which talks to your AI provider" width="800"></picture></p>
 
 **Website: [farcall.app](https://farcall.app)** · This repository holds the builds only. **[Download the latest release](https://github.com/eamon831/farcall-releases/releases/latest)**
 

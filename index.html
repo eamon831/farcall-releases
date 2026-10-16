@@ -370,26 +370,18 @@
   .arch-section {
     margin: 0 0 72px;
   }
+  /* The diagram SVGs carry their own light/dark background (images/diagram-*.svg). */
   figure {
     margin: 0;
-    background: #FFFFFF;
     border: 1px solid var(--line-strong);
     border-radius: 18px;
-    padding: 24px;
+    overflow: hidden;
     box-shadow: var(--shadow-sm);
-  }
-  @media (prefers-color-scheme: dark) {
-    figure {
-      background: #FBF9F7;
-      border-color: var(--line-strong);
-      box-shadow: 0 8px 28px rgba(0, 0, 0, 0.35);
-    }
   }
   figure img {
     width: 100%;
     height: auto;
     display: block;
-    border-radius: 8px;
   }
 
   /* Features Grid */
@@ -740,8 +732,7 @@
       <h2 class="section-title">Direct from your phone to your machine</h2>
     </div>
     <figure>
-      <img src="images/how-it-works.png" width="1568" height="306"
-           alt="Your phone talks to Farcall on your computer over your private Tailscale network; Farcall runs your coding agent, which talks to your AI provider.">
+      <picture><source media="(max-width: 640px) and (prefers-color-scheme: dark)" srcset="images/diagram-tall-dark.svg"><source media="(max-width: 640px)" srcset="images/diagram-tall-light.svg"><source media="(prefers-color-scheme: dark)" srcset="images/diagram-wide-dark.svg"><img src="images/diagram-wide-light.svg" width="1600" height="480" alt="Your phone talks to Farcall on your computer over your private Tailscale network; Farcall runs your coding agent, which talks to your AI provider." loading="lazy"></picture>
     </figure>
   </section>
 

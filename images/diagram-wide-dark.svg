@@ -1,0 +1,142 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 480" width="100%" height="100%" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif">
+  <defs>
+    <filter id="shadow-wd" x="-8%" y="-8%" width="116%" height="116%">
+      <feDropShadow dx="0" dy="6" stdDeviation="8" flood-color="#000000" flood-opacity="0.35"/>
+    </filter>
+    <!-- Emerald arrows -->
+    <marker id="arr-em-r-wd" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M 1 1.5 L 8 5 L 1 8.5" fill="none" stroke="#5CC48E" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+    </marker>
+    <marker id="arr-em-l-wd" viewBox="0 0 10 10" refX="3" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M 9 1.5 L 2 5 L 9 8.5" fill="none" stroke="#5CC48E" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+    </marker>
+    <!-- Terracotta arrows -->
+    <marker id="arr-tc-r-wd" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M 1 1.5 L 8 5 L 1 8.5" fill="none" stroke="#D2704A" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+    </marker>
+    <marker id="arr-tc-l-wd" viewBox="0 0 10 10" refX="3" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M 9 1.5 L 2 5 L 9 8.5" fill="none" stroke="#D2704A" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+    </marker>
+    <!-- Stone arrows -->
+    <marker id="arr-st-r-wd" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M 1 1.5 L 8 5 L 1 8.5" fill="none" stroke="#A8A29E" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+    </marker>
+    <marker id="arr-st-l-wd" viewBox="0 0 10 10" refX="3" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M 9 1.5 L 2 5 L 9 8.5" fill="none" stroke="#A8A29E" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+    </marker>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1600" height="480" fill="#1C1917"/>
+
+  <!-- 3. YOUR COMPUTER (Outer Container) -->
+  <rect x="520" y="44" width="580" height="392" rx="16" fill="#231F1D" stroke="#3A3532" stroke-width="1.5"/>
+  
+  <!-- Laptop Icon & Header -->
+  <g transform="translate(715, 66)">
+    <rect x="4" y="2" width="20" height="14" rx="2" fill="none" stroke="#A8A29E" stroke-width="1.8"/>
+    <path d="M 1 19 L 27 19" stroke="#A8A29E" stroke-width="2" stroke-linecap="round"/>
+    <text x="36" y="15" font-size="16" font-weight="600" fill="#F5F5F4">Your computer</text>
+  </g>
+  <text x="810" y="104" text-anchor="middle" font-size="13" fill="#A8A29E">Mac, Windows or Linux</text>
+
+  <!-- 1. YOUR PHONE -->
+  <g filter="url(#shadow-wd)">
+    <rect x="36" y="140" width="210" height="220" rx="12" fill="#292524" stroke="#3F3A36" stroke-width="1"/>
+    <rect x="36.5" y="140.5" width="209" height="219" rx="11.5" fill="none" stroke="#D2704A" stroke-width="1.5" stroke-opacity="0.45"/>
+  </g>
+  <!-- Phone Icon -->
+  <g transform="translate(119, 166)">
+    <circle cx="22" cy="22" r="22" fill="#D2704A" fill-opacity="0.15"/>
+    <rect x="15" y="10" width="14" height="24" rx="2.5" fill="none" stroke="#E0825D" stroke-width="1.8"/>
+    <line x1="20" y1="13" x2="24" y2="13" stroke="#E0825D" stroke-width="1.5" stroke-linecap="round"/>
+    <circle cx="22" cy="30.5" r="1" fill="#E0825D"/>
+  </g>
+  <text x="141" y="238" text-anchor="middle" font-size="17" font-weight="600" fill="#F5F5F4">Your phone</text>
+  <text x="141" y="262" text-anchor="middle" font-size="14" font-weight="500" fill="#E0825D">Farcall app</text>
+  <rect x="103" y="282" width="76" height="24" rx="12" fill="#1C1917" stroke="#3F3A36" stroke-width="1"/>
+  <text x="141" y="298" text-anchor="middle" font-size="12" font-weight="500" fill="#A8A29E">Android</text>
+
+  <!-- 3A. FARCALL SERVICE CARD -->
+  <g filter="url(#shadow-wd)">
+    <rect x="550" y="130" width="210" height="260" rx="10" fill="#292524" stroke="#D2704A" stroke-width="1.5"/>
+  </g>
+  <!-- Terminal/Service Icon -->
+  <g transform="translate(633, 158)">
+    <circle cx="22" cy="22" r="22" fill="#D2704A" fill-opacity="0.15"/>
+    <rect x="11" y="13" width="22" height="18" rx="3" fill="none" stroke="#E0825D" stroke-width="1.8"/>
+    <path d="M 15 19 L 19 22 L 15 25" fill="none" stroke="#E0825D" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+    <line x1="21" y1="25" x2="26" y2="25" stroke="#E0825D" stroke-width="1.6" stroke-linecap="round"/>
+  </g>
+  <text x="655" y="232" text-anchor="middle" font-size="17" font-weight="600" fill="#F5F5F4">Farcall</text>
+  <text x="655" y="256" text-anchor="middle" font-size="14" fill="#A8A29E">background service</text>
+
+  <!-- 3B. CODING AGENT CARD -->
+  <g filter="url(#shadow-wd)">
+    <rect x="820" y="130" width="250" height="260" rx="10" fill="#292524" stroke="#3F3A36" stroke-width="1.5"/>
+  </g>
+  <!-- Folder/Code Icon -->
+  <g transform="translate(923, 158)">
+    <circle cx="22" cy="22" r="22" fill="#1C1917"/>
+    <path d="M 11 15 C 11 13.8 11.8 13 13 13 L 18 13 L 20.5 16 L 31 16 C 32.2 16 33 16.8 33 18 L 33 29 C 33 30.2 32.2 31 31 31 L 13 31 C 11.8 31 11 30.2 11 29 Z" fill="none" stroke="#A8A29E" stroke-width="1.8" stroke-linejoin="round"/>
+    <path d="M 19 21 L 16.5 23.5 L 19 26 M 25 21 L 27.5 23.5 L 25 26" fill="none" stroke="#E0825D" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+  <text x="945" y="232" text-anchor="middle" font-size="17" font-weight="600" fill="#F5F5F4">Your coding agent</text>
+  <text x="945" y="256" text-anchor="middle" font-size="14" font-weight="500" fill="#E0825D">Claude Code or Codex</text>
+  <rect x="863" y="286" width="164" height="28" rx="6" fill="#1C1917" stroke="#3F3A36" stroke-width="1"/>
+  <text x="945" y="304" text-anchor="middle" font-size="12.5" fill="#A8A29E">in your project folder</text>
+
+  <!-- Internal Computer Arrow (Farcall <-> Agent) -->
+  <line x1="768" y1="260" x2="812" y2="260" stroke="#D2704A" stroke-width="2" marker-start="url(#arr-tc-l-wd)" marker-end="url(#arr-tc-r-wd)"/>
+
+  <!-- 2. PRIVATE TAILSCALE NETWORK (Phone <-> Farcall) -->
+  <line x1="254" y1="250" x2="542" y2="250" stroke="#5CC48E" stroke-width="2" stroke-dasharray="5 4" marker-start="url(#arr-em-l-wd)" marker-end="url(#arr-em-r-wd)"/>
+  
+  <!-- Tailscale Pill -->
+  <g filter="url(#shadow-wd)">
+    <rect x="276" y="172" width="244" height="156" rx="12" fill="#232926" stroke="#5CC48E" stroke-width="1.5"/>
+  </g>
+  <!-- Shield + Lock Icon -->
+  <g transform="translate(382, 184)">
+    <path d="M 16 3 L 28 7.5 L 28 16.5 C 28 24 22.8 29.8 16 32 C 9.2 29.8 4 24 4 16.5 L 4 7.5 Z" fill="#5CC48E" fill-opacity="0.15" stroke="#5CC48E" stroke-width="1.6" stroke-linejoin="round"/>
+    <rect x="12" y="16" width="8" height="6.5" rx="1.2" fill="#5CC48E"/>
+    <path d="M 13.5 16 L 13.5 13.5 C 13.5 12 14.5 11 16 11 C 17.5 11 18.5 12 18.5 13.5 L 18.5 16" fill="none" stroke="#5CC48E" stroke-width="1.5"/>
+  </g>
+  <text x="398" y="238" text-anchor="middle" font-size="14.5" font-weight="600" fill="#5CC48E">Your private Tailscale network</text>
+  <text x="398" y="261" text-anchor="middle" font-size="13.5" fill="#D6D3D1">messages, replies, approvals</text>
+  <rect x="331" y="277" width="134" height="24" rx="12" fill="#5CC48E" fill-opacity="0.15"/>
+  <text x="398" y="293" text-anchor="middle" font-size="12" font-weight="600" fill="#6EE7B7">no cloud relay</text>
+
+  <!-- 4. CONNECTION TO AI PROVIDER (Agent <-> Provider) -->
+  <line x1="1078" y1="250" x2="1322" y2="250" stroke="#A8A29E" stroke-width="2" marker-start="url(#arr-st-l-wd)" marker-end="url(#arr-st-r-wd)"/>
+  
+  <!-- Login / API Key Pill -->
+  <g filter="url(#shadow-wd)">
+    <rect x="1116" y="218" width="176" height="64" rx="10" fill="#292524" stroke="#44403C" stroke-width="1.5"/>
+  </g>
+  <!-- Key Icon -->
+  <g transform="translate(1192, 227)">
+    <circle cx="7" cy="9" r="4.5" fill="none" stroke="#A8A29E" stroke-width="1.6"/>
+    <path d="M 11.5 9 L 21 9 M 18 9 L 18 12.5 M 21 9 L 21 12.5" fill="none" stroke="#A8A29E" stroke-width="1.6" stroke-linecap="round"/>
+  </g>
+  <text x="1204" y="264" text-anchor="middle" font-size="13.5" font-weight="500" fill="#E7E5E4">your login or API key</text>
+
+  <!-- 4. AI PROVIDER CARD -->
+  <g filter="url(#shadow-wd)">
+    <rect x="1330" y="130" width="234" height="240" rx="12" fill="#292524" stroke="#3F3A36" stroke-width="1.5"/>
+  </g>
+  <!-- AI Chip / Spark Icon -->
+  <g transform="translate(1425, 154)">
+    <circle cx="22" cy="22" r="22" fill="#1C1917"/>
+    <rect x="13" y="13" width="18" height="18" rx="3.5" fill="none" stroke="#A8A29E" stroke-width="1.8"/>
+    <!-- Chip pins -->
+    <path d="M 17 10 L 17 13 M 22 10 L 22 13 M 27 10 L 27 13 M 17 31 L 17 34 M 22 31 L 22 34 M 27 31 L 27 34 M 10 17 L 13 17 M 10 22 L 13 22 M 10 27 L 13 27 M 31 17 L 34 17 M 31 22 L 34 22 M 31 27 L 34 27" stroke="#A8A29E" stroke-width="1.5" stroke-linecap="round"/>
+    <circle cx="22" cy="22" r="3" fill="#E0825D"/>
+  </g>
+  <text x="1447" y="224" text-anchor="middle" font-size="17" font-weight="600" fill="#F5F5F4">Your AI provider</text>
+  
+  <!-- Provider List -->
+  <text x="1447" y="254" text-anchor="middle" font-size="14" fill="#A8A29E">Anthropic · OpenAI</text>
+  <text x="1447" y="278" text-anchor="middle" font-size="14" fill="#A8A29E">Z.ai · Moonshot</text>
+  <text x="1447" y="302" text-anchor="middle" font-size="14" fill="#A8A29E">OpenRouter</text>
+</svg>
