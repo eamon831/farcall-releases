@@ -7,9 +7,28 @@
 <meta name="description" content="Run your coding agents from your phone. Every agent, your choice of model, your own computer, no cloud relay. Claude Code and Codex, on Mac, Windows and Linux, with an Android app.">
 <meta property="og:title" content="Farcall: run your coding agents from your phone">
 <meta property="og:description" content="Every agent, your choice of model, your own computer, no cloud relay.">
-<meta property="og:image" content="https://farcall.app/images/how-it-works.png">
+<link rel="canonical" href="https://farcall.app/">
+<link rel="icon" href="images/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="images/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+<meta name="theme-color" content="#1C1917">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Farcall">
+<meta property="og:image" content="https://farcall.app/images/social-card.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
 <meta property="og:url" content="https://farcall.app/">
 <meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Farcall: run your coding agents from your phone">
+<meta name="twitter:description" content="Claude Code and Codex on your own computer, driven from your phone. No cloud relay.">
+<meta name="twitter:image" content="https://farcall.app/images/social-card.png">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Farcall","url":"https://farcall.app/",
+ "description":"A phone remote for AI coding agents: chat with Claude Code or Codex running on your own computer, and approve every command from your phone.",
+ "applicationCategory":"DeveloperApplication","operatingSystem":"macOS, Windows, Linux, Android",
+ "downloadUrl":"https://github.com/eamon831/farcall-releases/releases/latest","image":"https://farcall.app/images/icon-512.png",
+ "offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}
+</script>
 <style>
   :root { --bg: #fbf8f6; --fg: #1d1a18; --muted: #6b625c; --card: #ffffff; --line: #e8e1dc; --accent: #c4673f; --accent-fg: #ffffff; }
   @media (prefers-color-scheme: dark) {
@@ -36,9 +55,16 @@
   ol { padding-left: 22px; margin: 0 0 40px; }
   ol li { margin: 6px 0; }
   code { font: 14px/1.4 ui-monospace, SFMono-Regular, Menlo, monospace; background: var(--card); border: 1px solid var(--line); border-radius: 6px; padding: 2px 6px; }
+  .faq { margin: 0 0 40px; }
+  details { background: var(--card); border: 1px solid var(--line); border-radius: 12px; padding: 12px 16px; margin: 0 0 10px; }
+  summary { cursor: pointer; font-weight: 600; }
+  details p { margin: 8px 0 0; color: var(--muted); }
   footer { border-top: 1px solid var(--line); padding-top: 18px; color: var(--muted); font-size: 15px; display: flex; flex-wrap: wrap; gap: 18px; }
   footer a { color: var(--muted); }
 </style>
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Can I use Claude Code from my phone?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Farcall runs Claude Code on your own computer and gives you a phone app to chat with it: start a session in a project, read replies as they stream, and approve or deny each command or file edit it wants to make."}}, {"@type": "Question", "name": "Does it work with Codex and other models?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Claude Code can run on your Claude login, on Z.ai's GLM or on Moonshot's Kimi; Codex runs on your OpenAI login (preview). You pick per session, and you can put two or three agents in one chat."}}, {"@type": "Question", "name": "Is my code sent to a server?", "acceptedAnswer": {"@type": "Answer", "text": "No. Your phone reaches your computer over your own private Tailscale network. Farcall has no server in the middle; your code and chats stay on your machines and your AI provider."}}, {"@type": "Question", "name": "What do I need?", "acceptedAnswer": {"@type": "Answer", "text": "A Mac, Windows PC or Linux machine to run the agent, an Android phone, and an account with an AI provider (a Claude login, or a GLM or Kimi key). Farcall's setup installs what is missing."}}, {"@type": "Question", "name": "Is Farcall free?", "acceptedAnswer": {"@type": "Answer", "text": "Yes, Farcall itself is free to download. You pay your AI provider as you normally would."}}]}
+</script>
 </head>
 <body>
 <main>
@@ -83,6 +109,15 @@
     <li>Follow the setup in the Farcall window: Tailscale, Claude Code, a short approval test, your projects folder.</li>
     <li>Install the Android app from the QR code in setup, sign in to the same Tailscale account, and pair.</li>
   </ol>
+
+  <h3>Questions</h3>
+  <div class="faq">
+    <details><summary>Can I use Claude Code from my phone?</summary><p>Yes. Farcall runs Claude Code on your own computer and gives you a phone app to chat with it: start a session in a project, read replies as they stream, and approve or deny each command or file edit it wants to make.</p></details>
+    <details><summary>Does it work with Codex and other models?</summary><p>Yes. Claude Code can run on your Claude login, on Z.ai's GLM or on Moonshot's Kimi; Codex runs on your OpenAI login (preview). You pick per session, and you can put two or three agents in one chat.</p></details>
+    <details><summary>Is my code sent to a server?</summary><p>No. Your phone reaches your computer over your own private Tailscale network. Farcall has no server in the middle; your code and chats stay on your machines and your AI provider.</p></details>
+    <details><summary>What do I need?</summary><p>A Mac, Windows PC or Linux machine to run the agent, an Android phone, and an account with an AI provider (a Claude login, or a GLM or Kimi key). Farcall's setup installs what is missing.</p></details>
+    <details><summary>Is Farcall free?</summary><p>Yes, Farcall itself is free to download. You pay your AI provider as you normally would.</p></details>
+  </div>
 
   <footer>
     <span>Mac, Windows and Linux · Android</span>
