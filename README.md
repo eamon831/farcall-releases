@@ -1,6 +1,8 @@
 # Farcall
 
-**Control Claude Code and Codex from your Android phone.** They run on your own Mac, Windows or Linux computer; you chat with them, watch the replies stream in, and approve every command before it runs. From anywhere: end-to-end encrypted over your own Tailscale network, with no Farcall server in between.
+**One phone remote for the AI coding agents on your computer.** Claude Code (on Claude, GLM, Kimi or Gemini) and Codex (on OpenAI), side by side in one app, even in the same chat. When an agent asks "Can I run `npm test`?", tap Allow and it keeps going. End-to-end encrypted over your own Tailscale network, with no Farcall server in between.
+
+*Using another coding CLI? [Tell us which one →](https://github.com/eamon831/farcall-releases/issues/1)*
 
 <p align="center">
   <picture><source media="(prefers-color-scheme: dark)" srcset="images/shot-phone-chat-dark.png"><img src="images/shot-phone-chat-light.png" alt="A chat: the agent explains the bug, edits the file, and asks before running npm test (Allow / Deny)" width="260"></picture>
