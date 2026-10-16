@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Farcall: run your coding agents from your phone</title>
-<meta name="description" content="Run your coding agents from your phone. Every agent, your choice of model, your own computer, no cloud relay. Claude Code and Codex, on Mac, Windows and Linux, with an Android app.">
+<title>Farcall: control Claude Code and Codex from your Android phone</title>
+<meta name="description" content="Control Claude Code and Codex from your Android phone. They run on your own Mac, Windows or Linux computer; you chat, watch replies stream and approve every command. Claude, GLM, Kimi or Gemini. No cloud relay.">
 <meta property="og:title" content="Farcall: run your coding agents from your phone">
 <meta property="og:description" content="Every agent, your choice of model, your own computer, no cloud relay.">
 <link rel="canonical" href="https://farcall.app/">
@@ -59,24 +59,33 @@
   details { background: var(--card); border: 1px solid var(--line); border-radius: 12px; padding: 12px 16px; margin: 0 0 10px; }
   summary { cursor: pointer; font-weight: 600; }
   details p { margin: 8px 0 0; color: var(--muted); }
+  .shots { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin: 0 0 36px; }
+  .shots img { width: 100%; height: auto; display: block; }
+  @media (max-width: 640px) { .shots { grid-template-columns: 1fr 1fr; } .shots picture:last-child { display: none; } }
   footer { border-top: 1px solid var(--line); padding-top: 18px; color: var(--muted); font-size: 15px; display: flex; flex-wrap: wrap; gap: 18px; }
   footer a { color: var(--muted); }
 </style>
 <script type="application/ld+json">
-{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Can I use Claude Code from my phone?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Farcall runs Claude Code on your own computer and gives you a phone app to chat with it: start a session in a project, read replies as they stream, and approve or deny each command or file edit it wants to make."}}, {"@type": "Question", "name": "Does it work with Codex and other models?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Claude Code can run on your Claude login, on Z.ai's GLM or on Moonshot's Kimi; Codex runs on your OpenAI login (preview). You pick per session, and you can put two or three agents in one chat."}}, {"@type": "Question", "name": "Is my code sent to a server?", "acceptedAnswer": {"@type": "Answer", "text": "No. Your phone reaches your computer over your own private Tailscale network. Farcall has no server in the middle; your code and chats stay on your machines and your AI provider."}}, {"@type": "Question", "name": "What do I need?", "acceptedAnswer": {"@type": "Answer", "text": "A Mac, Windows PC or Linux machine to run the agent, an Android phone, and an account with an AI provider (a Claude login, or a GLM or Kimi key). Farcall's setup installs what is missing."}}, {"@type": "Question", "name": "Is Farcall free?", "acceptedAnswer": {"@type": "Answer", "text": "Yes, Farcall itself is free to download. You pay your AI provider as you normally would."}}]}
+{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Can I use Claude Code from my phone?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Farcall runs Claude Code on your own computer and gives you a phone app to chat with it: start a session in a project, read replies as they stream, and approve or deny each command or file edit it wants to make."}}, {"@type": "Question", "name": "Does it work with Codex, GLM, Kimi or Gemini?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Claude Code can run on your Claude login, on Z.ai's GLM, on Moonshot's Kimi, or on Gemini through OpenRouter (preview); Codex runs on your OpenAI login (preview). You pick per session, and you can put two or three agents in one chat."}}, {"@type": "Question", "name": "Is my code sent to a server?", "acceptedAnswer": {"@type": "Answer", "text": "No. Your phone reaches your computer over your own private Tailscale network. Farcall has no server in the middle; your code and chats stay on your machines and your AI provider."}}, {"@type": "Question", "name": "What do I need?", "acceptedAnswer": {"@type": "Answer", "text": "A Mac, Windows PC or Linux machine to run the agent, an Android phone, and one AI: a Claude account, an API key for GLM, Kimi or OpenRouter, or Codex. Farcall's setup installs what is missing."}}, {"@type": "Question", "name": "Is there an iPhone app?", "acceptedAnswer": {"@type": "Answer", "text": "Not yet: the phone app is Android only for now."}}, {"@type": "Question", "name": "Is Farcall free?", "acceptedAnswer": {"@type": "Answer", "text": "Yes, Farcall itself is free to download. You pay your AI provider as you normally would."}}]}
 </script>
 </head>
 <body>
 <main>
   <div class="brand">Far<span>call</span></div>
 
-  <h1>Run your coding agents from your phone.</h1>
-  <p class="lead">Every agent, your choice of model, your own computer, no cloud relay.</p>
-  <p class="aside">Like having your terminal's Claude Code or Codex in your pocket, minus the tiny keyboard.</p>
+  <h1>Control Claude Code and Codex from your Android phone.</h1>
+  <p class="lead">They run on your own computer. You chat, watch the replies stream in, and approve every command before it runs. From anywhere, with no cloud relay.</p>
+  <p class="aside">Mac, Windows and Linux on the computer · Android on the phone · iPhone not yet</p>
 
   <div class="buttons">
     <a class="btn primary" href="https://github.com/eamon831/farcall-releases/releases/latest">Download</a>
     <a class="btn" href="https://github.com/eamon831/farcall-releases#getting-started">How to install</a>
+  </div>
+
+  <div class="shots">
+    <picture><source media="(prefers-color-scheme: dark)" srcset="images/shot-phone-chat-dark.png"><img src="images/shot-phone-chat-light.png" alt="A chat: the agent edits a file and asks before running npm test, with Allow and Deny" loading="lazy"></picture>
+    <picture><source media="(prefers-color-scheme: dark)" srcset="images/shot-phone-sessions-dark.png"><img src="images/shot-phone-sessions-light.png" alt="Sessions on a computer: one waiting for approval, one working, one done" loading="lazy"></picture>
+    <picture><source media="(prefers-color-scheme: dark)" srcset="images/shot-phone-new-session-dark.png"><img src="images/shot-phone-new-session-light.png" alt="New session: pick a project folder and an agent: Claude, GLM, Kimi or Codex" loading="lazy"></picture>
   </div>
 
   <figure>
@@ -87,40 +96,44 @@
   <div class="grid">
     <div class="card">
       <h2>Your agent, your model</h2>
-      <p>Claude Code on your Claude login, or on Z.ai's GLM or Moonshot's Kimi. Codex on OpenAI (preview). Pick per session.</p>
+      <p>Claude Code on your Claude login, or on Z.ai's GLM or Moonshot's Kimi; Gemini through OpenRouter (preview). Codex on your OpenAI login (preview). Pick per session.</p>
+    </div>
+    <div class="card">
+      <h2>You approve every command</h2>
+      <p>When the agent wants to run a command or edit a file, your phone asks first: Allow or Deny. You see what it is doing while it works.</p>
     </div>
     <div class="card">
       <h2>No server in the middle</h2>
-      <p>Your phone reaches your computer over your own private Tailscale network. Your chats and code stay on your machines.</p>
+      <p>Your phone reaches your computer over your own private Tailscale network, built in: no Tailscale app to install. Chats and code stay on your machines.</p>
     </div>
     <div class="card">
-      <h2>You stay in charge</h2>
-      <p>When an agent wants to run a command or edit a file, your phone asks first. Allow or deny from anywhere.</p>
-    </div>
-    <div class="card">
-      <h2>Ask a panel</h2>
-      <p>Put two or three agents in one chat, read-only. They answer side by side and can discuss each other's answers.</p>
+      <h2>More than one agent</h2>
+      <p>Put two or three agents in one chat: they answer side by side and can discuss each other's answers. Update your computer's Farcall from the phone, too.</p>
     </div>
   </div>
 
   <h3>Get started</h3>
   <ol>
-    <li>Install Farcall on your Mac, Windows PC or Linux machine. On a Mac:<br><code>curl -fsSL https://github.com/eamon831/farcall-releases/releases/latest/download/install.sh | bash</code></li>
-    <li>Follow the setup in the Farcall window: Tailscale, Claude Code, a short approval test, your projects folder.</li>
+    <li>Install Farcall on the computer.<br>
+      Mac (Terminal): <code>curl -fsSL https://github.com/eamon831/farcall-releases/releases/latest/download/install.sh | bash</code><br>
+      Windows (PowerShell): <code>irm https://github.com/eamon831/farcall-releases/releases/latest/download/install.ps1 | iex</code><br>
+      Linux (x64): <code>curl -fsSL https://github.com/eamon831/farcall-releases/releases/latest/download/install-linux.sh | bash</code></li>
+    <li>Follow the setup in the Farcall window: Connect, Pick your AI (sign in or paste a key), Projects folder, Pair your phone.</li>
     <li>Install the Android app from the QR code in setup, sign in to the same Tailscale account, and pair.</li>
   </ol>
 
   <h3>Questions</h3>
   <div class="faq">
     <details><summary>Can I use Claude Code from my phone?</summary><p>Yes. Farcall runs Claude Code on your own computer and gives you a phone app to chat with it: start a session in a project, read replies as they stream, and approve or deny each command or file edit it wants to make.</p></details>
-    <details><summary>Does it work with Codex and other models?</summary><p>Yes. Claude Code can run on your Claude login, on Z.ai's GLM or on Moonshot's Kimi; Codex runs on your OpenAI login (preview). You pick per session, and you can put two or three agents in one chat.</p></details>
+    <details><summary>Does it work with Codex, GLM, Kimi or Gemini?</summary><p>Yes. Claude Code can run on your Claude login, on Z.ai's GLM, on Moonshot's Kimi, or on Gemini through OpenRouter (preview); Codex runs on your OpenAI login (preview). You pick per session, and you can put two or three agents in one chat.</p></details>
     <details><summary>Is my code sent to a server?</summary><p>No. Your phone reaches your computer over your own private Tailscale network. Farcall has no server in the middle; your code and chats stay on your machines and your AI provider.</p></details>
-    <details><summary>What do I need?</summary><p>A Mac, Windows PC or Linux machine to run the agent, an Android phone, and an account with an AI provider (a Claude login, or a GLM or Kimi key). Farcall's setup installs what is missing.</p></details>
+    <details><summary>What do I need?</summary><p>A Mac, Windows PC or Linux machine to run the agent, an Android phone, and one AI: a Claude account, an API key for GLM, Kimi or OpenRouter, or Codex. Farcall's setup installs what is missing.</p></details>
+    <details><summary>Is there an iPhone app?</summary><p>Not yet: the phone app is Android only for now.</p></details>
     <details><summary>Is Farcall free?</summary><p>Yes, Farcall itself is free to download. You pay your AI provider as you normally would.</p></details>
   </div>
 
   <footer>
-    <span>Mac, Windows and Linux · Android</span>
+    <span><b>[OWNER: who builds it, and whether the source is public]</b></span>
     <a href="https://github.com/eamon831/farcall-releases">GitHub</a>
     <a href="https://github.com/eamon831/farcall-releases/issues/new/choose">Feedback</a>
   </footer>

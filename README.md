@@ -1,15 +1,27 @@
 # Farcall
 
-**Run your coding agents from your phone. Every agent, your choice of model, your own computer, no cloud relay.**
+**Control Claude Code and Codex from your Android phone.** They run on your own Mac, Windows or Linux computer; you chat with them, watch the replies stream in, and approve every command before it runs. From anywhere, with no cloud relay.
 
-*Like having your terminal's Claude Code or Codex in your pocket, minus the tiny keyboard.*
+<p align="center">
+  <picture><source media="(prefers-color-scheme: dark)" srcset="images/shot-phone-chat-dark.png"><img src="images/shot-phone-chat-light.png" alt="A chat: the agent explains the bug, edits the file, and asks before running npm test (Allow / Deny)" width="260"></picture>
+  <picture><source media="(prefers-color-scheme: dark)" srcset="images/shot-phone-sessions-dark.png"><img src="images/shot-phone-sessions-light.png" alt="Sessions on a computer: one waiting for your approval, one working, one done" width="260"></picture>
+  <picture><source media="(prefers-color-scheme: dark)" srcset="images/shot-phone-new-session-dark.png"><img src="images/shot-phone-new-session-light.png" alt="New session: pick a project folder and an agent: Claude, Claude on GLM or Kimi, or Codex" width="260"></picture>
+</p>
 
-They work on your computer, in your projects. You chat, watch the replies stream in, and approve every command before it runs, from anywhere.
+- **Your agent, your model.** Claude Code on your Claude login, or on Z.ai's GLM or Moonshot's Kimi; Gemini through OpenRouter (preview). Codex on your OpenAI login (preview). Pick per session.
+- **You approve every command.** When the agent wants to run a command or edit a file, your phone asks first: Allow or Deny, from anywhere. You can see what it is doing while it works.
+- **No server in the middle.** Your phone reaches your computer over your own private [Tailscale](https://tailscale.com) network, built into Farcall: no Tailscale app to install. Your chats and code stay on your machines.
+- **Mac, Windows and Linux** on the computer, **Android** on the phone. iPhone: not yet.
 
-- **Your agent, your model.** Claude Code on your Claude login, or on Z.ai's GLM or Moonshot's Kimi. Codex on OpenAI (preview). Pick per session.
-- **No server in the middle.** Your phone reaches your computer over your own private [Tailscale](https://tailscale.com) network. Your chats and code stay on your machines.
-- **You stay in charge.** When the agent wants to run a command or edit a file, your phone asks first.
-- **Mac, Windows and Linux** on the computer side, Android on the phone.
+## How is it different?
+
+Remote apps for coding agents usually tie you to one agent, one account, or a cloud relay that sees your session. Farcall:
+
+- **Works with any of your providers**, not one account: Claude, GLM, Kimi, Gemini (OpenRouter) and Codex, side by side.
+- **Has no relay.** Phone and computer talk directly over your Tailscale network; Farcall runs no server.
+- **Asks before every command**, with the request on your phone, not just a notification after the fact.
+- **Can put two or three agents in one chat** (a panel): they answer side by side and can discuss each other's answers.
+- **Updates your computer from your phone:** Settings › Update Farcall on that computer.
 
 <p align="center"><img src="images/how-it-works.png" alt="How Farcall connects: phone, over your private Tailscale network, to Farcall on your computer, which runs your coding agent, which talks to your AI provider" width="800"></p>
 
@@ -19,7 +31,7 @@ They work on your computer, in your projects. You chat, watch the replies stream
 
 - **A computer** that stays on while you use it: a Mac (Apple Silicon, macOS 13+), a Windows PC (64-bit Windows 10 or 11) or a Linux machine (x64, Ubuntu 22.04 or newer or a similar distribution, with a desktop and systemd).
 - **An Android phone.**
-- **An account with an AI provider.** The usual path is a Claude account: Farcall's setup installs Claude Code and signs you in. A Z.ai or Moonshot API key works too (setup's **Other models** step). For Codex, install it and sign in yourself first; Farcall picks it up.
+- **One AI to work with**, any of: a Claude account (setup signs you in), a Z.ai (GLM), Moonshot (Kimi) or OpenRouter (Gemini, preview) API key, or Codex signed in to your OpenAI account. One is enough; setup installs Claude Code when the one you pick needs it.
 - **A Tailscale account**, free for personal use. You sign in from inside Farcall on both devices; the Tailscale app itself is not needed.
 
 ## Getting started
@@ -64,7 +76,9 @@ Installs into `~/.local/opt/farcall` and adds a menu entry.
 
 You can read each script before running it: [install.sh](https://github.com/eamon831/farcall-releases/releases/latest/download/install.sh), [install.ps1](https://github.com/eamon831/farcall-releases/releases/latest/download/install.ps1), [install-linux.sh](https://github.com/eamon831/farcall-releases/releases/latest/download/install-linux.sh).
 
-**2. Follow the setup in the Farcall window.** It goes one step at a time and checks each one: the background service, Tailscale sign-in, Claude Code and its login, a short approval test, and the folder your projects live in. About ten minutes.
+**2. Follow the setup in the Farcall window.** Four steps, each checked for you: **Connect** (sign in to Tailscale), **Pick your AI** (sign in, or paste a key), **Projects folder**, **Pair your phone**. Farcall installs Claude Code and checks that approvals reach your phone by itself.
+
+<p align="center"><picture><source media="(prefers-color-scheme: dark)" srcset="images/shot-desktop-setup-dark.png"><img src="images/shot-desktop-setup-light.png" alt="The setup window: Pick your AI, with Claude signed in and a GLM key stored" width="640"></picture></p>
 
 **3. Install the phone app.** The setup's phone step shows a QR code; scan it with the phone's camera, or download `farcall.apk` from the release. Allow installing from your browser when Android asks.
 
@@ -90,6 +104,7 @@ The screen can still turn off. Only the computer has to stay awake.
 - **No middleman.** The phone reaches the computer directly over your Tailscale network. Farcall runs no server and never sees your chats, code or files.
 - **Paired devices only.** The computer listens only on its Tailscale address and accepts only phones that scanned its pairing code.
 - **You approve each command.** By default the agent asks before it runs a command or edits a file, and the request comes to your phone. You can choose looser modes per session.
+- **Who makes it.** **[OWNER: who builds it (a name or "one developer"), and whether the source is public ("not yet" / "closed source")]** Every build here is published with its SHA-256, and each installer checks it before installing, for your account only.
 - **Crash reports** are on by default and can be turned off any time (phone: Settings › Privacy; computer: **Check setup** in the Farcall window). They contain only the error and where in Farcall it happened, with folder names, network addresses and keys removed: never your chats or files. They go to [Sentry](https://sentry.io).
 
 ## Updating and uninstalling
