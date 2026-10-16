@@ -104,7 +104,7 @@ The screen can still turn off. Only the computer has to stay awake.
 - **No middleman.** The phone reaches the computer directly over your Tailscale network. Farcall runs no server and never sees your chats, code or files.
 - **Paired devices only.** The computer listens only on its Tailscale address and accepts only phones that scanned its pairing code.
 - **You approve each command.** By default the agent asks before it runs a command or edits a file, and the request comes to your phone. You can choose looser modes per session.
-- **Who makes it.** **[OWNER: who builds it (a name or "one developer"), and whether the source is public ("not yet" / "closed source")]** Every build here is published with its SHA-256, and each installer checks it before installing, for your account only.
+- **Who makes it.** Made by MD Saiful Hossain ([@eamon831](https://github.com/eamon831)), who built Farcall to run his own Claude Code sessions from his phone. The source isn't public yet. Every build here is published with its SHA-256, and each installer checks it before installing, for your account only.
 - **Crash reports** are on by default and can be turned off any time (phone: Settings › Privacy; computer: **Check setup** in the Farcall window). They contain only the error and where in Farcall it happened, with folder names, network addresses and keys removed: never your chats or files. They go to [Sentry](https://sentry.io).
 
 ## Updating and uninstalling
