@@ -1,6 +1,6 @@
 # Farcall
 
-**Control Claude Code and Codex from your Android phone.** They run on your own Mac, Windows or Linux computer; you chat with them, watch the replies stream in, and approve every command before it runs. From anywhere, with no cloud relay.
+**Control Claude Code and Codex from your Android phone.** They run on your own Mac, Windows or Linux computer; you chat with them, watch the replies stream in, and approve every command before it runs. From anywhere: end-to-end encrypted over your own Tailscale network, with no Farcall server in between.
 
 <p align="center">
   <picture><source media="(prefers-color-scheme: dark)" srcset="images/shot-phone-chat-dark.png"><img src="images/shot-phone-chat-light.png" alt="A chat: the agent explains the bug, edits the file, and asks before running npm test (Allow / Deny)" width="260"></picture>
@@ -15,10 +15,10 @@
 
 ## How is it different?
 
-Remote apps for coding agents usually tie you to one agent, one account, or a cloud relay that sees your session. Farcall:
+Remote apps for coding agents usually tie you to one agent, one account, or a company server that sits in your session. Farcall:
 
 - **Works with any of your providers**, not one account: Claude, GLM, Kimi, Gemini (OpenRouter) and Codex, side by side.
-- **Has no relay.** Phone and computer talk directly over your Tailscale network; Farcall runs no server.
+- **Has no server of its own.** Phone and computer connect over your own Tailscale network, end-to-end encrypted. (When they cannot reach each other directly, Tailscale relays the encrypted traffic, which it cannot read.)
 - **Asks before every command**, with the request on your phone, not just a notification after the fact.
 - **Can put two or three agents in one chat** (a panel): they answer side by side and can discuss each other's answers.
 - **Updates your computer from your phone:** Settings › Update Farcall on that computer.

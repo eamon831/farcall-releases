@@ -107,7 +107,7 @@
   <text x="398" y="238" text-anchor="middle" font-size="14.5" font-weight="600" fill="#065F46">Your private Tailscale network</text>
   <text x="398" y="261" text-anchor="middle" font-size="13.5" fill="#44403C">messages, replies, approvals</text>
   <rect x="331" y="277" width="134" height="24" rx="12" fill="#10B981" fill-opacity="0.12"/>
-  <text x="398" y="293" text-anchor="middle" font-size="12" font-weight="600" fill="#047857">no cloud relay</text>
+  <text x="398" y="293" text-anchor="middle" font-size="12" font-weight="600" fill="#047857">no Farcall server</text>
 
   <!-- 4. CONNECTION TO AI PROVIDER (Agent <-> Provider) -->
   <line x1="1078" y1="250" x2="1322" y2="250" stroke="#78716C" stroke-width="2" marker-start="url(#arr-st-l-wl)" marker-end="url(#arr-st-r-wl)"/>

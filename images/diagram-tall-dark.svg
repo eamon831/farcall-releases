@@ -60,7 +60,7 @@
   </g>
   <text x="300" y="248" text-anchor="middle" font-size="14" fill="#D6D3D1">messages, replies, approvals</text>
   <rect x="233" y="264" width="134" height="26" rx="13" fill="#5CC48E" fill-opacity="0.15"/>
-  <text x="300" y="281" text-anchor="middle" font-size="12.5" font-weight="600" fill="#6EE7B7">no cloud relay</text>
+  <text x="300" y="281" text-anchor="middle" font-size="12.5" font-weight="600" fill="#6EE7B7">no Farcall server</text>
 
   <!-- 3. YOUR COMPUTER (Outer Container) -->
   <rect x="60" y="344" width="480" height="444" rx="16" fill="#231F1D" stroke="#3A3532" stroke-width="1.5"/>
