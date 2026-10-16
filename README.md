@@ -2,6 +2,8 @@
 
 **One phone remote for the AI coding agents on your computer.** Claude Code (on Claude, GLM, Kimi or Gemini) and Codex (on OpenAI), side by side in one app, even in the same chat. When an agent asks "Can I run `npm test`?", tap Allow and it keeps going. End-to-end encrypted over your own Tailscale network, with no Farcall server in between.
 
+**Works where Anthropic's Remote Control won't:** Claude Code on GLM, Kimi or OpenRouter (Remote Control accepts only Anthropic's own API), and nothing to keep open on your computer: Farcall runs as a background service.
+
 *Using another coding CLI? [Tell us which one →](https://github.com/eamon831/farcall-releases/issues/1)*
 
 <p align="center">
