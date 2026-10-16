@@ -30,113 +30,830 @@
  "offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}
 </script>
 <style>
-  :root { --bg: #fbf8f6; --fg: #1d1a18; --muted: #6b625c; --card: #ffffff; --line: #e8e1dc; --accent: #c4673f; --accent-fg: #ffffff; }
-  @media (prefers-color-scheme: dark) {
-    :root { --bg: #181412; --fg: #f2ece8; --muted: #a99d95; --card: #221d1a; --line: #3a322d; --accent: #f0a582; --accent-fg: #2a1309; }
+  :root {
+    --bg: #F7F5F2;
+    --bg-elevated: #FFFFFF;
+    --bg-subtle: #EFECE6;
+    --fg: #1C1917;
+    --muted: #57534E;
+    --subtle: #78716C;
+    --line: #E2DDD5;
+    --line-strong: #D0C9BE;
+    --accent: #D2704A;
+    --accent-hover: #BD5E38;
+    --accent-fg: #FFFFFF;
+    --accent-tint: rgba(210, 112, 74, 0.1);
+    --emerald: #1F9D60;
+    --emerald-bg: rgba(92, 196, 142, 0.14);
+    --emerald-dot: #5CC48E;
+    --code-bg: #181513;
+    --code-fg: #F5F2EB;
+    --code-line: #2E2925;
+    --shadow-sm: 0 1px 2px rgba(28, 25, 23, 0.04);
+    --shadow-md: 0 12px 32px -8px rgba(28, 25, 23, 0.08), 0 2px 6px rgba(28, 25, 23, 0.04);
+    --shadow-phone: 0 24px 48px -12px rgba(28, 25, 23, 0.18), 0 4px 12px rgba(28, 25, 23, 0.08);
+    --grid-color: rgba(28, 25, 23, 0.035);
   }
+
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #110F0E;
+      --bg-elevated: #1A1715;
+      --bg-subtle: #221E1B;
+      --fg: #F5F2EE;
+      --muted: #A8A099;
+      --subtle: #787069;
+      --line: #2B2623;
+      --line-strong: #3B342F;
+      --accent: #D2704A;
+      --accent-hover: #E07E58;
+      --accent-fg: #FFFFFF;
+      --accent-tint: rgba(210, 112, 74, 0.15);
+      --emerald: #5CC48E;
+      --emerald-bg: rgba(92, 196, 142, 0.12);
+      --emerald-dot: #5CC48E;
+      --code-bg: #161311;
+      --code-fg: #EDE8E3;
+      --code-line: #2B2623;
+      --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.25);
+      --shadow-md: 0 16px 36px -8px rgba(0, 0, 0, 0.45);
+      --shadow-phone: 0 28px 56px -12px rgba(0, 0, 0, 0.7), 0 0 1px 1px rgba(255, 255, 255, 0.04);
+      --grid-color: rgba(255, 255, 255, 0.025);
+    }
+  }
+
   * { box-sizing: border-box; }
-  body { margin: 0; background: var(--bg); color: var(--fg); font: 17px/1.55 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; }
-  main { max-width: 880px; margin: 0 auto; padding: 56px 22px 40px; }
-  .brand { font-weight: 700; font-size: 20px; letter-spacing: .2px; }
+  html { scroll-behavior: smooth; }
+
+  body {
+    margin: 0;
+    background-color: var(--bg);
+    background-image: 
+      radial-gradient(ellipse 80% 50% at 50% -10%, var(--accent-tint), transparent),
+      linear-gradient(to right, var(--grid-color) 1px, transparent 1px),
+      linear-gradient(to bottom, var(--grid-color) 1px, transparent 1px);
+    background-size: 100% 100%, 32px 32px, 32px 32px;
+    background-position: top center;
+    color: var(--fg);
+    font: 16px/1.6 system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* Top Header Navigation */
+  .site-header {
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    background: color-mix(in srgb, var(--bg) 82%, transparent);
+    border-bottom: 1px solid var(--line);
+  }
+  .header-inner {
+    max-width: 1060px;
+    margin: 0 auto;
+    padding: 14px 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+  }
+  .brand-wrap {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .brand {
+    font-weight: 750;
+    font-size: 20px;
+    letter-spacing: -0.02em;
+    color: var(--fg);
+    display: inline-flex;
+    align-items: center;
+  }
   .brand span { color: var(--accent); }
-  h1 { font-size: clamp(30px, 5.4vw, 48px); line-height: 1.12; margin: 28px 0 14px; letter-spacing: -.5px; }
-  .lead { font-size: clamp(18px, 2.4vw, 21px); color: var(--muted); margin: 0 0 8px; }
-  .aside { font-style: italic; color: var(--muted); margin: 0 0 28px; }
-  .buttons { display: flex; flex-wrap: wrap; gap: 12px; margin: 0 0 40px; }
-  .btn { display: inline-block; padding: 12px 20px; border-radius: 999px; text-decoration: none; font-weight: 600; border: 1px solid var(--line); color: var(--fg); background: var(--card); }
-  .btn.primary { background: var(--accent); color: var(--accent-fg); border-color: var(--accent); }
-  figure { margin: 0 0 44px; background: #fff; border: 1px solid var(--line); border-radius: 16px; padding: 14px; }
-  figure img { width: 100%; height: auto; display: block; }
-  .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 16px; margin: 0 0 44px; }
-  .card { background: var(--card); border: 1px solid var(--line); border-radius: 16px; padding: 20px; }
-  .card h2 { font-size: 18px; margin: 0 0 6px; }
-  .card p { margin: 0; color: var(--muted); }
-  h3 { font-size: 22px; margin: 0 0 12px; }
-  ol { padding-left: 22px; margin: 0 0 40px; }
-  ol li { margin: 6px 0; }
-  code { font: 14px/1.4 ui-monospace, SFMono-Regular, Menlo, monospace; background: var(--card); border: 1px solid var(--line); border-radius: 6px; padding: 2px 6px; }
-  .faq { margin: 0 0 40px; }
-  details { background: var(--card); border: 1px solid var(--line); border-radius: 12px; padding: 12px 16px; margin: 0 0 10px; }
-  summary { cursor: pointer; font-weight: 600; }
-  details p { margin: 8px 0 0; color: var(--muted); }
-  .shots { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin: 0 0 36px; }
-  .shots img { width: 100%; height: auto; display: block; }
-  @media (max-width: 640px) { .shots { grid-template-columns: 1fr 1fr; } .shots picture:last-child { display: none; } }
-  footer { border-top: 1px solid var(--line); padding-top: 18px; color: var(--muted); font-size: 15px; display: flex; flex-wrap: wrap; gap: 18px; }
-  footer a { color: var(--muted); }
+  .status-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--emerald);
+    background: var(--emerald-bg);
+    border: 1px solid color-mix(in srgb, var(--emerald) 28%, transparent);
+    padding: 3px 10px;
+    border-radius: 999px;
+    letter-spacing: 0.01em;
+  }
+  .status-pill::before {
+    content: "";
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--emerald-dot);
+    box-shadow: 0 0 8px var(--emerald-dot);
+  }
+  .header-nav {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    font-size: 14px;
+    font-weight: 500;
+  }
+  .header-nav a {
+    color: var(--muted);
+    text-decoration: none;
+    transition: color 0.15s ease;
+  }
+  .header-nav a:hover { color: var(--fg); }
+  @media (max-width: 600px) {
+    .status-pill { display: none; }
+    .header-nav { gap: 14px; font-size: 13px; }
+  }
+
+  main {
+    max-width: 1060px;
+    margin: 0 auto;
+    padding: 64px 24px 56px;
+  }
+
+  /* Hero Section */
+  .hero {
+    max-width: 780px;
+    margin: 0 auto 52px;
+    text-align: center;
+  }
+  .eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--accent);
+    background: var(--accent-tint);
+    border: 1px solid color-mix(in srgb, var(--accent) 28%, transparent);
+    padding: 5px 12px;
+    border-radius: 999px;
+    margin-bottom: 20px;
+  }
+  h1 {
+    font-size: clamp(32px, 5.2vw, 56px);
+    line-height: 1.08;
+    margin: 0 0 20px;
+    letter-spacing: -0.03em;
+    font-weight: 800;
+    text-wrap: balance;
+  }
+  .lead {
+    font-size: clamp(17px, 2.2vw, 20px);
+    line-height: 1.55;
+    color: var(--muted);
+    margin: 0 auto 24px;
+    max-width: 650px;
+    text-wrap: balance;
+  }
+  .buttons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px;
+    margin: 0 0 20px;
+  }
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 13px 24px;
+    border-radius: 10px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 15px;
+    border: 1px solid var(--line-strong);
+    color: var(--fg);
+    background: var(--bg-elevated);
+    box-shadow: var(--shadow-sm);
+    transition: all 0.15s ease;
+  }
+  .btn:hover {
+    border-color: var(--muted);
+    transform: translateY(-1px);
+  }
+  .btn.primary {
+    background: var(--accent);
+    color: var(--accent-fg);
+    border-color: var(--accent);
+    box-shadow: 0 4px 14px rgba(210, 112, 74, 0.3);
+  }
+  .btn.primary:hover {
+    background: var(--accent-hover);
+    border-color: var(--accent-hover);
+  }
+  .btn svg {
+    width: 16px;
+    height: 16px;
+    flex-shrink: 0;
+  }
+  .aside {
+    font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+    font-size: 13px;
+    font-style: normal;
+    color: var(--subtle);
+    margin: 0;
+  }
+
+  /* Phone Showcase Stage */
+  .showcase {
+    position: relative;
+    background: linear-gradient(180deg, var(--bg-elevated) 0%, var(--bg-subtle) 100%);
+    border: 1px solid var(--line);
+    border-radius: 24px;
+    padding: 36px 28px 32px;
+    margin: 0 0 72px;
+    box-shadow: var(--shadow-md);
+  }
+  .shots {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    align-items: start;
+  }
+  .shot-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 14px;
+  }
+  .shots picture {
+    display: block;
+    width: 100%;
+    max-width: 280px;
+    transition: transform 0.25s ease;
+  }
+  .shots picture:hover {
+    transform: translateY(-4px);
+  }
+  .shots img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 26px;
+    box-shadow: var(--shadow-phone);
+  }
+  .shot-label {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+    font-size: 12px;
+    color: var(--muted);
+    background: var(--bg-elevated);
+    border: 1px solid var(--line);
+    padding: 4px 10px;
+    border-radius: 999px;
+  }
+  .shot-label .step-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--accent);
+  }
+  .shot-item:nth-child(2) .shot-label .step-dot {
+    background: var(--emerald-dot);
+  }
+
+  @media (max-width: 760px) {
+    .showcase { padding: 20px 14px; border-radius: 18px; }
+    .shots {
+      display: flex;
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      gap: 16px;
+      padding-bottom: 8px;
+      -webkit-overflow-scrolling: touch;
+    }
+    .shot-item {
+      flex: 0 0 78%;
+      max-width: 270px;
+      scroll-snap-align: center;
+    }
+  }
+
+  /* Section Headers */
+  .section-head {
+    margin: 0 0 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+  .section-kicker {
+    font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--accent);
+  }
+  h3, .section-title {
+    font-size: clamp(22px, 3vw, 28px);
+    line-height: 1.2;
+    font-weight: 750;
+    letter-spacing: -0.02em;
+    margin: 0;
+    color: var(--fg);
+  }
+
+  /* Architecture Diagram */
+  .arch-section {
+    margin: 0 0 72px;
+  }
+  figure {
+    margin: 0;
+    background: #FFFFFF;
+    border: 1px solid var(--line-strong);
+    border-radius: 18px;
+    padding: 24px;
+    box-shadow: var(--shadow-sm);
+  }
+  @media (prefers-color-scheme: dark) {
+    figure {
+      background: #FBF9F7;
+      border-color: var(--line-strong);
+      box-shadow: 0 8px 28px rgba(0, 0, 0, 0.35);
+    }
+  }
+  figure img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 8px;
+  }
+
+  /* Features Grid */
+  .features-section {
+    margin: 0 0 72px;
+  }
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 18px;
+  }
+  @media (max-width: 680px) {
+    .grid { grid-template-columns: 1fr; }
+  }
+  .card {
+    background: var(--bg-elevated);
+    border: 1px solid var(--line);
+    border-radius: 16px;
+    padding: 26px;
+    box-shadow: var(--shadow-sm);
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    transition: border-color 0.15s ease;
+  }
+  .card:hover {
+    border-color: var(--line-strong);
+  }
+  .card-icon {
+    width: 36px;
+    height: 36px;
+    border-radius: 10px;
+    background: var(--accent-tint);
+    border: 1px solid color-mix(in srgb, var(--accent) 25%, transparent);
+    color: var(--accent);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 4px;
+  }
+  .card:nth-child(2) .card-icon,
+  .card:nth-child(3) .card-icon {
+    background: var(--emerald-bg);
+    border-color: color-mix(in srgb, var(--emerald) 28%, transparent);
+    color: var(--emerald);
+  }
+  .card-icon svg {
+    width: 18px;
+    height: 18px;
+  }
+  .card h2 {
+    font-size: 19px;
+    font-weight: 700;
+    letter-spacing: -0.01em;
+    margin: 0;
+  }
+  .card p {
+    margin: 0;
+    color: var(--muted);
+    font-size: 15.5px;
+    line-height: 1.6;
+  }
+
+  /* Get Started / Setup Steps */
+  .setup-section {
+    margin: 0 0 72px;
+  }
+  ol.steps {
+    list-style: none;
+    counter-reset: step-counter;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+  ol.steps > li {
+    counter-increment: step-counter;
+    background: var(--bg-elevated);
+    border: 1px solid var(--line);
+    border-radius: 16px;
+    padding: 22px 24px 22px 64px;
+    position: relative;
+    box-shadow: var(--shadow-sm);
+    font-size: 16px;
+    color: var(--fg);
+  }
+  ol.steps > li::before {
+    content: counter(step-counter);
+    position: absolute;
+    left: 20px;
+    top: 22px;
+    width: 30px;
+    height: 30px;
+    border-radius: 8px;
+    background: var(--accent-tint);
+    border: 1px solid color-mix(in srgb, var(--accent) 35%, transparent);
+    color: var(--accent);
+    font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+    font-weight: 700;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .step-title {
+    font-weight: 650;
+    display: block;
+    margin-bottom: 12px;
+  }
+  .cmd-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 8px;
+  }
+  .cmd-row {
+    background: var(--code-bg);
+    border: 1px solid var(--code-line);
+    border-radius: 10px;
+    padding: 10px 14px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    overflow-x: auto;
+  }
+  .cmd-content {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    min-width: 0;
+    flex: 1;
+  }
+  .os-label {
+    font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+    font-size: 11.5px;
+    font-weight: 600;
+    color: #A8A099;
+    letter-spacing: 0.02em;
+  }
+  code {
+    font: 13.5px/1.45 ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+    color: var(--code-fg);
+    background: transparent;
+    border: none;
+    padding: 0;
+    white-space: nowrap;
+    overflow-x: auto;
+    display: block;
+  }
+  .copy-btn {
+    flex-shrink: 0;
+    background: rgba(255, 255, 255, 0.07);
+    border: 1px solid rgba(255, 255, 255, 0.14);
+    color: #E5E0D8;
+    font: 500 12px/1 system-ui, -apple-system, sans-serif;
+    padding: 7px 11px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.15s ease;
+  }
+  .copy-btn:hover {
+    background: rgba(255, 255, 255, 0.14);
+    color: #FFFFFF;
+  }
+  .copy-btn.copied {
+    background: rgba(92, 196, 142, 0.2);
+    border-color: #5CC48E;
+    color: #5CC48E;
+  }
+
+  @media (max-width: 560px) {
+    ol.steps > li {
+      padding: 56px 16px 18px 16px;
+    }
+    ol.steps > li::before {
+      left: 16px;
+      top: 16px;
+    }
+    .cmd-row {
+      flex-direction: column;
+      align-items: stretch;
+    }
+    code {
+      white-space: pre-wrap;
+      word-break: break-all;
+    }
+    .copy-btn {
+      align-self: flex-end;
+    }
+  }
+
+  /* FAQ Section */
+  .faq-section {
+    margin: 0 0 72px;
+  }
+  .faq {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  details {
+    background: var(--bg-elevated);
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    padding: 0;
+    transition: border-color 0.15s ease;
+  }
+  details:hover {
+    border-color: var(--line-strong);
+  }
+  details[open] {
+    border-color: var(--line-strong);
+    box-shadow: var(--shadow-sm);
+  }
+  summary {
+    cursor: pointer;
+    font-weight: 650;
+    font-size: 16px;
+    padding: 16px 20px;
+    list-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+  }
+  summary::-webkit-details-marker { display: none; }
+  summary::after {
+    content: "+";
+    font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+    font-size: 18px;
+    font-weight: 500;
+    color: var(--muted);
+    width: 24px;
+    height: 24px;
+    border-radius: 6px;
+    background: var(--bg-subtle);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    transition: transform 0.15s ease, color 0.15s ease;
+  }
+  details[open] summary::after {
+    content: "−";
+    color: var(--accent);
+  }
+  details p {
+    margin: 0;
+    padding: 0 20px 18px;
+    color: var(--muted);
+    font-size: 15.5px;
+    line-height: 1.6;
+    border-top: 1px solid var(--line);
+    padding-top: 14px;
+  }
+
+  /* Footer */
+  footer {
+    border-top: 1px solid var(--line);
+    padding-top: 28px;
+    color: var(--muted);
+    font-size: 14.5px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 18px;
+  }
+  .footer-note {
+    max-width: 680px;
+  }
+  .footer-links {
+    display: flex;
+    gap: 20px;
+    font-weight: 600;
+  }
+  footer a {
+    color: var(--fg);
+    text-decoration: underline;
+    text-decoration-color: var(--line-strong);
+    text-underline-offset: 3px;
+    transition: color 0.15s ease, text-decoration-color 0.15s ease;
+  }
+  footer a:hover {
+    color: var(--accent);
+    text-decoration-color: var(--accent);
+  }
 </style>
 <script type="application/ld+json">
 {"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Can I use Claude Code from my phone?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Farcall runs Claude Code on your own computer and gives you a phone app to chat with it: start a session in a project, read replies as they stream, and approve or deny each command or file edit it wants to make."}}, {"@type": "Question", "name": "Does it work with Codex, GLM, Kimi or Gemini?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Claude Code can run on your Claude login, on Z.ai's GLM, on Moonshot's Kimi, or on Gemini through OpenRouter (preview); Codex runs on your OpenAI login (preview). You pick per session, and you can put two or three agents in one chat."}}, {"@type": "Question", "name": "Is my code sent to a server?", "acceptedAnswer": {"@type": "Answer", "text": "No. Your phone reaches your computer over your own private Tailscale network. Farcall has no server in the middle; your code and chats stay on your machines and your AI provider."}}, {"@type": "Question", "name": "What do I need?", "acceptedAnswer": {"@type": "Answer", "text": "A Mac, Windows PC or Linux machine to run the agent, an Android phone, and one AI: a Claude account, an API key for GLM, Kimi or OpenRouter, or Codex. Farcall's setup installs what is missing."}}, {"@type": "Question", "name": "Is there an iPhone app?", "acceptedAnswer": {"@type": "Answer", "text": "Not yet: the phone app is Android only for now."}}, {"@type": "Question", "name": "Is Farcall free?", "acceptedAnswer": {"@type": "Answer", "text": "Yes, Farcall itself is free to download. You pay your AI provider as you normally would."}}]}
 </script>
 </head>
 <body>
+
+<header class="site-header">
+  <div class="header-inner">
+    <div class="brand-wrap">
+      <div class="brand">Far<span>call</span></div>
+      <span class="status-pill">Private P2P · No Cloud Relay</span>
+    </div>
+    <nav class="header-nav" aria-label="Page sections">
+      <a href="#features">Features</a>
+      <a href="#setup">Get started</a>
+      <a href="#questions">FAQ</a>
+    </nav>
+  </div>
+</header>
+
 <main>
-  <div class="brand">Far<span>call</span></div>
+  <section class="hero">
+    <div class="eyebrow">Android Remote for Local Coding Agents</div>
+    <h1>Control Claude Code and Codex from your Android phone.</h1>
+    <p class="lead">They run on your own computer. You chat, watch the replies stream in, and approve every command before it runs. From anywhere, with no cloud relay.</p>
 
-  <h1>Control Claude Code and Codex from your Android phone.</h1>
-  <p class="lead">They run on your own computer. You chat, watch the replies stream in, and approve every command before it runs. From anywhere, with no cloud relay.</p>
-  <p class="aside">Mac, Windows and Linux on the computer · Android on the phone · iPhone not yet</p>
-
-  <div class="buttons">
-    <a class="btn primary" href="https://github.com/eamon831/farcall-releases/releases/latest">Download</a>
-    <a class="btn" href="https://github.com/eamon831/farcall-releases#getting-started">How to install</a>
-  </div>
-
-  <div class="shots">
-    <picture><source media="(prefers-color-scheme: dark)" srcset="images/shot-phone-chat-dark.png"><img src="images/shot-phone-chat-light.png" alt="A chat: the agent edits a file and asks before running npm test, with Allow and Deny" loading="lazy"></picture>
-    <picture><source media="(prefers-color-scheme: dark)" srcset="images/shot-phone-sessions-dark.png"><img src="images/shot-phone-sessions-light.png" alt="Sessions on a computer: one waiting for approval, one working, one done" loading="lazy"></picture>
-    <picture><source media="(prefers-color-scheme: dark)" srcset="images/shot-phone-new-session-dark.png"><img src="images/shot-phone-new-session-light.png" alt="New session: pick a project folder and an agent: Claude, GLM, Kimi or Codex" loading="lazy"></picture>
-  </div>
-
-  <figure>
-    <img src="images/how-it-works.png" width="1568" height="306"
-         alt="Your phone talks to Farcall on your computer over your private Tailscale network; Farcall runs your coding agent, which talks to your AI provider.">
-  </figure>
-
-  <div class="grid">
-    <div class="card">
-      <h2>Your agent, your model</h2>
-      <p>Claude Code on your Claude login, or on Z.ai's GLM or Moonshot's Kimi; Gemini through OpenRouter (preview). Codex on your OpenAI login (preview). Pick per session.</p>
+    <div class="buttons">
+      <a class="btn primary" href="https://github.com/eamon831/farcall-releases/releases/latest">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+        Download
+      </a>
+      <a class="btn" href="https://github.com/eamon831/farcall-releases#getting-started">How to install</a>
     </div>
-    <div class="card">
-      <h2>You approve every command</h2>
-      <p>When the agent wants to run a command or edit a file, your phone asks first: Allow or Deny. You see what it is doing while it works.</p>
-    </div>
-    <div class="card">
-      <h2>No server in the middle</h2>
-      <p>Your phone reaches your computer over your own private Tailscale network, built in: no Tailscale app to install. Chats and code stay on your machines.</p>
-    </div>
-    <div class="card">
-      <h2>More than one agent</h2>
-      <p>Put two or three agents in one chat: they answer side by side and can discuss each other's answers. Update your computer's Farcall from the phone, too.</p>
-    </div>
-  </div>
 
-  <h3>Get started</h3>
-  <ol>
-    <li>Install Farcall on the computer.<br>
-      Mac (Terminal): <code>curl -fsSL https://github.com/eamon831/farcall-releases/releases/latest/download/install.sh | bash</code><br>
-      Windows (PowerShell): <code>irm https://github.com/eamon831/farcall-releases/releases/latest/download/install.ps1 | iex</code><br>
-      Linux (x64): <code>curl -fsSL https://github.com/eamon831/farcall-releases/releases/latest/download/install-linux.sh | bash</code></li>
-    <li>Follow the setup in the Farcall window: Connect, Pick your AI (sign in or paste a key), Projects folder, Pair your phone.</li>
-    <li>Install the Android app from the QR code in setup, sign in to the same Tailscale account, and pair.</li>
-  </ol>
+    <p class="aside">Mac, Windows and Linux on the computer · Android on the phone · iPhone not yet</p>
+  </section>
 
-  <h3>Questions</h3>
-  <div class="faq">
-    <details><summary>Can I use Claude Code from my phone?</summary><p>Yes. Farcall runs Claude Code on your own computer and gives you a phone app to chat with it: start a session in a project, read replies as they stream, and approve or deny each command or file edit it wants to make.</p></details>
-    <details><summary>Does it work with Codex, GLM, Kimi or Gemini?</summary><p>Yes. Claude Code can run on your Claude login, on Z.ai's GLM, on Moonshot's Kimi, or on Gemini through OpenRouter (preview); Codex runs on your OpenAI login (preview). You pick per session, and you can put two or three agents in one chat.</p></details>
-    <details><summary>Is my code sent to a server?</summary><p>No. Your phone reaches your computer over your own private Tailscale network. Farcall has no server in the middle; your code and chats stay on your machines and your AI provider.</p></details>
-    <details><summary>What do I need?</summary><p>A Mac, Windows PC or Linux machine to run the agent, an Android phone, and one AI: a Claude account, an API key for GLM, Kimi or OpenRouter, or Codex. Farcall's setup installs what is missing.</p></details>
-    <details><summary>Is there an iPhone app?</summary><p>Not yet: the phone app is Android only for now.</p></details>
-    <details><summary>Is Farcall free?</summary><p>Yes, Farcall itself is free to download. You pay your AI provider as you normally would.</p></details>
-  </div>
+  <section class="showcase" aria-label="Phone app screenshots">
+    <div class="shots">
+      <div class="shot-item">
+        <picture><source media="(prefers-color-scheme: dark)" srcset="images/shot-phone-chat-dark.png"><img src="images/shot-phone-chat-light.png" alt="A chat: the agent edits a file and asks before running npm test, with Allow and Deny" loading="lazy"></picture>
+        <span class="shot-label"><span class="step-dot"></span>Stream &amp; approve commands</span>
+      </div>
+      <div class="shot-item">
+        <picture><source media="(prefers-color-scheme: dark)" srcset="images/shot-phone-sessions-dark.png"><img src="images/shot-phone-sessions-light.png" alt="Sessions on a computer: one waiting for approval, one working, one done" loading="lazy"></picture>
+        <span class="shot-label"><span class="step-dot"></span>Live session status</span>
+      </div>
+      <div class="shot-item">
+        <picture><source media="(prefers-color-scheme: dark)" srcset="images/shot-phone-new-session-dark.png"><img src="images/shot-phone-new-session-light.png" alt="New session: pick a project folder and an agent: Claude, GLM, Kimi or Codex" loading="lazy"></picture>
+        <span class="shot-label"><span class="step-dot"></span>Pick folder &amp; model panel</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="arch-section" aria-label="Architecture diagram">
+    <div class="section-head">
+      <span class="section-kicker">Architecture</span>
+      <h2 class="section-title">Direct from your phone to your machine</h2>
+    </div>
+    <figure>
+      <img src="images/how-it-works.png" width="1568" height="306"
+           alt="Your phone talks to Farcall on your computer over your private Tailscale network; Farcall runs your coding agent, which talks to your AI provider.">
+    </figure>
+  </section>
+
+  <section class="features-section" id="features">
+    <div class="section-head">
+      <span class="section-kicker">Capabilities</span>
+      <h2 class="section-title">Built for high-trust local workflows</h2>
+    </div>
+    <div class="grid">
+      <div class="card">
+        <div class="card-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="16" height="16" rx="2"/><rect x="9" y="9" width="6" height="6"/><path d="M9 1v3M15 1v3M9 20v3M15 20v3M20 9h3M20 14h3M1 9h3M1 14h3"/></svg>
+        </div>
+        <h2>Your agent, your model</h2>
+        <p>Claude Code on your Claude login, or on Z.ai's GLM or Moonshot's Kimi; Gemini through OpenRouter (preview). Codex on your OpenAI login (preview). Pick per session.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg>
+        </div>
+        <h2>You approve every command</h2>
+        <p>When the agent wants to run a command or edit a file, your phone asks first: Allow or Deny. You see what it is doing while it works.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+        </div>
+        <h2>No server in the middle</h2>
+        <p>Your phone reaches your computer over your own private Tailscale network, built in: no Tailscale app to install. Chats and code stay on your machines.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+        </div>
+        <h2>More than one agent</h2>
+        <p>Put two or three agents in one chat: they answer side by side and can discuss each other's answers. Update your computer's Farcall from the phone, too.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="setup-section" id="setup">
+    <div class="section-head">
+      <span class="section-kicker">Quickstart</span>
+      <h3>Get started</h3>
+    </div>
+    <ol class="steps">
+      <li>
+        <span class="step-title">Install Farcall on the computer.</span>
+        <div class="cmd-list">
+          <div class="cmd-row">
+            <div class="cmd-content">
+              <span class="os-label">Mac (Terminal):</span>
+              <code>curl -fsSL https://github.com/eamon831/farcall-releases/releases/latest/download/install.sh | bash</code>
+            </div>
+            <button type="button" class="copy-btn" aria-label="Copy Mac command">Copy</button>
+          </div>
+          <div class="cmd-row">
+            <div class="cmd-content">
+              <span class="os-label">Windows (PowerShell):</span>
+              <code>irm https://github.com/eamon831/farcall-releases/releases/latest/download/install.ps1 | iex</code>
+            </div>
+            <button type="button" class="copy-btn" aria-label="Copy Windows command">Copy</button>
+          </div>
+          <div class="cmd-row">
+            <div class="cmd-content">
+              <span class="os-label">Linux (x64):</span>
+              <code>curl -fsSL https://github.com/eamon831/farcall-releases/releases/latest/download/install-linux.sh | bash</code>
+            </div>
+            <button type="button" class="copy-btn" aria-label="Copy Linux command">Copy</button>
+          </div>
+        </div>
+      </li>
+      <li>Follow the setup in the Farcall window: Connect, Pick your AI (sign in or paste a key), Projects folder, Pair your phone.</li>
+      <li>Install the Android app from the QR code in setup, sign in to the same Tailscale account, and pair.</li>
+    </ol>
+  </section>
+
+  <section class="faq-section" id="questions">
+    <div class="section-head">
+      <span class="section-kicker">FAQ</span>
+      <h3>Questions</h3>
+    </div>
+    <div class="faq">
+      <details><summary>Can I use Claude Code from my phone?</summary><p>Yes. Farcall runs Claude Code on your own computer and gives you a phone app to chat with it: start a session in a project, read replies as they stream, and approve or deny each command or file edit it wants to make.</p></details>
+      <details><summary>Does it work with Codex, GLM, Kimi or Gemini?</summary><p>Yes. Claude Code can run on your Claude login, on Z.ai's GLM, on Moonshot's Kimi, or on Gemini through OpenRouter (preview); Codex runs on your OpenAI login (preview). You pick per session, and you can put two or three agents in one chat.</p></details>
+      <details><summary>Is my code sent to a server?</summary><p>No. Your phone reaches your computer over your own private Tailscale network. Farcall has no server in the middle; your code and chats stay on your machines and your AI provider.</p></details>
+      <details><summary>What do I need?</summary><p>A Mac, Windows PC or Linux machine to run the agent, an Android phone, and one AI: a Claude account, an API key for GLM, Kimi or OpenRouter, or Codex. Farcall's setup installs what is missing.</p></details>
+      <details><summary>Is there an iPhone app?</summary><p>Not yet: the phone app is Android only for now.</p></details>
+      <details><summary>Is Farcall free?</summary><p>Yes, Farcall itself is free to download. You pay your AI provider as you normally would.</p></details>
+    </div>
+  </section>
 
   <footer>
-    <span>Made by MD Saiful Hossain (<a href="https://github.com/eamon831">@eamon831</a>) to run his own Claude Code sessions from his phone. The source isn't public yet; every build is published with its SHA-256.</span>
-    <a href="https://github.com/eamon831/farcall-releases">GitHub</a>
-    <a href="https://github.com/eamon831/farcall-releases/issues/new/choose">Feedback</a>
+    <span class="footer-note">Made by MD Saiful Hossain (<a href="https://github.com/eamon831">@eamon831</a>) to run his own Claude Code sessions from his phone. The source isn't public yet; every build is published with its SHA-256.</span>
+    <div class="footer-links">
+      <a href="https://github.com/eamon831/farcall-releases">GitHub</a>
+      <a href="https://github.com/eamon831/farcall-releases/issues/new/choose">Feedback</a>
+    </div>
   </footer>
 </main>
+
+<script>
+  document.querySelectorAll('.copy-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const code = btn.parentElement.querySelector('code').innerText;
+      navigator.clipboard.writeText(code).then(() => {
+        btn.textContent = 'Copied';
+        btn.classList.add('copied');
+        setTimeout(() => { btn.textContent = 'Copy'; btn.classList.remove('copied'); }, 1800);
+      });
+    });
+  });
+</script>
 </body>
 </html>
