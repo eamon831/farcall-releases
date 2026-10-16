@@ -1,0 +1,287 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 700" width="100%" height="100%" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif">
+  <defs>
+    <!-- Subtle Dark Drop Shadow -->
+    <filter id="shadow-dark" x="-4%" y="-4%" width="108%" height="108%">
+      <feDropShadow dx="0" dy="4" stdDeviation="8" flood-color="#000000" flood-opacity="0.35"/>
+    </filter>
+
+    <!-- Arrowhead: Terracotta (Primary Flow) -->
+    <marker id="arrow-terra-dark" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M 1 1.5 L 8.5 5 L 1 8.5 z" fill="#D2704A"/>
+    </marker>
+
+    <!-- Arrowhead: Emerald (Output / Feedback) -->
+    <marker id="arrow-emerald-dark" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M 1 1.5 L 8.5 5 L 1 8.5 z" fill="#5CC48E"/>
+    </marker>
+
+    <!-- Arrowhead: Stone (Internal Delegation) -->
+    <marker id="arrow-stone-dark" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M 1 1.5 L 8.5 5 L 1 8.5 z" fill="#78716C"/>
+    </marker>
+  </defs>
+
+  <!-- Canvas Background -->
+  <rect width="1600" height="700" fill="#1C1917"/>
+
+  <!-- Subtle Dot Grid -->
+  <pattern id="dots-dark" x="0" y="0" width="24" height="24" patternUnits="userSpaceOnUse">
+    <circle cx="2" cy="2" r="1" fill="#292524"/>
+  </pattern>
+  <rect width="1600" height="700" fill="url(#dots-dark)"/>
+
+  <!-- Header -->
+  <g transform="translate(50, 42)">
+    <circle cx="8" cy="0" r="5" fill="#D2704A"/>
+    <text x="24" y="5" font-size="13" font-weight="700" fill="#A8A29E" letter-spacing="0.08em">HOW FARCALL IS BUILT FROM A PHONE</text>
+  </g>
+
+  <!-- ==========================================
+       1. YOU, ON YOUR PHONE (FARCALL APP)
+       ========================================== -->
+  <g id="node-phone" filter="url(#shadow-dark)">
+    <!-- Outer Card -->
+    <rect x="50" y="135" width="260" height="390" rx="18" fill="#262320" stroke="#D2704A" stroke-width="1.5"/>
+    <!-- Phone Notch/Speaker -->
+    <line x1="160" y1="152" x2="200" y2="152" stroke="#3F3A36" stroke-width="3" stroke-linecap="round"/>
+
+    <!-- Icon + App Pill -->
+    <g transform="translate(74, 175)">
+      <rect x="0" y="0" width="38" height="38" rx="10" fill="#36241D" stroke="#5C3424" stroke-width="1"/>
+      <!-- Mini Phone Icon -->
+      <rect x="12" y="7" width="14" height="24" rx="3" fill="none" stroke="#D2704A" stroke-width="1.75"/>
+      <circle cx="19" cy="27" r="1" fill="#D2704A"/>
+      
+      <rect x="50" y="6" width="96" height="26" rx="13" fill="#36241D"/>
+      <text x="98" y="23" font-size="12" font-weight="600" fill="#E88D6B" text-anchor="middle">Farcall app</text>
+    </g>
+
+    <!-- Title -->
+    <text x="74" y="248" font-size="19" font-weight="700" fill="#F5F5F4">You, on your phone</text>
+
+    <!-- Inner Screen / Actions -->
+    <rect x="68" y="268" width="224" height="220" rx="12" fill="#1C1917" stroke="#36312E" stroke-width="1"/>
+
+    <!-- Action 1 -->
+    <g transform="translate(84, 296)">
+      <circle cx="8" cy="-4" r="10" fill="#36241D"/>
+      <path d="M 4 -4 L 12 -4 M 8 -8 L 8 0" stroke="#D2704A" stroke-width="1.5" stroke-linecap="round"/>
+      <text x="28" y="0" font-size="14" font-weight="500" fill="#E7E5E4">Write what you want</text>
+    </g>
+    <line x1="84" y1="320" x2="276" y2="320" stroke="#292524" stroke-width="1"/>
+
+    <!-- Action 2 -->
+    <g transform="translate(84, 348)">
+      <circle cx="8" cy="-4" r="10" fill="#36241D"/>
+      <rect x="3" y="-8" width="10" height="8" rx="1.5" fill="none" stroke="#D2704A" stroke-width="1.4"/>
+      <circle cx="6.5" cy="-5" r="1" fill="#D2704A"/>
+      <text x="28" y="0" font-size="14" font-weight="500" fill="#E7E5E4">Send screenshots</text>
+    </g>
+    <line x1="84" y1="372" x2="276" y2="372" stroke="#292524" stroke-width="1"/>
+
+    <!-- Action 3 -->
+    <g transform="translate(84, 400)">
+      <circle cx="8" cy="-4" r="10" fill="#193327"/>
+      <path d="M 4 -4 L 7 -1 L 12 -7" fill="none" stroke="#5CC48E" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+      <text x="28" y="0" font-size="14" font-weight="500" fill="#E7E5E4">Approve</text>
+    </g>
+    <line x1="84" y1="424" x2="276" y2="424" stroke="#292524" stroke-width="1"/>
+
+    <!-- Action 4 -->
+    <g transform="translate(84, 452)">
+      <circle cx="8" cy="-4" r="10" fill="#193327"/>
+      <circle cx="8" cy="-4" r="3.5" fill="none" stroke="#5CC48E" stroke-width="1.5"/>
+      <text x="28" y="0" font-size="14" font-weight="500" fill="#E7E5E4">Check the result</text>
+    </g>
+
+    <!-- Home Bar -->
+    <line x1="145" y1="507" x2="215" y2="507" stroke="#44403C" stroke-width="3" stroke-linecap="round"/>
+  </g>
+
+
+  <!-- ==========================================
+       2. TAILSCALE NETWORK BRIDGE
+       ========================================== -->
+  <g id="bridge-tailscale">
+    <!-- Connection Line -->
+    <line x1="310" y1="330" x2="482" y2="330" stroke="#D2704A" stroke-width="2" marker-end="url(#arrow-terra-dark)"/>
+    
+    <!-- Pill Badge above line -->
+    <rect x="325" y="266" width="146" height="48" rx="10" fill="#262320" stroke="#3F3A36" stroke-width="1" filter="url(#shadow-dark)"/>
+    <!-- Lock / Mesh Icon -->
+    <g transform="translate(341, 281)">
+      <rect x="0" y="7" width="12" height="9" rx="2" fill="none" stroke="#D2704A" stroke-width="1.5"/>
+      <path d="M 3 7 V 4 A 3 3 0 0 1 9 4 V 7" fill="none" stroke="#D2704A" stroke-width="1.5"/>
+    </g>
+    <text x="362" y="286" font-size="12" font-weight="600" fill="#F5F5F4">your private</text>
+    <text x="362" y="302" font-size="12" font-weight="600" fill="#A8A29E">Tailscale network</text>
+
+    <!-- Mesh Dots Decoration on Line -->
+    <circle cx="355" cy="330" r="3" fill="#D2704A"/>
+    <circle cx="398" cy="330" r="3" fill="#D2704A"/>
+    <circle cx="441" cy="330" r="3" fill="#D2704A"/>
+  </g>
+
+
+  <!-- ==========================================
+       3. YOUR COMPUTER & AI TEAM
+       ========================================== -->
+  <g id="container-computer" filter="url(#shadow-dark)">
+    <!-- Outer Computer Box -->
+    <rect x="490" y="75" width="670" height="510" rx="18" fill="#231F1D" stroke="#36312E" stroke-width="1.5"/>
+
+    <!-- Computer Header Bar -->
+    <g transform="translate(518, 108)">
+      <!-- Laptop/Desktop Icon -->
+      <rect x="0" y="0" width="22" height="15" rx="2.5" fill="none" stroke="#A8A29E" stroke-width="1.75"/>
+      <line x1="-3" y1="18" x2="25" y2="18" stroke="#A8A29E" stroke-width="1.75" stroke-linecap="round"/>
+      
+      <text x="34" y="14" font-size="17" font-weight="700" fill="#F5F5F4">Your computer</text>
+      <circle cx="172" cy="9" r="2.5" fill="#57534E"/>
+      <text x="184" y="14" font-size="14" font-weight="500" fill="#A8A29E">Farcall runs Claude Code (lead)</text>
+    </g>
+
+    <line x1="490" y1="142" x2="1160" y2="142" stroke="#36312E" stroke-width="1"/>
+
+    <!-- CLAUDE CODE (LEAD) CARD -->
+    <g id="node-lead" transform="translate(520, 245)">
+      <rect x="0" y="0" width="215" height="170" rx="14" fill="#2C2724" stroke="#D2704A" stroke-width="1.5"/>
+      
+      <!-- Lead Accent Bar -->
+      <path d="M 0 14 Q 0 0 14 0 L 201 0 Q 215 0 215 14 L 215 18 L 0 18 Z" fill="#3B261E"/>
+      
+      <!-- Terminal/Spark Icon -->
+      <rect x="20" y="34" width="36" height="36" rx="9" fill="#3B261E" stroke="#5C3424" stroke-width="1"/>
+      <path d="M 31 47 L 36 52 L 31 57 M 39 57 L 45 57" fill="none" stroke="#D2704A" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+
+      <!-- Badge -->
+      <rect x="148" y="40" width="48" height="22" rx="6" fill="#D2704A"/>
+      <text x="172" y="55" font-size="11" font-weight="700" fill="#FFFFFF" text-anchor="middle">LEAD</text>
+
+      <text x="20" y="98" font-size="17" font-weight="700" fill="#F5F5F4">Claude Code</text>
+      <text x="20" y="122" font-size="13" font-weight="400" fill="#A8A29E">Leads a small AI team,</text>
+      <text x="20" y="140" font-size="13" font-weight="400" fill="#A8A29E">delegates &amp; coordinates</text>
+    </g>
+
+    <!-- ==========================================
+         DELEGATION ARROWS (LEAD <-> 3 SUB-AGENTS)
+         ========================================== -->
+    <!-- 1. Lead <-> Background Claude Agents -->
+    <path d="M 735 280 C 775 280, 775 202, 818 202" fill="none" stroke="#D2704A" stroke-width="1.5" marker-end="url(#arrow-terra-dark)"/>
+    <path d="M 825 222 C 782 222, 782 296, 742 296" fill="none" stroke="#78716C" stroke-width="1.5" stroke-dasharray="4 3" marker-end="url(#arrow-stone-dark)"/>
+
+    <!-- 2. Lead <-> Gemini 4 -->
+    <line x1="735" y1="348" x2="818" y2="348" stroke="#D2704A" stroke-width="1.5" marker-end="url(#arrow-terra-dark)"/>
+    <line x1="825" y1="366" x2="742" y2="366" stroke="#78716C" stroke-width="1.5" stroke-dasharray="4 3" marker-end="url(#arrow-stone-dark)"/>
+
+    <!-- 3. Lead <-> GLM -->
+    <path d="M 735 384 C 775 384, 775 492, 818 492" fill="none" stroke="#D2704A" stroke-width="1.5" marker-end="url(#arrow-terra-dark)"/>
+    <path d="M 825 512 C 782 512, 782 400, 742 400" fill="none" stroke="#78716C" stroke-width="1.5" stroke-dasharray="4 3" marker-end="url(#arrow-stone-dark)"/>
+
+
+    <!-- ==========================================
+         THREE AI TEAM BOXES
+         ========================================== -->
+    <!-- Box A: Background Claude agents -->
+    <g id="node-bg-claude" transform="translate(825, 160)">
+      <rect x="0" y="0" width="305" height="106" rx="12" fill="#2C2724" stroke="#3F3A36" stroke-width="1"/>
+      <!-- Git Branch / Repo Copies Icon -->
+      <rect x="18" y="18" width="32" height="32" rx="8" fill="#1C1917"/>
+      <circle cx="29" cy="27" r="2.5" fill="none" stroke="#A8A29E" stroke-width="1.5"/>
+      <circle cx="29" cy="41" r="2.5" fill="none" stroke="#A8A29E" stroke-width="1.5"/>
+      <circle cx="39" cy="34" r="2.5" fill="none" stroke="#A8A29E" stroke-width="1.5"/>
+      <path d="M 29 29.5 V 38.5 M 29 31 C 29 34, 36.5 34, 36.5 34" fill="none" stroke="#A8A29E" stroke-width="1.5"/>
+
+      <text x="62" y="33" font-size="15" font-weight="700" fill="#F5F5F4">Background Claude agents</text>
+      <text x="62" y="55" font-size="13" fill="#A8A29E">Build and test in their own</text>
+      <text x="62" y="73" font-size="13" fill="#A8A29E">copies of the repo</text>
+    </g>
+
+    <!-- Box B: Gemini 4 -->
+    <g id="node-gemini" transform="translate(825, 302)">
+      <rect x="0" y="0" width="305" height="106" rx="12" fill="#2C2724" stroke="#3F3A36" stroke-width="1"/>
+      <!-- Diamond / Design Spark Icon -->
+      <rect x="18" y="18" width="32" height="32" rx="8" fill="#3B261E"/>
+      <path d="M 34 24 L 37 31 L 44 34 L 37 37 L 34 44 L 31 37 L 24 34 L 31 31 Z" fill="none" stroke="#D2704A" stroke-width="1.5" stroke-linejoin="round"/>
+
+      <text x="62" y="33" font-size="15" font-weight="700" fill="#F5F5F4">Gemini 4</text>
+      <text x="62" y="55" font-size="13" fill="#A8A29E">Designs (UI, logo, website)</text>
+      <text x="62" y="73" font-size="13" fill="#A8A29E">and reviews</text>
+    </g>
+
+    <!-- Box C: GLM -->
+    <g id="node-glm" transform="translate(825, 444)">
+      <rect x="0" y="0" width="305" height="106" rx="12" fill="#2C2724" stroke="#3F3A36" stroke-width="1"/>
+      <!-- Shield / Independent Review Icon -->
+      <rect x="18" y="18" width="32" height="32" rx="8" fill="#193327"/>
+      <path d="M 34 24 L 42 27 V 33 C 42 38 38.5 41.5 34 43 C 29.5 41.5 26 38 26 33 V 27 Z" fill="none" stroke="#5CC48E" stroke-width="1.5" stroke-linejoin="round"/>
+      <path d="M 31 33.5 L 33 35.5 L 37.5 31" fill="none" stroke="#5CC48E" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+
+      <text x="62" y="33" font-size="15" font-weight="700" fill="#F5F5F4">GLM</text>
+      <text x="62" y="55" font-size="13" fill="#A8A29E">Gives a second,</text>
+      <text x="62" y="73" font-size="13" fill="#A8A29E">independent review</text>
+    </g>
+  </g>
+
+
+  <!-- ==========================================
+       4. OUTPUTS (TESTS + DEPLOY & RELEASE)
+       ========================================== -->
+  <!-- Arrows from Computer to Output Boxes -->
+  <path d="M 1160 280 C 1200 280, 1200 230, 1242 230" fill="none" stroke="#5CC48E" stroke-width="2" marker-end="url(#arrow-emerald-dark)"/>
+  <path d="M 1160 380 C 1200 380, 1200 430, 1242 430" fill="none" stroke="#5CC48E" stroke-width="2" marker-end="url(#arrow-emerald-dark)"/>
+
+  <!-- Output 1: Tests, then deploy -->
+  <g id="node-deploy" transform="translate(1250, 160)" filter="url(#shadow-dark)">
+    <rect x="0" y="0" width="300" height="140" rx="14" fill="#262320" stroke="#5CC48E" stroke-width="1.5"/>
+    
+    <!-- Emerald Icon Badge -->
+    <rect x="22" y="22" width="38" height="38" rx="10" fill="#193327" stroke="#28523E" stroke-width="1"/>
+    <path d="M 34 41 L 39 46 L 49 36" fill="none" stroke="#5CC48E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+
+    <text x="74" y="38" font-size="16" font-weight="700" fill="#F5F5F4">Tests, then deploy</text>
+    <text x="74" y="58" font-size="13" font-weight="500" fill="#5CC48E">Automated verification</text>
+
+    <line x1="22" y1="78" x2="278" y2="78" stroke="#36312E" stroke-width="1"/>
+    <text x="22" y="102" font-size="14" font-weight="500" fill="#D6D3D1">Dev build to your phone</text>
+    <text x="22" y="122" font-size="14" font-weight="500" fill="#D6D3D1">and computer</text>
+  </g>
+
+  <!-- Output 2: Release -->
+  <g id="node-release" transform="translate(1250, 360)" filter="url(#shadow-dark)">
+    <rect x="0" y="0" width="300" height="140" rx="14" fill="#262320" stroke="#3F3A36" stroke-width="1.5"/>
+    
+    <!-- Globe / Release Icon Badge -->
+    <rect x="22" y="22" width="38" height="38" rx="10" fill="#1C1917" stroke="#36312E" stroke-width="1"/>
+    <circle cx="41" cy="41" r="10" fill="none" stroke="#A8A29E" stroke-width="1.6"/>
+    <ellipse cx="41" cy="41" rx="4.5" ry="10" fill="none" stroke="#A8A29E" stroke-width="1.4"/>
+    <line x1="31" y1="41" x2="51" y2="41" stroke="#A8A29E" stroke-width="1.4"/>
+
+    <text x="74" y="46" font-size="16" font-weight="700" fill="#F5F5F4">Release</text>
+
+    <line x1="22" y1="78" x2="278" y2="78" stroke="#36312E" stroke-width="1"/>
+    <text x="22" y="108" font-size="15" font-weight="600" fill="#E7E5E4">GitHub + website</text>
+  </g>
+
+
+  <!-- ==========================================
+       5. FEEDBACK LOOP ARROW BACK TO PHONE
+       ========================================== -->
+  <g id="feedback-loop">
+    <!-- Smooth Curved Return Path from Dev Build to Phone -->
+    <path d="M 1550 230 L 1566 230 Q 1582 230 1582 246 L 1582 628 Q 1582 644 1566 644 L 196 644 Q 180 644 180 628 L 180 533" 
+          fill="none" stroke="#5CC48E" stroke-width="2" stroke-dasharray="6 4" marker-end="url(#arrow-emerald-dark)"/>
+
+    <!-- Label Pill Centered on Bottom Loop -->
+    <g transform="translate(590, 622)" filter="url(#shadow-dark)">
+      <rect x="0" y="0" width="460" height="44" rx="22" fill="#262320" stroke="#5CC48E" stroke-width="1.5"/>
+      
+      <!-- Loop / Refresh Icon -->
+      <circle cx="26" cy="22" r="12" fill="#193327"/>
+      <path d="M 22 20 A 5 5 0 1 1 21 25" fill="none" stroke="#5CC48E" stroke-width="1.6" stroke-linecap="round"/>
+      <path d="M 20 17 L 22 20.5 L 25.5 19.5" fill="none" stroke="#5CC48E" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+
+      <text x="48" y="27" font-size="14" font-weight="600" fill="#F5F5F4">you try it on the phone, send a screenshot, next round</text>
+    </g>
+  </g>
+</svg>

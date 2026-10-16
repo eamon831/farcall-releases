@@ -671,6 +671,7 @@
     color: var(--accent);
     text-decoration-color: var(--accent);
   }
+  @media (max-width: 640px) { .workflow-figure { overflow-x: auto; } .workflow-figure img { min-width: 900px; } }
 </style>
 <script type="application/ld+json">
 {"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Can I use Claude Code from my phone?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Farcall runs Claude Code on your own computer and gives you a phone app to chat with it: start a session in a project, read replies as they stream, and approve or deny each command or file edit it wants to make."}}, {"@type": "Question", "name": "Does it work with Codex, GLM, Kimi or Gemini?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Claude Code can run on your Claude login, on Z.ai's GLM, on Moonshot's Kimi, or on Gemini through OpenRouter (preview); Codex runs on your OpenAI login (preview). You pick per session, and you can put two or three agents in one chat."}}, {"@type": "Question", "name": "Is my code sent to a server?", "acceptedAnswer": {"@type": "Answer", "text": "No. Your phone reaches your computer over your own private Tailscale network. Farcall has no server in the middle; your code and chats stay on your machines and your AI provider."}}, {"@type": "Question", "name": "What do I need?", "acceptedAnswer": {"@type": "Answer", "text": "A Mac, Windows PC or Linux machine to run the agent, an Android phone, and one AI: a Claude account, an API key for GLM, Kimi or OpenRouter, or Codex. Farcall's setup installs what is missing."}}, {"@type": "Question", "name": "Is there an iPhone app?", "acceptedAnswer": {"@type": "Answer", "text": "Not yet: the phone app is Android only for now."}}, {"@type": "Question", "name": "Is Farcall free?", "acceptedAnswer": {"@type": "Answer", "text": "Yes, Farcall itself is free to download. You pay your AI provider as you normally would."}}]}
@@ -736,6 +737,21 @@
     <figure>
       <picture><source media="(max-width: 640px) and (prefers-color-scheme: dark)" srcset="images/diagram-tall-dark.svg"><source media="(max-width: 640px)" srcset="images/diagram-tall-light.svg"><source media="(prefers-color-scheme: dark)" srcset="images/diagram-wide-dark.svg"><img src="images/diagram-wide-light.svg" width="1600" height="480" alt="Your phone talks to Farcall on your computer over your private Tailscale network; Farcall runs your coding agent, which talks to your AI provider." loading="lazy"></picture>
     </figure>
+  </section>
+
+  <section class="arch-section" id="workflow" aria-label="How Farcall is built from a phone">
+    <div class="section-head">
+      <span class="section-kicker">In practice</span>
+      <h2 class="section-title">Farcall is built from a phone, with Farcall</h2>
+    </div>
+    <p class="lead" style="max-width:760px;margin:0 auto 22px;text-align:center">
+      Release 111 was built in one day from my phone: 89 messages sent from the phone, from the first request at 09:24 to the published release at 16:18.
+      Claude Code on my computer led the work; Gemini 4 designed and reviewed it, GLM gave a second review, and I tried every build on the phone before it shipped.
+    </p>
+    <figure class="workflow-figure">
+      <picture><source media="(prefers-color-scheme: dark)" srcset="images/workflow-dark.svg"><img src="images/workflow-light.svg" width="1600" height="700" alt="How Farcall is built from a phone: you write what you want, send screenshots and approve from the Farcall app; over your private Tailscale network, Claude Code on your computer leads a small AI team (background Claude agents build and test, Gemini 4 designs and reviews, GLM reviews); tests run, a dev build goes to your phone and computer, releases go to GitHub and the website; you try it on the phone and send a screenshot for the next round." loading="lazy"></picture>
+    </figure>
+    <p style="text-align:center;color:var(--muted);font-size:0.9em;margin-top:12px">On a phone, swipe the diagram sideways.</p>
   </section>
 
   <section class="features-section" id="features">
