@@ -17,6 +17,51 @@
 - **No server in the middle.** Your phone reaches your computer over your own private [Tailscale](https://tailscale.com) network, built into Farcall: no Tailscale app to install. Your chats and code stay on your machines.
 - **Mac, Windows and Linux** on the computer, **Android** on the phone. iPhone: not yet.
 
+## When you'd reach for it
+
+The agent runs on your own computer, with your files, tools and logins, and does
+the typing. So a phone is enough to drive it: you say what you want and approve
+what it does. It works with your Claude login or with keys for GLM, Kimi or
+OpenRouter (Anthropic's Remote Control accepts only Anthropic's own API).
+
+**Start it, then walk away.** "Run the tests and fix what fails." Go make tea.
+When the agent wants to run a command, your phone asks, so the work doesn't
+stop and wait for you to get back to the desk.
+
+**A bug you found on your phone, fixed from your phone.** Screenshot the
+problem, send it to the agent working on that app, approve its changes, then
+install the build it makes. Farcall is built this way; [see how](https://farcall.app/#workflow).
+
+**"Why is this broken?" from anywhere.** The agent reads the logs and the code
+on your computer and tells you what went wrong. Nothing gets pasted into a
+chatbot.
+
+**Not just code.** Farcall's developer keeps a fitness log in a git repo: a
+photo of a meal before eating it, a note after the gym, and the agent writes it
+into Markdown. In use 10 of the last 14 days, and no fitness app was ever built
+for it.
+
+**Why not SSH and tmux?** You can. Farcall is for when you'd rather tap Allow
+on a command than type in a terminal on a phone keyboard: approvals as buttons,
+photos and files straight into the chat, and a notification when the agent is
+waiting for you.
+
+### Keep the memory in the repo
+
+Phone sessions work best when you don't have to scroll back to remember where
+you were. Have the agent keep its state in git:
+
+- a `CLAUDE.md` (or `AGENTS.md` for Codex) with the project's rules
+- a short status file it updates at the end of a session
+- commit messages that say why, not just what
+- push, so any session on any computer starts where the last one stopped
+
+Then five minutes from your phone picks up where yesterday left off.
+
+**Not for:** writing code by hand on a phone, a computer that's asleep, or
+reviewing a big diff (that's still desk work). Android only for now; iPhone:
+not yet.
+
 ## How is it different?
 
 Remote apps for coding agents usually tie you to one agent, one account, or a company server that sits in your session. Farcall:

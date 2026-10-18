@@ -794,6 +794,48 @@
     </div>
   </section>
 
+  <section class="features-section" id="use">
+    <div class="section-head">
+      <span class="section-kicker">In use</span>
+      <h2 class="section-title">When you'd reach for it</h2>
+    </div>
+    <p class="lead" style="max-width:760px;margin:0 auto 22px;text-align:center">The agent runs on your own computer, with your files, tools and logins, and does the typing. So a phone is enough to drive it: you say what you want and approve what it does. It works with your Claude login or with keys for GLM, Kimi or OpenRouter (Anthropic's Remote Control accepts only Anthropic's own API).</p>
+    <div class="grid">
+      <div class="card">
+        <h2>Start it, then walk away.</h2>
+        <p>"Run the tests and fix what fails." Go make tea. When the agent wants to run a command, your phone asks, so the work doesn't stop and wait for you to get back to the desk.</p>
+      </div>
+      <div class="card">
+        <h2>A bug you found on your phone, fixed from your phone.</h2>
+        <p>Screenshot the problem, send it to the agent working on that app, approve its changes, then install the build it makes. Farcall is built this way; <a href="https://farcall.app/#workflow">see how</a>.</p>
+      </div>
+      <div class="card">
+        <h2>"Why is this broken?" from anywhere.</h2>
+        <p>The agent reads the logs and the code on your computer and tells you what went wrong. Nothing gets pasted into a chatbot.</p>
+      </div>
+      <div class="card">
+        <h2>Not just code.</h2>
+        <p>Farcall's developer keeps a fitness log in a git repo: a photo of a meal before eating it, a note after the gym, and the agent writes it into Markdown. In use 10 of the last 14 days, and no fitness app was ever built for it.</p>
+      </div>
+      <div class="card">
+        <h2>Why not SSH and tmux?</h2>
+        <p>You can. Farcall is for when you'd rather tap Allow on a command than type in a terminal on a phone keyboard: approvals as buttons, photos and files straight into the chat, and a notification when the agent is waiting for you.</p>
+      </div>
+    </div>
+    <div style="max-width:760px;margin:28px auto 0">
+      <h3>Keep the memory in the repo</h3>
+      <p>Phone sessions work best when you don't have to scroll back to remember where you were. Have the agent keep its state in git:</p>
+      <ul>
+        <li>a <code>CLAUDE.md</code> (or <code>AGENTS.md</code> for Codex) with the project's rules</li>
+        <li>a short status file it updates at the end of a session</li>
+        <li>commit messages that say why, not just what</li>
+        <li>push, so any session on any computer starts where the last one stopped</li>
+      </ul>
+      <p>Then five minutes from your phone picks up where yesterday left off.</p>
+      <p style="color:var(--muted)"><strong>Not for:</strong> writing code by hand on a phone, a computer that's asleep, or reviewing a big diff (that's still desk work). Android only for now; iPhone: not yet.</p>
+    </div>
+  </section>
+
   <section class="setup-section" id="setup">
     <div class="section-head">
       <span class="section-kicker">Quickstart</span>
