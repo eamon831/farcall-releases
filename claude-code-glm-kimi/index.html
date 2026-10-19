@@ -1,0 +1,174 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Claude Code with GLM or Kimi, from your phone · Farcall</title>
+<meta name="description" content="Run Claude Code on Z.ai's GLM or Moonshot's Kimi with your own API key, on your Mac, Windows or Linux computer, and drive it from your Android phone. Pick the provider per session; approve every command with a tap.">
+<link rel="canonical" href="https://farcall.app/claude-code-glm-kimi/">
+<link rel="icon" href="/images/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/images/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="icon" href="/images/favicon-192.png" sizes="192x192" type="image/png">
+<link rel="apple-touch-icon" href="/images/apple-touch-icon.png">
+<meta name="theme-color" content="#1C1917">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Farcall">
+<meta property="og:title" content="Claude Code with GLM or Kimi, from your phone">
+<meta property="og:description" content="Claude Code on Z.ai's GLM or Moonshot's Kimi, running on your own computer and driven from your Android phone.">
+<meta property="og:url" content="https://farcall.app/claude-code-glm-kimi/">
+<meta property="og:image" content="https://farcall.app/images/social-card.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Claude Code with GLM or Kimi, from your phone">
+<meta name="twitter:description" content="Claude Code on GLM or Kimi, on your own computer, driven from your Android phone.">
+<meta name="twitter:image" content="https://farcall.app/images/social-card.png">
+<link rel="stylesheet" href="/site.css">
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Can Claude Code use GLM or Kimi instead of Claude?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Z.ai and Moonshot both offer an Anthropic-compatible API, so Claude Code can run on GLM or Kimi when it is pointed at their address with your key. Farcall does that for you per session: paste the key once in setup and pick Claude · GLM or Claude · Kimi when you start a session."}}, {"@type": "Question", "name": "Do I need a Claude subscription to use it with GLM or Kimi?", "acceptedAnswer": {"@type": "Answer", "text": "No. A Z.ai or Moonshot API key is enough. Farcall installs Claude Code during setup if it is missing."}}, {"@type": "Question", "name": "Where is my API key kept?", "acceptedAnswer": {"@type": "Answer", "text": "On your computer, in the system's secret store: the Mac keychain, Windows Credential Manager, or the Linux keyring. Farcall reads it when a session starts and never sends it to the phone."}}, {"@type": "Question", "name": "Can I mix providers?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Each session picks its own: one on your Claude login, one on GLM, one on Kimi, Codex on OpenAI. You can also put two or three agents in one chat and compare their answers."}}, {"@type": "Question", "name": "Does Anthropic's Remote Control work with GLM or Kimi?", "acceptedAnswer": {"@type": "Answer", "text": "No. Remote Control accepts only Anthropic's own API. Farcall works with GLM, Kimi and OpenRouter keys as well as your Claude login."}}, {"@type": "Question", "name": "Is there an iPhone app?", "acceptedAnswer": {"@type": "Answer", "text": "Not yet: the phone app is Android only for now."}}]}
+</script>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="header-inner">
+    <div class="brand-wrap">
+      <a class="brand" href="/" style="text-decoration:none">Far<span>call</span></a>
+      <span class="status-pill">No Farcall server · End-to-end encrypted</span>
+    </div>
+    <nav class="header-nav" aria-label="Page sections">
+      <a href="#how">How it works</a>
+      <a href="#setup">Get started</a>
+      <a href="#questions">FAQ</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="hero">
+    <div class="eyebrow">Claude Code · GLM · Kimi</div>
+    <h1>Claude Code with GLM or Kimi, from your phone.</h1>
+    <p class="lead">Z.ai and Moonshot both offer an Anthropic-compatible API, so Claude Code can run on GLM or Kimi with your own key. Farcall sets that up per session on your computer and lets you drive it from your Android phone: no environment variables to juggle, and every command waits for your Allow.</p>
+
+    <div class="buttons">
+      <a class="btn primary" href="https://github.com/eamon831/farcall-releases/releases/latest">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+        Download
+      </a>
+      <a class="btn" href="/claude-code-from-phone/">Claude Code from your phone</a>
+    </div>
+
+    <p class="aside">Mac, Windows and Linux on the computer · Android on the phone · iPhone not yet</p>
+  </section>
+
+  <section class="features-section" id="how">
+    <div class="section-head">
+      <span class="section-kicker">How it works</span>
+      <h2 class="section-title">One key, pasted once</h2>
+    </div>
+    <div class="grid">
+      <div class="card">
+        <h2>Paste your key in setup</h2>
+        <p>In the Farcall window, Pick your AI takes a Z.ai (GLM) or Moonshot (Kimi) API key. It goes into your computer's secret store and never to the phone.</p>
+      </div>
+      <div class="card">
+        <h2>Pick the provider per session</h2>
+        <p>Starting a session on the phone, choose Claude, Claude · GLM or Claude · Kimi. Farcall starts Claude Code with that provider's address and your key; your normal terminal setup is left alone.</p>
+      </div>
+      <div class="card">
+        <h2>Same Claude Code, same approvals</h2>
+        <p>Replies stream to your phone, and each command or file edit asks first: Allow or Deny. Photos and files go straight into the chat.</p>
+      </div>
+      <div class="card">
+        <h2>Side by side</h2>
+        <p>Put Claude and GLM, or GLM and Kimi, in one chat: they answer the same question side by side and can discuss each other's answers.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="features-section" id="providers">
+    <div class="section-head">
+      <span class="section-kicker">Providers</span>
+      <h2 class="section-title">What you can run</h2>
+    </div>
+    <p class="lead" style="max-width:760px;margin:0 auto 22px;text-align:center">Claude Code on your Claude login, on Z.ai's GLM (GLM-5.3 as of October 2026), on Moonshot's Kimi (Kimi K3), or on Gemini through OpenRouter (preview). Codex on your OpenAI login (preview). Anthropic's Remote Control accepts only Anthropic's own API; Farcall works with all of these, with nothing to keep open on your computer.</p>
+  </section>
+
+  <section class="setup-section" id="setup">
+    <div class="section-head">
+      <span class="section-kicker">Quickstart</span>
+      <h3>Get started</h3>
+    </div>
+    <ol class="steps">
+      <li>
+        <span class="step-title">Install Farcall on the computer.</span>
+        <div class="cmd-list">
+          <div class="cmd-row">
+            <div class="cmd-content">
+              <span class="os-label">Mac (Terminal):</span>
+              <code>curl -fsSL https://github.com/eamon831/farcall-releases/releases/latest/download/install.sh | bash</code>
+            </div>
+            <button type="button" class="copy-btn" aria-label="Copy Mac command">Copy</button>
+          </div>
+          <div class="cmd-row">
+            <div class="cmd-content">
+              <span class="os-label">Windows (PowerShell):</span>
+              <code>irm https://github.com/eamon831/farcall-releases/releases/latest/download/install.ps1 | iex</code>
+            </div>
+            <button type="button" class="copy-btn" aria-label="Copy Windows command">Copy</button>
+          </div>
+          <div class="cmd-row">
+            <div class="cmd-content">
+              <span class="os-label">Linux (x64):</span>
+              <code>curl -fsSL https://github.com/eamon831/farcall-releases/releases/latest/download/install-linux.sh | bash</code>
+            </div>
+            <button type="button" class="copy-btn" aria-label="Copy Linux command">Copy</button>
+          </div>
+        </div>
+      </li>
+      <li>Follow the setup in the Farcall window: sign in to Tailscale, pick your AI (sign in to Claude or paste a key), choose your projects folder, and pair your phone. Farcall installs Claude Code if it's missing.</li>
+      <li>Install the Android app from the QR code in setup, sign in to the same Tailscale account, and pair.</li>
+    </ol>
+  </section>
+
+  <section class="faq-section" id="questions">
+    <div class="section-head">
+      <span class="section-kicker">FAQ</span>
+      <h3>Questions</h3>
+    </div>
+    <div class="faq">
+      <details><summary>Can Claude Code use GLM or Kimi instead of Claude?</summary><p>Yes. Z.ai and Moonshot both offer an Anthropic-compatible API, so Claude Code can run on GLM or Kimi when it is pointed at their address with your key. Farcall does that for you per session: paste the key once in setup and pick Claude · GLM or Claude · Kimi when you start a session.</p></details>
+      <details><summary>Do I need a Claude subscription to use it with GLM or Kimi?</summary><p>No. A Z.ai or Moonshot API key is enough. Farcall installs Claude Code during setup if it is missing.</p></details>
+      <details><summary>Where is my API key kept?</summary><p>On your computer, in the system's secret store: the Mac keychain, Windows Credential Manager, or the Linux keyring. Farcall reads it when a session starts and never sends it to the phone.</p></details>
+      <details><summary>Can I mix providers?</summary><p>Yes. Each session picks its own: one on your Claude login, one on GLM, one on Kimi, Codex on OpenAI. You can also put two or three agents in one chat and compare their answers.</p></details>
+      <details><summary>Does Anthropic's Remote Control work with GLM or Kimi?</summary><p>No. Remote Control accepts only Anthropic's own API. Farcall works with GLM, Kimi and OpenRouter keys as well as your Claude login.</p></details>
+      <details><summary>Is there an iPhone app?</summary><p>Not yet: the phone app is Android only for now.</p></details>
+    </div>
+  </section>
+
+  <footer>
+    <span class="footer-note">Made by MD Saiful Hossain (<a href="https://github.com/eamon831">@eamon831</a>). The source isn't public yet; every build is published with its SHA-256. <a href="/">Farcall home</a></span>
+    <div class="footer-links">
+      <a href="https://github.com/eamon831/farcall-releases">GitHub</a>
+      <a href="https://github.com/eamon831/farcall-releases/issues/new/choose">Feedback</a>
+    </div>
+  </footer>
+</main>
+
+<script>
+  document.querySelectorAll('.copy-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const code = btn.parentElement.querySelector('code').innerText;
+      navigator.clipboard.writeText(code).then(() => {
+        btn.textContent = 'Copied';
+        btn.classList.add('copied');
+        setTimeout(() => { btn.textContent = 'Copy'; btn.classList.remove('copied'); }, 1800);
+      });
+    });
+  });
+</script>
+<!-- Cloudflare Web Analytics (counts visits; no cookies, no personal data). The token is public by design. -->
+<script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "83fa978853154d9fa263d07489d4963b"}'></script>
+<!-- End Cloudflare Web Analytics -->
+</body>
+</html>
