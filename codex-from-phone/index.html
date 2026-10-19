@@ -1,0 +1,167 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Use Codex from your phone, beside Claude Code · Farcall</title>
+<meta name="description" content="Drive the Codex CLI on your own Mac, Windows or Linux computer from your Android phone: start sessions, watch replies stream, and allow or deny every command and file change. Codex and Claude Code in one app.">
+<link rel="canonical" href="https://farcall.app/codex-from-phone/">
+<link rel="icon" href="/images/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/images/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="icon" href="/images/favicon-192.png" sizes="192x192" type="image/png">
+<link rel="apple-touch-icon" href="/images/apple-touch-icon.png">
+<meta name="theme-color" content="#1C1917">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Farcall">
+<meta property="og:title" content="Use Codex from your phone, beside Claude Code">
+<meta property="og:description" content="The Codex CLI on your own computer, driven from your Android phone. Approve every command with a tap.">
+<meta property="og:url" content="https://farcall.app/codex-from-phone/">
+<meta property="og:image" content="https://farcall.app/images/social-card.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Use Codex from your phone, beside Claude Code">
+<meta name="twitter:description" content="The Codex CLI on your own computer, driven from your Android phone.">
+<meta name="twitter:image" content="https://farcall.app/images/social-card.png">
+<link rel="stylesheet" href="/site.css">
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Can I use Codex from my phone?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Codex runs on your own computer, signed in to your ChatGPT account, and Farcall gives you an Android app to drive it: start a session in a project, read replies as they stream, and allow or deny each command and file change."}}, {"@type": "Question", "name": "How is this different from OpenAI's Codex mobile?", "acceptedAnswer": {"@type": "Answer", "text": "OpenAI's remote connections reach the ChatGPT or Codex app on a Mac or Windows computer and go offline when that app closes. Farcall runs as a background service on Mac, Windows or Linux, so nothing has to stay open, and it puts Codex and Claude Code side by side in one app."}}, {"@type": "Question", "name": "Do I need an OpenAI API key?", "acceptedAnswer": {"@type": "Answer", "text": "No. Codex uses its own ChatGPT sign-in, and Farcall's setup offers that sign-in for you. Install the Codex CLI on the computer first; Farcall finds it."}}, {"@type": "Question", "name": "Can Codex and Claude Code work in the same chat?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Put two or three agents in one chat, for example Codex and Claude Code: they answer side by side and can discuss each other's answers."}}, {"@type": "Question", "name": "Is my code sent to a server?", "acceptedAnswer": {"@type": "Answer", "text": "No. Your phone reaches your computer over your own private Tailscale network. Farcall has no server in the middle; your code and chats stay on your machines and your AI provider."}}, {"@type": "Question", "name": "Is there an iPhone app?", "acceptedAnswer": {"@type": "Answer", "text": "Not yet: the phone app is Android only for now."}}]}
+</script>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="header-inner">
+    <div class="brand-wrap">
+      <a class="brand" href="/" style="text-decoration:none">Far<span>call</span></a>
+      <span class="status-pill">No Farcall server · End-to-end encrypted</span>
+    </div>
+    <nav class="header-nav" aria-label="Page sections">
+      <a href="#how">How it works</a>
+      <a href="#setup">Get started</a>
+      <a href="#questions">FAQ</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="hero">
+    <div class="eyebrow">Codex · Android</div>
+    <h1>Use Codex from your phone, beside Claude Code.</h1>
+    <p class="lead">The Codex CLI keeps running on your own computer, in your project, signed in to your ChatGPT account. Farcall puts it in an Android app: start a session, watch the reply stream in, and allow or deny each command and file change. Codex support is in preview.</p>
+
+    <div class="buttons">
+      <a class="btn primary" href="https://github.com/eamon831/farcall-releases/releases/latest">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+        Download
+      </a>
+      <a class="btn" href="/claude-code-from-phone/">Claude Code from your phone</a>
+    </div>
+
+    <p class="aside">Mac, Windows and Linux on the computer · Android on the phone · iPhone not yet</p>
+  </section>
+
+  <section class="features-section" id="how">
+    <div class="section-head">
+      <span class="section-kicker">How it works</span>
+      <h2 class="section-title">Codex on your computer, steered from your phone</h2>
+    </div>
+    <div class="grid">
+      <div class="card">
+        <h2>Your ChatGPT sign-in</h2>
+        <p>No API key: Codex uses its own sign-in, and Farcall's setup offers it. Pick Codex when you start a session on the phone.</p>
+      </div>
+      <div class="card">
+        <h2>Allow or Deny</h2>
+        <p>When Codex wants to run a command or change a file, your phone shows it first. Tap Allow and it keeps going.</p>
+      </div>
+      <div class="card">
+        <h2>Codex and Claude Code together</h2>
+        <p>Run Codex in one session and Claude Code (on Claude, GLM, Kimi or Gemini) in another, or put them in one chat to answer side by side.</p>
+      </div>
+      <div class="card">
+        <h2>Nothing to keep open</h2>
+        <p>Farcall runs as a background service on Mac, Windows or Linux. Your phone reaches it over your own private Tailscale network, with no Farcall server in between.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="setup-section" id="setup">
+    <div class="section-head">
+      <span class="section-kicker">Quickstart</span>
+      <h3>Get started</h3>
+    </div>
+    <ol class="steps">
+      <li>Install the <a href="https://github.com/openai/codex" style="color:var(--accent);font-weight:600">Codex CLI</a> on the computer, if it isn't there yet.</li>
+      <li>
+        <span class="step-title">Install Farcall on the computer.</span>
+        <div class="cmd-list">
+          <div class="cmd-row">
+            <div class="cmd-content">
+              <span class="os-label">Mac (Terminal):</span>
+              <code>curl -fsSL https://github.com/eamon831/farcall-releases/releases/latest/download/install.sh | bash</code>
+            </div>
+            <button type="button" class="copy-btn" aria-label="Copy Mac command">Copy</button>
+          </div>
+          <div class="cmd-row">
+            <div class="cmd-content">
+              <span class="os-label">Windows (PowerShell):</span>
+              <code>irm https://github.com/eamon831/farcall-releases/releases/latest/download/install.ps1 | iex</code>
+            </div>
+            <button type="button" class="copy-btn" aria-label="Copy Windows command">Copy</button>
+          </div>
+          <div class="cmd-row">
+            <div class="cmd-content">
+              <span class="os-label">Linux (x64):</span>
+              <code>curl -fsSL https://github.com/eamon831/farcall-releases/releases/latest/download/install-linux.sh | bash</code>
+            </div>
+            <button type="button" class="copy-btn" aria-label="Copy Linux command">Copy</button>
+          </div>
+        </div>
+      </li>
+      <li>Follow the setup in the Farcall window: sign in to Tailscale, pick your AI (choose ChatGPT · Codex and sign in), choose your projects folder, and pair your phone.</li>
+      <li>Install the Android app from the QR code in setup, sign in to the same Tailscale account, and pair.</li>
+    </ol>
+  </section>
+
+  <section class="faq-section" id="questions">
+    <div class="section-head">
+      <span class="section-kicker">FAQ</span>
+      <h3>Questions</h3>
+    </div>
+    <div class="faq">
+      <details><summary>Can I use Codex from my phone?</summary><p>Yes. Codex runs on your own computer, signed in to your ChatGPT account, and Farcall gives you an Android app to drive it: start a session in a project, read replies as they stream, and allow or deny each command and file change.</p></details>
+      <details><summary>How is this different from OpenAI's Codex mobile?</summary><p>OpenAI's remote connections reach the ChatGPT or Codex app on a Mac or Windows computer and go offline when that app closes. Farcall runs as a background service on Mac, Windows or Linux, so nothing has to stay open, and it puts Codex and Claude Code side by side in one app.</p></details>
+      <details><summary>Do I need an OpenAI API key?</summary><p>No. Codex uses its own ChatGPT sign-in, and Farcall's setup offers that sign-in for you. Install the Codex CLI on the computer first; Farcall finds it.</p></details>
+      <details><summary>Can Codex and Claude Code work in the same chat?</summary><p>Yes. Put two or three agents in one chat, for example Codex and Claude Code: they answer side by side and can discuss each other's answers.</p></details>
+      <details><summary>Is my code sent to a server?</summary><p>No. Your phone reaches your computer over your own private Tailscale network. Farcall has no server in the middle; your code and chats stay on your machines and your AI provider.</p></details>
+      <details><summary>Is there an iPhone app?</summary><p>Not yet: the phone app is Android only for now.</p></details>
+    </div>
+  </section>
+
+  <footer>
+    <span class="footer-note">Made by MD Saiful Hossain (<a href="https://github.com/eamon831">@eamon831</a>). The source isn't public yet; every build is published with its SHA-256. <a href="/">Farcall home</a></span>
+    <div class="footer-links">
+      <a href="https://github.com/eamon831/farcall-releases">GitHub</a>
+      <a href="https://github.com/eamon831/farcall-releases/issues/new/choose">Feedback</a>
+    </div>
+  </footer>
+</main>
+
+<script>
+  document.querySelectorAll('.copy-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const code = btn.parentElement.querySelector('code').innerText;
+      navigator.clipboard.writeText(code).then(() => {
+        btn.textContent = 'Copied';
+        btn.classList.add('copied');
+        setTimeout(() => { btn.textContent = 'Copy'; btn.classList.remove('copied'); }, 1800);
+      });
+    });
+  });
+</script>
+<!-- Cloudflare Web Analytics (counts visits; no cookies, no personal data). The token is public by design. -->
+<script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "83fa978853154d9fa263d07489d4963b"}'></script>
+<!-- End Cloudflare Web Analytics -->
+</body>
+</html>
