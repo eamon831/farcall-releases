@@ -96,7 +96,7 @@ In Terminal:
 curl -fsSL https://github.com/eamon831/farcall-releases/releases/latest/download/install.sh | bash
 ```
 
-Prefer a disk image? Download `Farcall.dmg` from the release, drag Farcall to Applications and open it. The first time, macOS says it can't verify the app (Farcall isn't signed with an Apple Developer ID yet): click Done, then System Settings › Privacy & Security › **Open Anyway**. The Terminal way skips this.
+Prefer a disk image? Download `Farcall.dmg` from the release, drag Farcall to Applications and open it. The first time, macOS says it can't verify the app (Farcall isn't signed with an Apple Developer ID yet): click Done (or Cancel on older macOS), then System Settings › Privacy & Security › **Open Anyway**. The Terminal way skips this.
 </details>
 
 <details>
@@ -109,6 +109,8 @@ irm https://github.com/eamon831/farcall-releases/releases/latest/download/instal
 ```
 
 Installs into `%LOCALAPPDATA%\Programs\Farcall` and adds Farcall to the Start menu.
+
+Windows may show "Windows protected your PC" (either way of installing): click **More info**, then **Run anyway**. The build is not yet code-signed.
 </details>
 
 <details>
@@ -125,7 +127,7 @@ Installs into `~/.local/opt/farcall` and adds a menu entry.
 
 You can read each script before running it: [install.sh](https://github.com/eamon831/farcall-releases/releases/latest/download/install.sh), [install.ps1](https://github.com/eamon831/farcall-releases/releases/latest/download/install.ps1), [install-linux.sh](https://github.com/eamon831/farcall-releases/releases/latest/download/install-linux.sh).
 
-**2. Follow the setup in the Farcall window.** Four steps, each checked for you: **Connect** (sign in to Tailscale), **Pick your AI** (sign in, or paste a key), **Projects folder**, **Pair your phone**. Farcall installs Claude Code and checks that approvals reach your phone by itself.
+**2. Follow the setup in the Farcall window.** Each step is checked for you: **Connect** (sign in to Tailscale), **Pick your AI** (sign in, or paste a key), **Projects folder**, **Pair your phone**. Farcall installs Claude Code and checks that approvals reach your phone by itself.
 
 <p align="center"><picture><source media="(prefers-color-scheme: dark)" srcset="images/shot-desktop-setup-dark.png"><img src="images/shot-desktop-setup-light.png" alt="The setup window: Pick your AI, with Claude signed in and a GLM key stored" width="640"></picture></p>
 
