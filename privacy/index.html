@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Privacy · Farcall</title>
+<meta name="description" content="What Farcall stores on your phone and computer, what travels between them, and what never leaves: no Farcall server, no accounts, no analytics in the apps.">
+<link rel="canonical" href="https://farcall.app/privacy/">
+<link rel="icon" href="/images/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/images/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="icon" href="/images/favicon-192.png" sizes="192x192" type="image/png">
+<link rel="apple-touch-icon" href="/images/apple-touch-icon.png">
+<meta name="theme-color" content="#1C1917">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Farcall">
+<meta property="og:title" content="Farcall privacy">
+<meta property="og:description" content="What Farcall stores, what travels between your phone and your computer, and what never leaves.">
+<meta property="og:url" content="https://farcall.app/privacy/">
+<meta property="og:image" content="https://farcall.app/images/social-card.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Farcall privacy">
+<meta name="twitter:description" content="What Farcall stores, what travels between your phone and your computer, and what never leaves.">
+<link rel="stylesheet" href="/site.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="header-inner">
+    <div class="brand-wrap">
+      <a class="brand" href="/" style="text-decoration:none">Far<span>call</span></a>
+      <span class="status-pill">No Farcall server · End-to-end encrypted</span>
+    </div>
+    <nav class="header-nav" aria-label="Page sections">
+      <a href="#phone">On your phone</a>
+      <a href="#computer">On your computer</a>
+      <a href="#between">Between them</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="hero">
+    <div class="eyebrow">Privacy · updated 20 October 2026</div>
+    <h1>Farcall has no server, no account and no analytics in the apps.</h1>
+    <p class="lead">Farcall is a phone app and a program on your own computer. They talk to each other directly over your Tailscale network. Nothing you type, approve or watch goes anywhere else, and nobody at Farcall can see it.</p>
+  </section>
+
+  <section id="phone">
+    <h2>What the phone app stores</h2>
+    <ul>
+      <li><strong>Pairing:</strong> your computer's address and the pairing secret, in Android's encrypted storage. Unpairing deletes them.</li>
+      <li><strong>Saved chats:</strong> a copy of recent conversations and the session list, so a chat opens at once and works offline. Kept in the app's private folder; cleared when you uninstall.</li>
+      <li><strong>Queued messages and drafts:</strong> what you typed while offline, until it is sent.</li>
+      <li><strong>Settings:</strong> theme, the last computer used, playback position of videos.</li>
+    </ul>
+    <p>The app has no account, no sign-in and no analytics. It does not read your contacts, location, photos or files; attachments you send are the ones you pick.</p>
+  </section>
+
+  <section id="computer">
+    <h2>What the program on your computer stores</h2>
+    <ul>
+      <li><strong>Secrets</strong> (the pairing secret and any API keys you add) live in the system's secret store: the Mac keychain, Windows Credential Manager or the Linux keyring. They are never written to a log, a database or a message to the phone.</li>
+      <li><strong>The session list:</strong> which sessions exist, their folder, state and title, in a small local database.</li>
+      <li><strong>Conversations</strong> are written by Claude Code or Codex themselves, in their own folders, as they always are. Farcall reads them to show history; it does not copy them.</li>
+      <li><strong>Uploads</strong> you send from the phone, in a folder under the program's data directory.</li>
+      <li><strong>A log</strong> of what the program did (connections, sessions, errors), without secrets or message text.</li>
+    </ul>
+  </section>
+
+  <section id="between">
+    <h2>What travels, and where</h2>
+    <p>Messages, replies, approvals, files and video go from your phone to your computer over Tailscale, which encrypts them end to end between your two devices. Farcall runs no relay. The only third parties involved are the ones you chose: Tailscale for the network, and the AI provider your session uses (Anthropic, Z.ai, Moonshot, OpenAI or OpenRouter), which receives the conversation from your computer exactly as it would without Farcall.</p>
+    <p><strong>Crash reports.</strong> If the app or the program crashes, a report with the error, the stack trace and the app version is sent to Sentry, a crash-reporting service, so the bug can be fixed. Secrets are scrubbed before sending and the report holds no message text. There is no other telemetry.</p>
+    <p><strong>This website</strong> uses Cloudflare Web Analytics to count visits. It sets no cookies and stores no personal data.</p>
+    <p><strong>Updates.</strong> The app and the program check GitHub for new releases. GitHub sees the request like any download.</p>
+  </section>
+
+  <section id="contact">
+    <h2>Deleting your data, and contact</h2>
+    <p>Uninstall the phone app and the program; remove the secrets from your secret store if you want them gone too. Everything Farcall kept is on your own devices, so there is nothing to request from anyone.</p>
+    <p>Questions: <a href="mailto:hello@farcall.app">hello@farcall.app</a>.</p>
+  </section>
+
+<footer>
+    <span class="footer-note">Made by MD Saiful Hossain (<a href="https://github.com/eamon831">@eamon831</a>). The source isn't public yet; every build is published with its SHA-256. <a href="/">Farcall home</a></span>
+    <div class="footer-links">
+      <a href="https://github.com/eamon831/farcall-releases">GitHub</a>
+      <a href="https://github.com/eamon831/farcall-releases/issues/new/choose">Feedback</a>
+      <a href="/privacy/">Privacy</a>
+    </div>
+  </footer>
+</main>
+
+<script>
+  document.querySelectorAll('.copy-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const code = btn.parentElement.querySelector('code').innerText;
+      navigator.clipboard.writeText(code).then(() => {
+        btn.textContent = 'Copied';
+        btn.classList.add('copied');
+        setTimeout(() => { btn.textContent = 'Copy'; btn.classList.remove('copied'); }, 1800);
+      });
+    });
+  });
+</script>
+<!-- Cloudflare Web Analytics (counts visits; no cookies, no personal data). The token is public by design. -->
+<script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "83fa978853154d9fa263d07489d4963b"}'></script>
+<!-- End Cloudflare Web Analytics -->
+</body>
+</html>
