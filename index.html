@@ -34,7 +34,7 @@
 </script>
 <link rel="stylesheet" href="/site.css">
 <script type="application/ld+json">
-{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Can I use Claude Code from my phone?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Farcall runs Claude Code on your own computer and gives you a phone app to chat with it: start a session in a project, read replies as they stream, and approve or deny each command or file edit it wants to make."}}, {"@type": "Question", "name": "Does it work with Codex, GLM, Kimi or Gemini?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Claude Code can run on your Claude login, on Z.ai's GLM, on Moonshot's Kimi, or on Gemini through OpenRouter (preview); Codex runs on your OpenAI login (preview). You pick per session, and you can put two or three agents in one chat."}}, {"@type": "Question", "name": "Is my code sent to a server?", "acceptedAnswer": {"@type": "Answer", "text": "No. Your phone reaches your computer over your own private Tailscale network. Farcall has no server in the middle; your code and chats stay on your machines and your AI provider."}}, {"@type": "Question", "name": "What do I need?", "acceptedAnswer": {"@type": "Answer", "text": "A Mac (Apple Silicon), Windows PC or Linux machine to run the agent, an Android phone, and one AI: a Claude account, an API key for GLM, Kimi or OpenRouter, or Codex. Farcall's setup installs what is missing."}}, {"@type": "Question", "name": "Is there an iPhone app?", "acceptedAnswer": {"@type": "Answer", "text": "Not yet: the phone app is Android only for now."}}, {"@type": "Question", "name": "Is Farcall free?", "acceptedAnswer": {"@type": "Answer", "text": "Yes, Farcall itself is free to download. You pay your AI provider as you normally would."}}]}
+{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Can I use Claude Code from my phone?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Farcall runs Claude Code on your own computer and gives you a phone app to chat with it: start a session in a project, read replies as they stream, and approve or deny each command or file edit it wants to make."}}, {"@type": "Question", "name": "Does it work with Codex, GLM, Kimi or Gemini?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Claude Code can run on your Claude login, on Z.ai's GLM, on Moonshot's Kimi, or on Gemini through OpenRouter (preview); Codex runs on your OpenAI login (preview). You pick per session, and you can put two or three agents in one chat."}}, {"@type": "Question", "name": "Is my code sent to a server?", "acceptedAnswer": {"@type": "Answer", "text": "No. Your phone reaches your computer over your own private Tailscale network. Farcall has no server in the middle; your code and chats stay on your machines and your AI provider."}}, {"@type": "Question", "name": "What do I need?", "acceptedAnswer": {"@type": "Answer", "text": "A Mac (Apple Silicon), Windows PC or Linux machine to run the agent, an Android phone, and one AI: a Claude account, an API key for GLM, Kimi or OpenRouter, or Codex. Farcall's setup installs what is missing."}}, {"@type": "Question", "name": "Is there an iPhone app?", "acceptedAnswer": {"@type": "Answer", "text": "Not yet: the phone app is Android only for now."}}, {"@type": "Question", "name": "Is Farcall free?", "acceptedAnswer": {"@type": "Answer", "text": "Yes, Farcall itself is free to download. You pay your AI provider as you normally would."}}, {"@type": "Question", "name": "Does Farcall collect anything?", "acceptedAnswer": {"@type": "Answer", "text": "No chats, no files, no account. If the app crashes, a scrubbed crash report goes to Sentry, and under the same switch the phone app counts its own starts under a random id. Both are on by default and switch off together in Settings."}}]}
 </script>
 </head>
 <body>
@@ -107,6 +107,7 @@
     <p class="lead" style="max-width:760px;margin:0 auto 22px;text-align:center">
       Release 111 was built in one day from my phone: 89 messages sent from the phone, from the first request at 09:24 to the published release at 16:18.
       Claude Code on my computer led the work; Gemini 4 designed and reviewed it, GLM gave a second review, and I tried every build on the phone before it shipped.
+      On 19 and 20 October a whole-repo review and its 39 fixes, 13 phone builds and three public releases were done the same way, from the phone, including the bug that froze the video player's clock, found by watching the log the phone sent.
     </p>
     <figure class="workflow-figure">
       <picture><source media="(prefers-color-scheme: dark)" srcset="images/workflow-dark.svg"><img src="images/workflow-light.svg" width="1600" height="700" alt="How Farcall is built from a phone: you write what you want, send screenshots and approve from the Farcall app; over your private Tailscale network, Claude Code on your computer leads a small AI team (background Claude agents build and test, Gemini 4 designs and reviews, GLM reviews); tests run, a dev build goes to your phone and computer, releases go to GitHub and the website; you try it on the phone and send a screenshot for the next round." loading="lazy"></picture>
@@ -147,6 +148,20 @@
         </div>
         <h2>More than one agent</h2>
         <p>Put two or three agents in one chat: they answer side by side and can discuss each other's answers. Update your computer's Farcall from the phone, too.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"/></svg>
+        </div>
+        <h2>Your files, a terminal, your videos</h2>
+        <p>Browse and read the files the agent changed, search a folder, run a command in it, or download a file to the phone. Play a video from the computer: Farcall converts what the phone can't play, with your subtitle and audio track.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 1l22 22"/><path d="M16.72 11.06A10.94 10.94 0 0 1 19 12.55"/><path d="M5 12.55a10.94 10.94 0 0 1 5.17-2.39"/><path d="M10.71 5.05A16 16 0 0 1 22.56 9"/><path d="M1.42 9a15.91 15.91 0 0 1 4.7-2.88"/><path d="M8.53 16.11a6 6 0 0 1 6.95 0"/><line x1="12" y1="20" x2="12.01" y2="20"/></svg>
+        </div>
+        <h2>Works without a signal</h2>
+        <p>Your sessions and recent chats are saved on the phone, so they open at once, even offline. A message typed with no network waits and goes when one is back. A notification tells you when the agent is waiting for you.</p>
       </div>
     </div>
   </section>
@@ -189,7 +204,7 @@
         <li>push, so any session on any computer starts where the last one stopped</li>
       </ul>
       <p>Then five minutes from your phone picks up where yesterday left off.</p>
-      <p style="color:var(--muted)"><strong>Not for:</strong> writing code by hand on a phone, a computer that's asleep, or reviewing a big diff (that's still desk work). Android only for now; iPhone: not yet.</p>
+      <p style="color:var(--muted)"><strong>Not for:</strong> writing code by hand on a phone, or reviewing a big diff (that's still desk work). The computer must be on and reachable: Farcall keeps it from idle-sleeping, but a laptop closed in a bag is out of reach. Android only for now; iPhone: not yet.</p>
     </div>
   </section>
 
@@ -242,6 +257,7 @@
       <details><summary>What do I need?</summary><p>A Mac (Apple Silicon), Windows PC or Linux machine to run the agent, an Android phone, and one AI: a Claude account, an API key for GLM, Kimi or OpenRouter, or Codex. Farcall's setup installs what is missing.</p></details>
       <details><summary>Is there an iPhone app?</summary><p>Not yet: the phone app is Android only for now.</p></details>
       <details><summary>Is Farcall free?</summary><p>Yes, Farcall itself is free to download. You pay your AI provider as you normally would.</p></details>
+      <details><summary>Does Farcall collect anything?</summary><p>No chats, no files, no account. If the app crashes, a scrubbed crash report goes to Sentry; and under the same switch the phone app counts its own starts under a random id, so we can tell how many people use Farcall. Both are on by default and switch off together in Settings. Details on the <a href="/privacy/">privacy page</a>.</p></details>
     </div>
   </section>
 
