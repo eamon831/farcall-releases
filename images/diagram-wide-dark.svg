@@ -102,10 +102,10 @@
     <rect x="12" y="16" width="8" height="6.5" rx="1.2" fill="#5CC48E"/>
     <path d="M 13.5 16 L 13.5 13.5 C 13.5 12 14.5 11 16 11 C 17.5 11 18.5 12 18.5 13.5 L 18.5 16" fill="none" stroke="#5CC48E" stroke-width="1.5"/>
   </g>
-  <text x="398" y="238" text-anchor="middle" font-size="14.5" font-weight="600" fill="#5CC48E">Your private Tailscale network</text>
+  <text x="398" y="238" text-anchor="middle" font-size="14.5" font-weight="600" fill="#5CC48E">Your private network</text>
   <text x="398" y="261" text-anchor="middle" font-size="13.5" fill="#D6D3D1">messages, replies, approvals</text>
-  <rect x="331" y="277" width="134" height="24" rx="12" fill="#5CC48E" fill-opacity="0.15"/>
-  <text x="398" y="293" text-anchor="middle" font-size="12" font-weight="600" fill="#6EE7B7">no Farcall server</text>
+  <rect x="316" y="277" width="164" height="24" rx="12" fill="#5CC48E" fill-opacity="0.15"/>
+  <text x="398" y="293" text-anchor="middle" font-size="12" font-weight="600" fill="#6EE7B7">end-to-end encrypted</text>
 
   <!-- 4. CONNECTION TO AI PROVIDER (Agent <-> Provider) -->
   <line x1="1078" y1="250" x2="1322" y2="250" stroke="#A8A29E" stroke-width="2" marker-start="url(#arr-st-l-wd)" marker-end="url(#arr-st-r-wd)"/>

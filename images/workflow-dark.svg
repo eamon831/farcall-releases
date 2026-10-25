@@ -114,7 +114,7 @@
       <path d="M 3 7 V 4 A 3 3 0 0 1 9 4 V 7" fill="none" stroke="#D2704A" stroke-width="1.5"/>
     </g>
     <text x="362" y="286" font-size="12" font-weight="600" fill="#F5F5F4">your private</text>
-    <text x="362" y="302" font-size="12" font-weight="600" fill="#A8A29E">Tailscale network</text>
+    <text x="362" y="302" font-size="12" font-weight="600" fill="#A8A29E">network</text>
 
     <!-- Mesh Dots Decoration on Line -->
     <circle cx="355" cy="330" r="3" fill="#D2704A"/>

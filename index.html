@@ -4,9 +4,9 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Farcall: one phone remote for Claude Code, Codex and your coding agents</title>
-<meta name="description" content="Control Claude Code and Codex from your Android phone. They run on your own Mac, Windows or Linux computer; you chat, watch replies stream and approve every command. Claude, GLM, Kimi or Gemini. No Farcall server in between.">
+<meta name="description" content="Control Claude Code and Codex from your Android phone. They run on your own Mac, Windows or Linux computer; you chat, watch replies stream and approve every command. Claude, GLM, Kimi or Gemini. Your code and chats stay on your machines.">
 <meta property="og:title" content="Farcall: one phone remote for the AI coding agents on your computer">
-<meta property="og:description" content="Drive Claude Code and Codex on your own computer from one Android app. No Farcall server in between.">
+<meta property="og:description" content="Drive Claude Code and Codex on your own computer from one Android app. Your code and chats stay on your machines.">
 <link rel="canonical" href="https://farcall.app/">
 <link rel="icon" href="images/favicon.svg" type="image/svg+xml">
 <link rel="icon" href="images/favicon-32.png" sizes="32x32" type="image/png">
@@ -23,7 +23,7 @@
 <meta property="og:url" content="https://farcall.app/">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Farcall: one phone remote for the AI coding agents on your computer">
-<meta name="twitter:description" content="Claude Code and Codex on your own computer, driven from your phone. No Farcall server in between.">
+<meta name="twitter:description" content="Claude Code and Codex on your own computer, driven from your phone. Your code and chats stay on your machines.">
 <meta name="twitter:image" content="https://farcall.app/images/social-card.png">
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"SoftwareApplication","name":"Farcall","url":"https://farcall.app/",
@@ -34,7 +34,7 @@
 </script>
 <link rel="stylesheet" href="/site.css">
 <script type="application/ld+json">
-{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Can I use Claude Code from my phone?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Farcall runs Claude Code on your own computer and gives you a phone app to chat with it: start a session in a project, read replies as they stream, and approve or deny each command or file edit it wants to make."}}, {"@type": "Question", "name": "Does it work with Codex, GLM, Kimi or Gemini?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Claude Code can run on your Claude login, on Z.ai's GLM, on Moonshot's Kimi, or on Gemini through OpenRouter (preview); Codex runs on your OpenAI login (preview). You pick per session, and you can put two or three agents in one chat."}}, {"@type": "Question", "name": "Is my code sent to a server?", "acceptedAnswer": {"@type": "Answer", "text": "No. Your phone reaches your computer over your own private Tailscale network. Farcall has no server in the middle; your code and chats stay on your machines and your AI provider."}}, {"@type": "Question", "name": "What do I need?", "acceptedAnswer": {"@type": "Answer", "text": "A Mac (Apple Silicon), Windows PC or Linux machine to run the agent, an Android phone, and one AI: a Claude account, an API key for GLM, Kimi or OpenRouter, or Codex. Farcall's setup installs what is missing."}}, {"@type": "Question", "name": "Is there an iPhone app?", "acceptedAnswer": {"@type": "Answer", "text": "Not yet: the phone app is Android only for now."}}, {"@type": "Question", "name": "Is Farcall free?", "acceptedAnswer": {"@type": "Answer", "text": "Yes, Farcall itself is free to download. You pay your AI provider as you normally would."}}, {"@type": "Question", "name": "Does Farcall collect anything?", "acceptedAnswer": {"@type": "Answer", "text": "No chats, no files, no account. If the app crashes, a scrubbed crash report goes to Sentry, and under the same switch the phone app counts its own starts under a random id. Both are on by default and switch off together in Settings."}}]}
+{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Can I use Claude Code from my phone?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Farcall runs Claude Code on your own computer and gives you a phone app to chat with it: start a session in a project, read replies as they stream, and approve or deny each command or file edit it wants to make."}}, {"@type": "Question", "name": "Does it work with Codex, GLM, Kimi or Gemini?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Claude Code can run on your Claude login, on Z.ai's GLM, on Moonshot's Kimi, or on Gemini through OpenRouter (preview); Codex runs on your OpenAI login (preview). You pick per session, and you can put two or three agents in one chat."}}, {"@type": "Question", "name": "Is my code sent to a server?", "acceptedAnswer": {"@type": "Answer", "text": "No. Your phone reaches your computer over a private, encrypted network built into Farcall. Farcall's server only signs your devices in and helps them find each other; your code and chats stay on your machines and your AI provider."}}, {"@type": "Question", "name": "What do I need?", "acceptedAnswer": {"@type": "Answer", "text": "A Mac (Apple Silicon), Windows PC or Linux machine to run the agent, an Android phone, and one AI: a Claude account, an API key for GLM, Kimi or OpenRouter, or Codex. Farcall's setup installs what is missing."}}, {"@type": "Question", "name": "Is there an iPhone app?", "acceptedAnswer": {"@type": "Answer", "text": "Not yet: the phone app is Android only for now."}}, {"@type": "Question", "name": "Is Farcall free?", "acceptedAnswer": {"@type": "Answer", "text": "Yes, Farcall itself is free to download. You pay your AI provider as you normally would."}}, {"@type": "Question", "name": "Does Farcall collect anything?", "acceptedAnswer": {"@type": "Answer", "text": "No chats, no files. Signing in keeps your Google email and your devices' names on Farcall's sign-in server. If the app crashes, a scrubbed crash report goes to Sentry, and under the same switch the app and the computer count their use under a random id. Both are on by default and switch off together in Settings."}}]}
 </script>
 </head>
 <body>
@@ -43,7 +43,7 @@
   <div class="header-inner">
     <div class="brand-wrap">
       <div class="brand">Far<span>call</span></div>
-      <span class="status-pill">No Farcall server · End-to-end encrypted</span>
+      <span class="status-pill">Your code stays on your machines · End-to-end encrypted</span>
     </div>
     <nav class="header-nav" aria-label="Page sections">
       <a href="#features">Features</a>
@@ -103,7 +103,7 @@
       <h2 class="section-title">Direct from your phone to your machine</h2>
     </div>
     <figure>
-      <picture><source media="(max-width: 640px) and (prefers-color-scheme: dark)" srcset="images/diagram-tall-dark.svg"><source media="(max-width: 640px)" srcset="images/diagram-tall-light.svg"><source media="(prefers-color-scheme: dark)" srcset="images/diagram-wide-dark.svg"><img src="images/diagram-wide-light.svg" width="1600" height="480" alt="Your phone talks to Farcall on your computer over your private Tailscale network; Farcall runs your coding agent, which talks to your AI provider." loading="lazy"></picture>
+      <picture><source media="(max-width: 640px) and (prefers-color-scheme: dark)" srcset="images/diagram-tall-dark.svg"><source media="(max-width: 640px)" srcset="images/diagram-tall-light.svg"><source media="(prefers-color-scheme: dark)" srcset="images/diagram-wide-dark.svg"><img src="images/diagram-wide-light.svg" width="1600" height="480" alt="Your phone talks to Farcall on your computer over your private, encrypted network; Farcall runs your coding agent, which talks to your AI provider." loading="lazy"></picture>
     </figure>
   </section>
 
@@ -118,7 +118,7 @@
       On 19 and 20 October a whole-repo review and its 39 fixes, 13 phone builds and three public releases were done the same way, from the phone, including the bug that froze the video player's clock, found by watching the log the phone sent.
     </p>
     <figure class="workflow-figure">
-      <picture><source media="(prefers-color-scheme: dark)" srcset="images/workflow-dark.svg"><img src="images/workflow-light.svg" width="1600" height="700" alt="How Farcall is built from a phone: you write what you want, send screenshots and approve from the Farcall app; over your private Tailscale network, Claude Code on your computer leads a small AI team (background Claude agents build and test, Gemini 4 designs and reviews, GLM reviews); tests run, a dev build goes to your phone and computer, releases go to GitHub and the website; you try it on the phone and send a screenshot for the next round." loading="lazy"></picture>
+      <picture><source media="(prefers-color-scheme: dark)" srcset="images/workflow-dark.svg"><img src="images/workflow-light.svg" width="1600" height="700" alt="How Farcall is built from a phone: you write what you want, send screenshots and approve from the Farcall app; over your private network, Claude Code on your computer leads a small AI team (background Claude agents build and test, Gemini 4 designs and reviews, GLM reviews); tests run, a dev build goes to your phone and computer, releases go to GitHub and the website; you try it on the phone and send a screenshot for the next round." loading="lazy"></picture>
     </figure>
     <p style="text-align:center;color:var(--muted);font-size:0.9em;margin-top:12px">On a phone, swipe the diagram sideways.</p>
   </section>
@@ -147,8 +147,8 @@
         <div class="card-icon" aria-hidden="true">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
         </div>
-        <h2>No server in the middle</h2>
-        <p>Your phone reaches your computer over your own private Tailscale network, built in: no Tailscale app to install. Chats and code stay on your machines.</p>
+        <h2>Your code never passes our server</h2>
+        <p>Sign in with Google on both, and your phone reaches your computer over a private, encrypted network built into Farcall: no Tailscale app, no QR code. Chats and code stay on your machines.</p>
       </div>
       <div class="card">
         <div class="card-icon" aria-hidden="true">
@@ -248,8 +248,8 @@
           </div>
         </div>
       </li>
-      <li>Follow the setup in the Farcall window: Connect, Pick your AI (sign in or paste a key), Projects folder, Pair your phone.</li>
-      <li>Install the Android app from the QR code in setup, sign in to the same Tailscale account, and pair.</li>
+      <li>Follow the setup in the Farcall window: Connect (sign in with Google), Pick your AI (sign in or paste a key), Projects folder, Connect your phone.</li>
+      <li>Install the Android app from the QR code in setup and sign in with the same Google account. Your computer shows up by itself: no code to type.</li>
     </ol>
   </section>
 
@@ -261,11 +261,11 @@
     <div class="faq">
       <details><summary>Can I use Claude Code from my phone?</summary><p>Yes. Farcall runs Claude Code on your own computer and gives you a phone app to chat with it: start a session in a project, read replies as they stream, and approve or deny each command or file edit it wants to make. <a href="/claude-code-from-phone/">More on Claude Code from your phone</a>.</p></details>
       <details><summary>Does it work with Codex, GLM, Kimi or Gemini?</summary><p>Yes. Claude Code can run on your Claude login, on Z.ai's GLM, on Moonshot's Kimi, or on Gemini through OpenRouter (preview); Codex runs on your OpenAI login (preview). You pick per session, and you can put two or three agents in one chat. <a href="/claude-code-glm-kimi/">More on Claude Code with GLM or Kimi</a>, or <a href="/codex-from-phone/">Codex from your phone</a>.</p></details>
-      <details><summary>Is my code sent to a server?</summary><p>No. Your phone reaches your computer over your own private Tailscale network. Farcall has no server in the middle; your code and chats stay on your machines and your AI provider.</p></details>
+      <details><summary>Is my code sent to a server?</summary><p>No. Your phone reaches your computer over a private, encrypted network built into Farcall. Farcall's server only signs your devices in and helps them find each other; your code and chats stay on your machines and your AI provider.</p></details>
       <details><summary>What do I need?</summary><p>A Mac (Apple Silicon), Windows PC or Linux machine to run the agent, an Android phone, and one AI: a Claude account, an API key for GLM, Kimi or OpenRouter, or Codex. Farcall's setup installs what is missing.</p></details>
       <details><summary>Is there an iPhone app?</summary><p>Not yet: the phone app is Android only for now.</p></details>
       <details><summary>Is Farcall free?</summary><p>Yes, Farcall itself is free to download. You pay your AI provider as you normally would.</p></details>
-      <details><summary>Does Farcall collect anything?</summary><p>No chats, no files, no account. If the app crashes, a scrubbed crash report goes to Sentry; and under the same switch the phone app counts its own starts under a random id, so we can tell how many people use Farcall. Both are on by default and switch off together in Settings. Details on the <a href="/privacy/">privacy page</a>.</p></details>
+      <details><summary>Does Farcall collect anything?</summary><p>No chats, no files. Signing in keeps your Google email and your devices' names on Farcall's sign-in server. If the app crashes, a scrubbed crash report goes to Sentry; and under the same switch the app and the computer count their use under a random id, so we can tell how many people use Farcall. Both are on by default and switch off together in Settings. Details on the <a href="/privacy/">privacy page</a>.</p></details>
     </div>
   </section>
 

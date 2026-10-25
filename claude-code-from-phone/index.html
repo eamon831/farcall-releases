@@ -14,7 +14,7 @@
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="Farcall">
 <meta property="og:title" content="Use Claude Code from your phone">
-<meta property="og:description" content="Claude Code runs on your own computer; you chat with it and approve its commands from your Android phone. No Farcall server in between.">
+<meta property="og:description" content="Claude Code runs on your own computer; you chat with it and approve its commands from your Android phone. Your code and chats stay on your machines.">
 <meta property="og:url" content="https://farcall.app/claude-code-from-phone/">
 <meta property="og:image" content="https://farcall.app/images/social-card.png">
 <meta property="og:image:width" content="1200">
@@ -25,7 +25,7 @@
 <meta name="twitter:image" content="https://farcall.app/images/social-card.png">
 <link rel="stylesheet" href="/site.css">
 <script type="application/ld+json">
-{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Can I use Claude Code from my phone?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Claude Code keeps running on your own computer, and Farcall gives you an Android app to drive it: start a session in a project, read replies as they stream, and approve or deny each command or file edit."}}, {"@type": "Question", "name": "Does Claude Code run on the phone?", "acceptedAnswer": {"@type": "Answer", "text": "No. It runs on your Mac, Windows PC or Linux machine, with your files, tools and logins. The phone is the remote: you type what you want and tap Allow or Deny."}}, {"@type": "Question", "name": "Can I use Claude Code on GLM or Kimi from my phone?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Claude Code in Farcall can run on your Claude login, on Z.ai's GLM, on Moonshot's Kimi, or on Gemini through OpenRouter (preview). You pick per session."}}, {"@type": "Question", "name": "Is my code sent to a server?", "acceptedAnswer": {"@type": "Answer", "text": "No. Your phone reaches your computer over your own private Tailscale network. Farcall has no server in the middle; your code and chats stay on your machines and your AI provider."}}, {"@type": "Question", "name": "Is there an iPhone app?", "acceptedAnswer": {"@type": "Answer", "text": "Not yet: the phone app is Android only for now."}}, {"@type": "Question", "name": "Is Farcall free?", "acceptedAnswer": {"@type": "Answer", "text": "Yes, Farcall itself is free to download. You pay your AI provider as you normally would."}}]}
+{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Can I use Claude Code from my phone?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Claude Code keeps running on your own computer, and Farcall gives you an Android app to drive it: start a session in a project, read replies as they stream, and approve or deny each command or file edit."}}, {"@type": "Question", "name": "Does Claude Code run on the phone?", "acceptedAnswer": {"@type": "Answer", "text": "No. It runs on your Mac, Windows PC or Linux machine, with your files, tools and logins. The phone is the remote: you type what you want and tap Allow or Deny."}}, {"@type": "Question", "name": "Can I use Claude Code on GLM or Kimi from my phone?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Claude Code in Farcall can run on your Claude login, on Z.ai's GLM, on Moonshot's Kimi, or on Gemini through OpenRouter (preview). You pick per session."}}, {"@type": "Question", "name": "Is my code sent to a server?", "acceptedAnswer": {"@type": "Answer", "text": "No. Your phone reaches your computer over a private, encrypted network built into Farcall. Farcall's server only signs your devices in and helps them find each other; your code and chats stay on your machines and your AI provider."}}, {"@type": "Question", "name": "Is there an iPhone app?", "acceptedAnswer": {"@type": "Answer", "text": "Not yet: the phone app is Android only for now."}}, {"@type": "Question", "name": "Is Farcall free?", "acceptedAnswer": {"@type": "Answer", "text": "Yes, Farcall itself is free to download. You pay your AI provider as you normally would."}}]}
 </script>
 </head>
 <body>
@@ -34,7 +34,7 @@
   <div class="header-inner">
     <div class="brand-wrap">
       <a class="brand" href="/" style="text-decoration:none">Far<span>call</span></a>
-      <span class="status-pill">No Farcall server · End-to-end encrypted</span>
+      <span class="status-pill">Your code stays on your machines · End-to-end encrypted</span>
     </div>
     <nav class="header-nav" aria-label="Page sections">
       <a href="#how">How it works</a>
@@ -80,8 +80,8 @@
         <p>Screenshot a bug and send it into the chat. The agent reads the code and logs on your computer and tells you what went wrong.</p>
       </div>
       <div class="card">
-        <h2>No server in the middle</h2>
-        <p>Your phone reaches your computer over your own private Tailscale network. Chats and code stay on your machines and your AI provider.</p>
+        <h2>Your code never passes our server</h2>
+        <p>Your phone reaches your computer over a private, encrypted network built into Farcall. Chats and code stay on your machines and your AI provider.</p>
       </div>
     </div>
   </section>
@@ -126,8 +126,8 @@
           </div>
         </div>
       </li>
-      <li>Follow the setup in the Farcall window: sign in to Tailscale, pick your AI (sign in to Claude or paste a key), choose your projects folder, and pair your phone. Farcall installs Claude Code if it's missing.</li>
-      <li>Install the Android app from the QR code in setup, sign in to the same Tailscale account, and pair.</li>
+      <li>Follow the setup in the Farcall window: sign in with Google, pick your AI (sign in to Claude or paste a key), choose your projects folder, and connect your phone. Farcall installs Claude Code if it's missing.</li>
+      <li>Install the Android app from the QR code in setup and sign in with the same Google account. Your computer shows up by itself: no code to type.</li>
     </ol>
   </section>
 
@@ -140,7 +140,7 @@
       <details><summary>Can I use Claude Code from my phone?</summary><p>Yes. Claude Code keeps running on your own computer, and Farcall gives you an Android app to drive it: start a session in a project, read replies as they stream, and approve or deny each command or file edit.</p></details>
       <details><summary>Does Claude Code run on the phone?</summary><p>No. It runs on your Mac, Windows PC or Linux machine, with your files, tools and logins. The phone is the remote: you type what you want and tap Allow or Deny.</p></details>
       <details><summary>Can I use Claude Code on GLM or Kimi from my phone?</summary><p>Yes. Claude Code in Farcall can run on your Claude login, on Z.ai's GLM, on Moonshot's Kimi, or on Gemini through OpenRouter (preview). You pick per session.</p></details>
-      <details><summary>Is my code sent to a server?</summary><p>No. Your phone reaches your computer over your own private Tailscale network. Farcall has no server in the middle; your code and chats stay on your machines and your AI provider.</p></details>
+      <details><summary>Is my code sent to a server?</summary><p>No. Your phone reaches your computer over a private, encrypted network built into Farcall. Farcall's server only signs your devices in and helps them find each other; your code and chats stay on your machines and your AI provider.</p></details>
       <details><summary>Is there an iPhone app?</summary><p>Not yet: the phone app is Android only for now.</p></details>
       <details><summary>Is Farcall free?</summary><p>Yes, Farcall itself is free to download. You pay your AI provider as you normally would.</p></details>
     </div>

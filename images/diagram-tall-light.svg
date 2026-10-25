@@ -58,11 +58,11 @@
     <path d="M 12 2 L 22 5.5 L 22 12.5 C 22 18.5 17.8 23.2 12 25 C 6.2 23.2 2 18.5 2 12.5 L 2 5.5 Z" fill="#10B981" fill-opacity="0.12" stroke="#059669" stroke-width="1.6" stroke-linejoin="round"/>
     <rect x="9" y="12" width="6" height="5" rx="1" fill="#059669"/>
     <path d="M 10 12 L 10 10 C 10 8.8 10.8 8 12 8 C 13.2 8 14 8.8 14 10 L 14 12" fill="none" stroke="#059669" stroke-width="1.4"/>
-    <text x="32" y="18" font-size="15.5" font-weight="600" fill="#065F46">Your private Tailscale network</text>
+    <text x="32" y="18" font-size="15.5" font-weight="600" fill="#065F46">Your private network</text>
   </g>
   <text x="300" y="248" text-anchor="middle" font-size="14" fill="#44403C">messages, replies, approvals</text>
-  <rect x="233" y="264" width="134" height="26" rx="13" fill="#10B981" fill-opacity="0.12"/>
-  <text x="300" y="281" text-anchor="middle" font-size="12.5" font-weight="600" fill="#047857">no Farcall server</text>
+  <rect x="218" y="264" width="164" height="26" rx="13" fill="#10B981" fill-opacity="0.12"/>
+  <text x="300" y="281" text-anchor="middle" font-size="12.5" font-weight="600" fill="#047857">end-to-end encrypted</text>
 
   <!-- 3. YOUR COMPUTER (Outer Container) -->
   <rect x="60" y="344" width="480" height="444" rx="16" fill="#F4F0EC" stroke="#D6D0C8" stroke-width="1.5"/>

@@ -25,7 +25,7 @@
 <meta name="twitter:image" content="https://farcall.app/images/social-card.png">
 <link rel="stylesheet" href="/site.css">
 <script type="application/ld+json">
-{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Can I use Codex from my phone?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Codex runs on your own computer, signed in to your ChatGPT account, and Farcall gives you an Android app to drive it: start a session in a project, read replies as they stream, and allow or deny each command and file change."}}, {"@type": "Question", "name": "How is this different from OpenAI's Codex mobile?", "acceptedAnswer": {"@type": "Answer", "text": "OpenAI's remote connections reach the ChatGPT or Codex app on a Mac or Windows computer and go offline when that app closes. Farcall runs as a background service on Mac, Windows or Linux, so nothing has to stay open, and it puts Codex and Claude Code side by side in one app."}}, {"@type": "Question", "name": "Do I need an OpenAI API key?", "acceptedAnswer": {"@type": "Answer", "text": "No. Codex uses its own ChatGPT sign-in, and Farcall's setup offers that sign-in for you. Install the Codex CLI on the computer first; Farcall finds it."}}, {"@type": "Question", "name": "Can Codex and Claude Code work in the same chat?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Put two or three agents in one chat, for example Codex and Claude Code: they answer side by side and can discuss each other's answers."}}, {"@type": "Question", "name": "Is my code sent to a server?", "acceptedAnswer": {"@type": "Answer", "text": "No. Your phone reaches your computer over your own private Tailscale network. Farcall has no server in the middle; your code and chats stay on your machines and your AI provider."}}, {"@type": "Question", "name": "Is there an iPhone app?", "acceptedAnswer": {"@type": "Answer", "text": "Not yet: the phone app is Android only for now."}}]}
+{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Can I use Codex from my phone?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Codex runs on your own computer, signed in to your ChatGPT account, and Farcall gives you an Android app to drive it: start a session in a project, read replies as they stream, and allow or deny each command and file change."}}, {"@type": "Question", "name": "How is this different from OpenAI's Codex mobile?", "acceptedAnswer": {"@type": "Answer", "text": "OpenAI's remote connections reach the ChatGPT or Codex app on a Mac or Windows computer and go offline when that app closes. Farcall runs as a background service on Mac, Windows or Linux, so nothing has to stay open, and it puts Codex and Claude Code side by side in one app."}}, {"@type": "Question", "name": "Do I need an OpenAI API key?", "acceptedAnswer": {"@type": "Answer", "text": "No. Codex uses its own ChatGPT sign-in, and Farcall's setup offers that sign-in for you. Install the Codex CLI on the computer first; Farcall finds it."}}, {"@type": "Question", "name": "Can Codex and Claude Code work in the same chat?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Put two or three agents in one chat, for example Codex and Claude Code: they answer side by side and can discuss each other's answers."}}, {"@type": "Question", "name": "Is my code sent to a server?", "acceptedAnswer": {"@type": "Answer", "text": "No. Your phone reaches your computer over a private, encrypted network built into Farcall. Farcall's server only signs your devices in and helps them find each other; your code and chats stay on your machines and your AI provider."}}, {"@type": "Question", "name": "Is there an iPhone app?", "acceptedAnswer": {"@type": "Answer", "text": "Not yet: the phone app is Android only for now."}}]}
 </script>
 </head>
 <body>
@@ -34,7 +34,7 @@
   <div class="header-inner">
     <div class="brand-wrap">
       <a class="brand" href="/" style="text-decoration:none">Far<span>call</span></a>
-      <span class="status-pill">No Farcall server · End-to-end encrypted</span>
+      <span class="status-pill">Your code stays on your machines · End-to-end encrypted</span>
     </div>
     <nav class="header-nav" aria-label="Page sections">
       <a href="#how">How it works</a>
@@ -81,7 +81,7 @@
       </div>
       <div class="card">
         <h2>Nothing to keep open</h2>
-        <p>Farcall runs as a background service on Mac, Windows or Linux. Your phone reaches it over your own private Tailscale network, with no Farcall server in between.</p>
+        <p>Farcall runs as a background service on Mac, Windows or Linux. Your phone reaches it over a private, encrypted network built into Farcall; Farcall's server only signs your devices in.</p>
       </div>
     </div>
   </section>
@@ -119,8 +119,8 @@
           </div>
         </div>
       </li>
-      <li>Follow the setup in the Farcall window: sign in to Tailscale, pick your AI (choose ChatGPT · Codex and sign in), choose your projects folder, and pair your phone.</li>
-      <li>Install the Android app from the QR code in setup, sign in to the same Tailscale account, and pair.</li>
+      <li>Follow the setup in the Farcall window: sign in with Google, pick your AI (choose ChatGPT · Codex and sign in), choose your projects folder, and connect your phone.</li>
+      <li>Install the Android app from the QR code in setup and sign in with the same Google account. Your computer shows up by itself: no code to type.</li>
     </ol>
   </section>
 
@@ -134,7 +134,7 @@
       <details><summary>How is this different from OpenAI's Codex mobile?</summary><p>OpenAI's remote connections reach the ChatGPT or Codex app on a Mac or Windows computer and go offline when that app closes. Farcall runs as a background service on Mac, Windows or Linux, so nothing has to stay open, and it puts Codex and Claude Code side by side in one app.</p></details>
       <details><summary>Do I need an OpenAI API key?</summary><p>No. Codex uses its own ChatGPT sign-in, and Farcall's setup offers that sign-in for you. Install the Codex CLI on the computer first; Farcall finds it.</p></details>
       <details><summary>Can Codex and Claude Code work in the same chat?</summary><p>Yes. Put two or three agents in one chat, for example Codex and Claude Code: they answer side by side and can discuss each other's answers.</p></details>
-      <details><summary>Is my code sent to a server?</summary><p>No. Your phone reaches your computer over your own private Tailscale network. Farcall has no server in the middle; your code and chats stay on your machines and your AI provider.</p></details>
+      <details><summary>Is my code sent to a server?</summary><p>No. Your phone reaches your computer over a private, encrypted network built into Farcall. Farcall's server only signs your devices in and helps them find each other; your code and chats stay on your machines and your AI provider.</p></details>
       <details><summary>Is there an iPhone app?</summary><p>Not yet: the phone app is Android only for now.</p></details>
     </div>
   </section>
