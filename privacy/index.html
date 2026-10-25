@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Privacy · Farcall</title>
-<meta name="description" content="What Farcall stores on your phone and computer, what travels between them, and what never leaves: no Farcall server, no accounts, no analytics in the apps.">
+<meta name="description" content="What Farcall stores on your phone, your computer and its sign-in server, what travels between your devices, and how to sign out or delete your account.">
 <link rel="canonical" href="https://farcall.app/privacy/">
 <link rel="icon" href="/images/favicon.svg" type="image/svg+xml">
 <link rel="icon" href="/images/favicon-32.png" sizes="32x32" type="image/png">
@@ -28,39 +28,54 @@
   <div class="header-inner">
     <div class="brand-wrap">
       <a class="brand" href="/" style="text-decoration:none">Far<span>call</span></a>
-      <span class="status-pill">No Farcall server · End-to-end encrypted</span>
+      <span class="status-pill">Your work stays on your devices · End-to-end encrypted</span>
     </div>
     <nav class="header-nav" aria-label="Page sections">
+      <a href="#account">Your account</a>
       <a href="#phone">On your phone</a>
       <a href="#computer">On your computer</a>
       <a href="#between">Between them</a>
-      <a href="#contact">Contact</a>
+      <a href="#contact">Delete</a>
     </nav>
   </div>
 </header>
 
 <main>
   <section class="hero">
-    <div class="eyebrow">Privacy · updated 20 October 2026</div>
-    <h1>Farcall has no server, no account and no analytics in the apps.</h1>
-    <p class="lead">Farcall is a phone app and a program on your own computer. They talk to each other directly over your Tailscale network. Nothing you type, approve or watch goes anywhere else, and nobody at Farcall can see it.</p>
+    <div class="eyebrow">Privacy · updated 25 October 2026</div>
+    <h1>Your work stays on your own devices. Our server only knows who signed in.</h1>
+    <p class="lead">Farcall is a phone app and a program on your own computer. You sign in with Google on both, and they connect over a private, encrypted network. Chats, approvals, files and video go straight between your devices, and nobody at Farcall can read them.</p>
+  </section>
+
+  <section id="account">
+    <h2>Your account</h2>
+    <p>Signing in with Google makes a Farcall account. Farcall's sign-in server (auth.farcall.app, on Tencent Cloud in Singapore) keeps:</p>
+    <ul>
+      <li><strong>You:</strong> your Google email and an account id.</li>
+      <li><strong>Your devices:</strong> for each phone and computer you signed in, its name, whether it is a phone or a computer, its operating system, its address on your private network and when it was last seen.</li>
+    </ul>
+    <p>Google runs the sign-in itself, through Firebase Authentication, which keeps a record of it (your email, an account id, sign-in dates) in Farcall's Firebase project. Farcall never sees your Google password.</p>
+    <p>The same server sets up your private network with Headscale, an open-source Tailscale coordination server. To connect your devices it holds each one's public network keys, its name, operating system and Tailscale version, and the public IP addresses it can be reached at. Every account gets a network of its own; another account's devices can't reach yours.</p>
+    <p>The server's logs name accounts and devices by id and computers by name. Nothing you type reaches the server. It is backed up daily, and backups are kept for 14 days.</p>
   </section>
 
   <section id="phone">
     <h2>What the phone app stores</h2>
     <ul>
-      <li><strong>Pairing:</strong> your computer's address and the pairing secret, in Android's encrypted storage. Unpairing deletes them.</li>
+      <li><strong>Your sign-in:</strong> your Google email and this phone's device token, in Android's encrypted storage. Signing out deletes them.</li>
       <li><strong>Saved chats:</strong> a copy of recent conversations and the session list, so a chat opens at once and works offline. Kept in the app's private folder; cleared when you uninstall.</li>
       <li><strong>Queued messages and drafts:</strong> what you typed while offline, until it is sent.</li>
+      <li><strong>Downloads:</strong> files you save from your computer go to Download/Farcall on the phone and stay there until you delete them.</li>
       <li><strong>Settings:</strong> theme, the last computer used, playback position of videos.</li>
     </ul>
-    <p>The app has no account, no sign-in and no analytics. It does not read your contacts, location, photos or files; attachments you send are the ones you pick.</p>
+    <p>The app does not read your contacts, location or photos. Attachments you send are the ones you pick.</p>
   </section>
 
   <section id="computer">
     <h2>What the program on your computer stores</h2>
     <ul>
-      <li><strong>Secrets</strong> (the pairing secret and any API keys you add) live in the system's secret store: the Mac keychain, Windows Credential Manager or the Linux keyring. They are never written to a log, a database or a message to the phone.</li>
+      <li><strong>Secrets</strong> (the program's own access token and any API keys you add) live in the system's secret store: the Mac keychain, Windows Credential Manager or the Linux keyring. They are never written to a log, a database or a message to the phone.</li>
+      <li><strong>Your sign-in:</strong> your account id, your Google email and this computer's device token, in a file in the program's data folder that only your user can read. Signing out deletes it.</li>
       <li><strong>The session list:</strong> which sessions exist, their folder, state and title, in a small local database.</li>
       <li><strong>Conversations</strong> are written by Claude Code or Codex themselves, in their own folders, as they always are. Farcall reads them to show history; it does not copy them.</li>
       <li><strong>Uploads</strong> you send from the phone, in a folder under the program's data directory.</li>
@@ -70,15 +85,17 @@
 
   <section id="between">
     <h2>What travels, and where</h2>
-    <p>Messages, replies, approvals, files and video go from your phone to your computer over Tailscale, which encrypts them end to end between your two devices. Farcall runs no relay. The only third parties involved are the ones you chose: Tailscale for the network, and the AI provider your session uses (Anthropic, Z.ai, Moonshot, OpenAI or OpenRouter), which receives the conversation from your computer exactly as it would without Farcall.</p>
-    <p><strong>Crash reports and a usage count.</strong> If the app or the program crashes, a report with the error, the stack trace and the app version is sent to Sentry, a crash-reporting service, so the bug can be fixed. Secrets are scrubbed before sending and the report holds no message text. Since 20 October 2026 the phone app also counts its own starts under a random install id, through the same service, so we can tell how many people use Farcall each week; and, once its endpoint is live, a daily count of features used (sessions started, approvals answered, files opened) goes to a small counter we run, again under that random id. Nothing in either names you, your computer or your conversations. Both are on by default and switch off together in Settings › Send crash reports and an anonymous usage count. There is no other telemetry.</p>
+    <p>Messages, replies, approvals, files and video go from your phone to your computer encrypted end to end with WireGuard, the encryption Tailscale uses. When your two devices can't reach each other directly, the encrypted traffic passes through Tailscale's relay servers, which forward it without being able to read it. Farcall's server helps your devices find each other but never carries that traffic. The AI provider your session uses (Anthropic, Z.ai, Moonshot, OpenAI or OpenRouter) receives the conversation from your computer, just as it would without Farcall.</p>
+    <p><strong>Crash reports and a usage count.</strong> If the app or the program crashes, a report with the error, the stack trace and the app version is sent to Sentry, a crash-reporting service, so the bug can be fixed. Secrets are scrubbed before sending and the report holds no message text. The phone app also counts its own starts under a random install id, through the same service. Once a day the app and the program each send a small count to a counter we run on Cloudflare: a random install id, the build, the operating system and a few numbers (sessions started, messages sent, approvals, files opened, and which agents ran). Nothing in either names you, your computer or your conversations. Both are on by default and switch off together in Settings › Send crash reports and an anonymous usage count. There is no other telemetry.</p>
     <p><strong>This website</strong> uses Cloudflare Web Analytics to count visits. It sets no cookies and stores no personal data.</p>
     <p><strong>Updates.</strong> The app and the program check GitHub for new releases. GitHub sees the request like any download.</p>
   </section>
 
   <section id="contact">
-    <h2>Deleting your data, and contact</h2>
-    <p>Uninstall the phone app and the program; remove the secrets from your secret store if you want them gone too. Everything Farcall kept is on your own devices, so there is nothing to request from anyone.</p>
+    <h2>Signing out, deleting your account, and contact</h2>
+    <p><strong>Sign out</strong> in the phone app (Settings › Sign out) or in the program's window. That device leaves your account and its sign-in is deleted from it.</p>
+    <p><strong>Delete your account</strong> in the phone app: Settings › Delete account. It removes your account, every device on it, your private network and your Firebase sign-in record, all at once. No phone? See <a href="https://auth.farcall.app/delete-account">auth.farcall.app/delete-account</a>, or email <a href="mailto:hello@farcall.app?subject=Delete%20my%20Farcall%20account">hello@farcall.app</a> from the address you signed in with. Server backups keep a copy for up to 14 days.</p>
+    <p>Everything else Farcall kept is on your own devices. Uninstall the app and the program, and remove the secrets from your secret store if you want them gone too.</p>
     <p>Questions: <a href="mailto:hello@farcall.app">hello@farcall.app</a>.</p>
   </section>
 
