@@ -135,6 +135,8 @@ You can read each script before running it: [install.sh](https://github.com/eamo
 
 **4. Sign in on the phone.** Open Farcall on the phone and tap **Sign in with Google**, with the same account as the computer. The computer shows up by itself; there is no code to type.
 
+To get a friend started, **Settings › Share app** on your phone sends them the app over WhatsApp, Bluetooth or anything else the share sheet offers. Farcall speaks English and Bengali: on the phone, **Settings › Language**; the computer's window follows your system language.
+
 That's it. On the phone, tap **Start a new session**, pick a project folder, and chat.
 
 ## Keep the computer awake
@@ -150,10 +152,14 @@ Turn off automatic sleep while it's plugged in:
 
 The screen can still turn off. Only the computer has to stay awake.
 
+## Battery on the phone
+
+So that approvals and replies reach you while Farcall is closed, the phone keeps one connection to your computer open, and that uses some battery. To save it, turn off **Settings › Background connection**: Farcall is then connected only while it is open, and sends no notifications while it is closed. The **Keep off** button on Farcall's notification does the same.
+
 ## Privacy and security
 
 - **Your work stays on your devices.** The phone reaches the computer over an end-to-end encrypted network. Farcall's sign-in server keeps your Google email and your devices' names, and never sees your chats, code or files. Details on the [privacy page](https://farcall.app/privacy/); sign out or delete your account from the phone's Settings.
-- **Your devices only.** The computer listens only on its private-network address and accepts only phones signed in to the same Google account.
+- **Your devices only.** The computer is reachable only through its private network and accepts only phones signed in to the same Google account. A phone you remove under **Settings › Devices on your Google account** is cut off within a minute.
 - **You approve each command.** By default the agent asks before it runs a command or edits a file, and the request comes to your phone. You can choose looser modes per session.
 - **Who makes it.** Made by MD Saiful Hossain ([@eamon831](https://github.com/eamon831)), who built Farcall to run his own Claude Code sessions from his phone. The source isn't public yet. Every build here is published with its SHA-256, and each installer checks it before installing, for your account only.
 - **Crash reports** are on by default and can be turned off any time (phone: Settings › Privacy; computer: **Check setup** in the Farcall window). They contain only the error and where in Farcall it happened, with folder names, network addresses and keys removed: never your chats or files. They go to [Sentry](https://sentry.io).
