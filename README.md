@@ -1,8 +1,8 @@
 # Farcall
 
-**One phone remote for the AI coding agents on your computer.** Claude Code (on Claude, GLM, Kimi or Gemini) and Codex (on OpenAI), side by side in one app, even in the same chat. When an agent asks "Can I run `npm test`?", tap Allow and it keeps going. End-to-end encrypted, and your code never passes through Farcall's server.
+**Build software from your phone.** Your AI agents run on your computer: Claude Code, Codex, GLM, Kimi, whichever you use. You direct them from anywhere: say what you want, send a screenshot, check the result, ship it. Farcall itself was built this way.
 
-**Works where Anthropic's Remote Control won't:** Claude Code on GLM, Kimi or OpenRouter (Remote Control accepts only Anthropic's own API), and nothing to keep open on your computer: Farcall runs as a background service.
+Your code stays on your computer and never passes through Farcall's server. When the agent finishes or needs you, your phone tells you.
 
 *Using another coding CLI? [Tell us which one →](https://github.com/eamon831/farcall-releases/issues/1)*
 
@@ -13,23 +13,23 @@
 </p>
 
 - **Your agent, your model.** Claude Code on your Claude login, or on Z.ai's GLM or Moonshot's Kimi; Gemini through OpenRouter (preview). Codex on your OpenAI login (preview). Pick per session.
-- **You approve every command.** When the agent wants to run a command or edit a file, your phone asks first: Allow or Deny, from anywhere. You can see what it is doing while it works.
+- **It tells you when it needs you.** A notification when the agent finishes, with the end of its reply, or when it has a question you can answer with a tap. Want it to ask before commands and edits? It does by default: Allow or Deny, from anywhere.
 - **Your code stays on your machines.** Sign in with Google on both, and your phone reaches your computer over a private, encrypted network built into Farcall (it runs on [Tailscale](https://tailscale.com)'s open-source client): no Tailscale app, no QR code to scan. Farcall's server only signs your devices in.
 - **Mac, Windows and Linux** on the computer, **Android** on the phone. iPhone: not yet.
 
 ## When you'd reach for it
 
 The agent runs on your own computer, with your files, tools and logins, and does
-the typing. So a phone is enough to drive it: you say what you want and approve
-what it does. It works with your Claude login or with keys for GLM, Kimi or
-OpenRouter (Anthropic's Remote Control accepts only Anthropic's own API).
+the typing. So a phone is enough to drive it: you say what you want and check
+what it did. It works with your Claude login or with keys for GLM, Kimi or
+OpenRouter.
 
 **Start it, then walk away.** "Run the tests and fix what fails." Go make tea.
-When the agent wants to run a command, your phone asks, so the work doesn't
-stop and wait for you to get back to the desk.
+When it's done, or stuck on a question, your phone tells you, and you send the
+next step from wherever you are.
 
 **A bug you found on your phone, fixed from your phone.** Screenshot the
-problem, send it to the agent working on that app, approve its changes, then
+problem, send it to the agent working on that app, check what it changed, then
 install the build it makes. Farcall is built this way; [see how](https://farcall.app/#workflow).
 
 **"Why is this broken?" from anywhere.** The agent reads the logs and the code
@@ -41,10 +41,9 @@ photo of a meal before eating it, a note after the gym, and the agent writes it
 into Markdown. In use 10 of the last 14 days, and no fitness app was ever built
 for it.
 
-**Why not SSH and tmux?** You can. Farcall is for when you'd rather tap Allow
-on a command than type in a terminal on a phone keyboard: approvals as buttons,
-photos and files straight into the chat, and a notification when the agent is
-waiting for you.
+**Why not SSH and tmux?** You can. Farcall is for when you'd rather not type in
+a terminal on a phone keyboard: a notification when the agent is done or waiting
+for you, photos and files straight into the chat, and answers as buttons.
 
 ### Keep the memory in the repo
 
@@ -66,9 +65,10 @@ not yet.
 
 Remote apps for coding agents usually tie you to one agent, one account, or a company server that sits in your session. Farcall:
 
-- **Works with any of your providers**, not one account: Claude, GLM, Kimi, Gemini (OpenRouter) and Codex, side by side.
-- **Keeps your work off its server.** Farcall's server only signs your devices in. Phone and computer connect over a private network, end-to-end encrypted. (When they cannot reach each other directly, Tailscale's relays pass the encrypted traffic on without being able to read it.)
-- **Asks before every command**, with the request on your phone, not just a notification after the fact.
+- **Works with any of your providers**, not one account: Claude, GLM, Kimi, Gemini (OpenRouter) and Codex, side by side. Anthropic's Remote Control accepts only Anthropic's own API, so Claude Code on GLM, Kimi or OpenRouter works here and not there.
+- **Nothing to keep open on your computer.** Farcall runs as a background service, so sessions keep going when the phone disconnects or the computer restarts.
+- **Keeps your work off its server.** Farcall's server only signs your devices in. Phone and computer connect over a private network, encrypted end to end by WireGuard (Tailscale's network, built into Farcall). When they can't reach each other directly, Tailscale's relays pass the encrypted traffic on without being able to read it.
+- **Asks before commands if you want it to**, with the request on your phone, not just a notification after the fact. It's the default; switch a session to Skip all when you don't.
 - **Can put two or three agents in one chat** (a panel): they answer side by side and can discuss each other's answers.
 - **Updates your computer from your phone:** Settings › Update Farcall on that computer.
 
@@ -158,11 +158,11 @@ So that approvals and replies reach you while Farcall is closed, the phone keeps
 
 ## Privacy and security
 
-- **Your work stays on your devices.** The phone reaches the computer over an end-to-end encrypted network. Farcall's sign-in server keeps your Google email and your devices' names, and never sees your chats, code or files. Details on the [privacy page](https://farcall.app/privacy/); sign out or delete your account from the phone's Settings.
+- **Your work stays on your devices.** The phone reaches the computer over a private network, encrypted end to end by WireGuard (Tailscale's, built into Farcall). Farcall's sign-in server keeps your Google email and your devices' names, and never sees your chats, code or files. Details on the [privacy page](https://farcall.app/privacy/); sign out or delete your account from the phone's Settings.
 - **Your devices only.** The computer is reachable only through its private network and accepts only phones signed in to the same Google account. A phone you remove under **Settings › Devices on your Google account** is cut off within a minute.
 - **You approve each command.** By default the agent asks before it runs a command or edits a file, and the request comes to your phone. You can choose looser modes per session.
 - **Who makes it.** Made by MD Saiful Hossain ([@eamon831](https://github.com/eamon831)), who built Farcall to run his own Claude Code sessions from his phone. The source isn't public yet. Every build here is published with its SHA-256, and each installer checks it before installing, for your account only.
-- **Crash reports** are on by default and can be turned off any time (phone: Settings › Privacy; computer: **Check setup** in the Farcall window). They contain only the error and where in Farcall it happened, with folder names, network addresses and keys removed: never your chats or files. They go to [Sentry](https://sentry.io).
+- **Crash reports** are on by default and can be turned off any time (phone: Settings › Privacy; computer: **Settings › Check setup** in the Farcall window). They contain only the error and where in Farcall it happened, with folder names, network addresses and keys removed: never your chats or files. They go to [Sentry](https://sentry.io).
 
 ## Updating and uninstalling
 
