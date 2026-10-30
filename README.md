@@ -1,6 +1,6 @@
 # Farcall
 
-**Build software from your phone.** Your AI agents run on your computer: Claude Code, Codex, GLM, Kimi, whichever you use. You direct them from anywhere: say what you want, send a screenshot, check the result, ship it. Farcall itself was built this way.
+**Ship from your phone.** Your AI agents run on your computer: Claude Code, Codex, GLM, Kimi, whichever you use. You direct them from anywhere: say what you want, send a screenshot, check the result, ship it. Farcall itself was built this way.
 
 Your code stays on your computer and never passes through Farcall's server. When the agent finishes or needs you, your phone tells you.
 
