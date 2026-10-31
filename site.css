@@ -45,7 +45,7 @@
       --code-line: #2B2623;
       --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.25);
       --shadow-md: 0 16px 36px -8px rgba(0, 0, 0, 0.45);
-      --shadow-phone: 0 28px 56px -12px rgba(0, 0, 0, 0.7), 0 0 1px 1px rgba(255, 255, 255, 0.04);
+      --shadow-phone: 0 12px 28px -10px rgba(0, 0, 0, 0.5), 0 0 0 1px rgba(255, 255, 255, 0.05);
       --grid-color: rgba(255, 255, 255, 0.025);
     }
   }
@@ -56,12 +56,6 @@
   body {
     margin: 0;
     background-color: var(--bg);
-    background-image: 
-      radial-gradient(ellipse 80% 50% at 50% -10%, var(--accent-tint), transparent),
-      linear-gradient(to right, var(--grid-color) 1px, transparent 1px),
-      linear-gradient(to bottom, var(--grid-color) 1px, transparent 1px);
-    background-size: 100% 100%, 32px 32px, 32px 32px;
-    background-position: top center;
     color: var(--fg);
     font: 16px/1.6 system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
     -webkit-font-smoothing: antialiased;
@@ -92,7 +86,7 @@
     gap: 12px;
   }
   .brand {
-    font-weight: 750;
+    font-weight: 600;
     font-size: 20px;
     letter-spacing: -0.02em;
     color: var(--fg);
@@ -103,15 +97,10 @@
   .status-pill {
     display: inline-flex;
     align-items: center;
-    gap: 6px;
-    font-size: 12px;
-    font-weight: 600;
-    color: var(--emerald);
-    background: var(--emerald-bg);
-    border: 1px solid color-mix(in srgb, var(--emerald) 28%, transparent);
-    padding: 3px 10px;
-    border-radius: 999px;
-    letter-spacing: 0.01em;
+    gap: 8px;
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--muted);
   }
   .status-pill::before {
     content: "";
@@ -119,7 +108,6 @@
     height: 6px;
     border-radius: 50%;
     background: var(--emerald-dot);
-    box-shadow: 0 0 8px var(--emerald-dot);
   }
   .header-nav {
     display: flex;
@@ -147,32 +135,39 @@
 
   /* Hero Section */
   .hero {
-    max-width: 780px;
     margin: 0 auto 52px;
     text-align: center;
   }
+  .hero-visual { max-width: 300px; margin: 32px auto 0; }
+  .hero-visual img { width: 100%; height: auto; display: block; border-radius: 28px; box-shadow: var(--shadow-phone); }
+  @media (min-width: 900px) {
+    .hero {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) 360px;
+      gap: 56px;
+      align-items: center;
+      text-align: left;
+      margin-bottom: 64px;
+    }
+    .hero-visual { max-width: none; margin: 0; }
+    .hero .lead { margin-left: 0; margin-right: 0; }
+    .hero .buttons { justify-content: flex-start; }
+    .hero .aside { text-align: left; }
+  }
   .eyebrow {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
+    display: block;
     font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
-    font-size: 12px;
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 0.08em;
-    color: var(--accent);
-    background: var(--accent-tint);
-    border: 1px solid color-mix(in srgb, var(--accent) 28%, transparent);
-    padding: 5px 12px;
-    border-radius: 999px;
-    margin-bottom: 20px;
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--muted);
+    margin-bottom: 16px;
   }
   h1 {
     font-size: clamp(32px, 5.2vw, 56px);
     line-height: 1.08;
     margin: 0 0 20px;
-    letter-spacing: -0.03em;
-    font-weight: 800;
+    letter-spacing: -0.02em;
+    font-weight: 600;
     text-wrap: balance;
   }
   .lead {
@@ -204,17 +199,16 @@
     color: var(--fg);
     background: var(--bg-elevated);
     box-shadow: var(--shadow-sm);
-    transition: all 0.15s ease;
+    transition: background-color 0.15s ease, border-color 0.15s ease, color 0.15s ease;
   }
   .btn:hover {
     border-color: var(--muted);
-    transform: translateY(-1px);
   }
   .btn.primary {
     background: var(--accent);
     color: var(--accent-fg);
     border-color: var(--accent);
-    box-shadow: 0 4px 14px rgba(210, 112, 74, 0.3);
+    box-shadow: none;
   }
   .btn.primary:hover {
     background: var(--accent-hover);
@@ -232,6 +226,13 @@
     color: var(--subtle);
     margin: 0;
   }
+  .aside a {
+    color: var(--muted);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    text-decoration-color: var(--line);
+  }
+  .aside a:hover { color: var(--fg); }
 
   /* Phone Showcase Stage */
   .showcase {
@@ -239,13 +240,13 @@
     background: linear-gradient(180deg, var(--bg-elevated) 0%, var(--bg-subtle) 100%);
     border: 1px solid var(--line);
     border-radius: 24px;
-    padding: 36px 28px 32px;
+    padding: 32px;
     margin: 0 0 72px;
-    box-shadow: var(--shadow-md);
+    box-shadow: none;
   }
   .shots {
     display: grid;
-    grid-template-columns: repeat(5, 1fr);
+    grid-template-columns: repeat(4, 1fr);
     gap: 20px;
     align-items: start;
   }
@@ -262,38 +263,20 @@
     display: block;
     width: 100%;
     max-width: 280px;
-    transition: transform 0.25s ease;
-  }
-  .shots picture:hover {
-    transform: translateY(-4px);
   }
   .shots img {
     width: 100%;
     height: auto;
     display: block;
-    border-radius: 26px;
+    border-radius: 20px;
     box-shadow: var(--shadow-phone);
   }
   .shot-label {
-    display: inline-flex;
-    align-items: center;
-    gap: 6px;
+    display: block;
+    text-align: center;
     font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
-    font-size: 12px;
+    font-size: 13px;
     color: var(--muted);
-    background: var(--bg-elevated);
-    border: 1px solid var(--line);
-    padding: 4px 10px;
-    border-radius: 999px;
-  }
-  .shot-label .step-dot {
-    width: 6px;
-    height: 6px;
-    border-radius: 50%;
-    background: var(--accent);
-  }
-  .shot-item:nth-child(2) .shot-label .step-dot {
-    background: var(--emerald-dot);
   }
 
   @media (max-width: 760px) {
@@ -322,17 +305,15 @@
   }
   .section-kicker {
     font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
-    font-size: 12px;
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 0.08em;
-    color: var(--accent);
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--muted);
   }
   h3, .section-title {
     font-size: clamp(22px, 3vw, 28px);
     line-height: 1.2;
-    font-weight: 750;
-    letter-spacing: -0.02em;
+    font-weight: 600;
+    letter-spacing: -0.01em;
     margin: 0;
     color: var(--fg);
   }
@@ -405,8 +386,8 @@
   }
   .card h2 {
     font-size: 19px;
-    font-weight: 700;
-    letter-spacing: -0.01em;
+    font-weight: 500;
+    letter-spacing: 0;
     margin: 0;
   }
   .card p {
@@ -452,14 +433,14 @@
     border: 1px solid color-mix(in srgb, var(--accent) 35%, transparent);
     color: var(--accent);
     font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
-    font-weight: 700;
+    font-weight: 600;
     font-size: 14px;
     display: flex;
     align-items: center;
     justify-content: center;
   }
   .step-title {
-    font-weight: 650;
+    font-weight: 500;
     display: block;
     margin-bottom: 12px;
   }
@@ -520,7 +501,7 @@
     padding: 7px 11px;
     border-radius: 6px;
     cursor: pointer;
-    transition: all 0.15s ease;
+    transition: background-color 0.15s ease, border-color 0.15s ease, color 0.15s ease;
   }
   .copy-btn:hover {
     background: rgba(255, 255, 255, 0.14);
@@ -578,7 +559,7 @@
   }
   summary {
     cursor: pointer;
-    font-weight: 650;
+    font-weight: 500;
     font-size: 16px;
     padding: 16px 20px;
     list-style: none;
@@ -602,7 +583,7 @@
     align-items: center;
     justify-content: center;
     flex-shrink: 0;
-    transition: transform 0.15s ease, color 0.15s ease;
+    transition: color 0.15s ease;
   }
   details[open] summary::after {
     content: "−";
