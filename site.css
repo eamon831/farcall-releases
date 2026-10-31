@@ -366,9 +366,9 @@
     width: 36px;
     height: 36px;
     border-radius: 10px;
-    background: var(--accent-tint);
-    border: 1px solid color-mix(in srgb, var(--accent) 25%, transparent);
-    color: var(--accent);
+    background: var(--bg-subtle);
+    border: 1px solid var(--line);
+    color: var(--muted);
     display: inline-flex;
     align-items: center;
     justify-content: center;
