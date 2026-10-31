@@ -33,7 +33,7 @@
   <!-- Header -->
   <g transform="translate(50, 42)">
     <circle cx="8" cy="0" r="5" fill="#D2704A"/>
-    <text x="24" y="5" font-size="13" font-weight="700" fill="#A8A29E" letter-spacing="0.08em">HOW FARCALL IS BUILT FROM A PHONE</text>
+    <text x="24" y="5" font-size="13" font-weight="500" fill="#A8A29E">How Farcall is built from a phone</text>
   </g>
 
   <!-- ==========================================
@@ -57,7 +57,7 @@
     </g>
 
     <!-- Title -->
-    <text x="74" y="248" font-size="19" font-weight="700" fill="#F5F5F4">You, on your phone</text>
+    <text x="74" y="248" font-size="19" font-weight="600" fill="#F5F5F4">You, on your phone</text>
 
     <!-- Inner Screen / Actions -->
     <rect x="68" y="268" width="224" height="220" rx="12" fill="#1C1917" stroke="#36312E" stroke-width="1"/>
@@ -136,7 +136,7 @@
       <rect x="0" y="0" width="22" height="15" rx="2.5" fill="none" stroke="#A8A29E" stroke-width="1.75"/>
       <line x1="-3" y1="18" x2="25" y2="18" stroke="#A8A29E" stroke-width="1.75" stroke-linecap="round"/>
       
-      <text x="34" y="14" font-size="17" font-weight="700" fill="#F5F5F4">Your computer</text>
+      <text x="34" y="14" font-size="17" font-weight="600" fill="#F5F5F4">Your computer</text>
       <circle cx="172" cy="9" r="2.5" fill="#57534E"/>
       <text x="184" y="14" font-size="14" font-weight="500" fill="#A8A29E">Farcall runs Claude Code (lead)</text>
     </g>
@@ -156,9 +156,9 @@
 
       <!-- Badge -->
       <rect x="148" y="40" width="48" height="22" rx="6" fill="#D2704A"/>
-      <text x="172" y="55" font-size="11" font-weight="700" fill="#FFFFFF" text-anchor="middle">LEAD</text>
+      <text x="172" y="55" font-size="11" font-weight="600" fill="#FFFFFF" text-anchor="middle">LEAD</text>
 
-      <text x="20" y="98" font-size="17" font-weight="700" fill="#F5F5F4">Claude Code</text>
+      <text x="20" y="98" font-size="17" font-weight="600" fill="#F5F5F4">Claude Code</text>
       <text x="20" y="122" font-size="13" font-weight="400" fill="#A8A29E">Leads a small AI team,</text>
       <text x="20" y="140" font-size="13" font-weight="400" fill="#A8A29E">delegates &amp; coordinates</text>
     </g>
@@ -192,7 +192,7 @@
       <circle cx="39" cy="34" r="2.5" fill="none" stroke="#A8A29E" stroke-width="1.5"/>
       <path d="M 29 29.5 V 38.5 M 29 31 C 29 34, 36.5 34, 36.5 34" fill="none" stroke="#A8A29E" stroke-width="1.5"/>
 
-      <text x="62" y="33" font-size="15" font-weight="700" fill="#F5F5F4">Background Claude agents</text>
+      <text x="62" y="33" font-size="15" font-weight="600" fill="#F5F5F4">Background Claude agents</text>
       <text x="62" y="55" font-size="13" fill="#A8A29E">Build and test in their own</text>
       <text x="62" y="73" font-size="13" fill="#A8A29E">copies of the repo</text>
     </g>
@@ -204,7 +204,7 @@
       <rect x="18" y="18" width="32" height="32" rx="8" fill="#3B261E"/>
       <path d="M 34 24 L 37 31 L 44 34 L 37 37 L 34 44 L 31 37 L 24 34 L 31 31 Z" fill="none" stroke="#D2704A" stroke-width="1.5" stroke-linejoin="round"/>
 
-      <text x="62" y="33" font-size="15" font-weight="700" fill="#F5F5F4">Gemini 4</text>
+      <text x="62" y="33" font-size="15" font-weight="600" fill="#F5F5F4">Gemini 4</text>
       <text x="62" y="55" font-size="13" fill="#A8A29E">Designs (UI, logo, website)</text>
       <text x="62" y="73" font-size="13" fill="#A8A29E">and reviews</text>
     </g>
@@ -217,7 +217,7 @@
       <path d="M 34 24 L 42 27 V 33 C 42 38 38.5 41.5 34 43 C 29.5 41.5 26 38 26 33 V 27 Z" fill="none" stroke="#5CC48E" stroke-width="1.5" stroke-linejoin="round"/>
       <path d="M 31 33.5 L 33 35.5 L 37.5 31" fill="none" stroke="#5CC48E" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
 
-      <text x="62" y="33" font-size="15" font-weight="700" fill="#F5F5F4">GLM</text>
+      <text x="62" y="33" font-size="15" font-weight="600" fill="#F5F5F4">GLM</text>
       <text x="62" y="55" font-size="13" fill="#A8A29E">Gives a second,</text>
       <text x="62" y="73" font-size="13" fill="#A8A29E">independent review</text>
     </g>
@@ -239,7 +239,7 @@
     <rect x="22" y="22" width="38" height="38" rx="10" fill="#193327" stroke="#28523E" stroke-width="1"/>
     <path d="M 34 41 L 39 46 L 49 36" fill="none" stroke="#5CC48E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
 
-    <text x="74" y="38" font-size="16" font-weight="700" fill="#F5F5F4">Tests, then deploy</text>
+    <text x="74" y="38" font-size="16" font-weight="600" fill="#F5F5F4">Tests, then deploy</text>
     <text x="74" y="58" font-size="13" font-weight="500" fill="#5CC48E">Automated verification</text>
 
     <line x1="22" y1="78" x2="278" y2="78" stroke="#36312E" stroke-width="1"/>
@@ -257,7 +257,7 @@
     <ellipse cx="41" cy="41" rx="4.5" ry="10" fill="none" stroke="#A8A29E" stroke-width="1.4"/>
     <line x1="31" y1="41" x2="51" y2="41" stroke="#A8A29E" stroke-width="1.4"/>
 
-    <text x="74" y="46" font-size="16" font-weight="700" fill="#F5F5F4">Release</text>
+    <text x="74" y="46" font-size="16" font-weight="600" fill="#F5F5F4">Release</text>
 
     <line x1="22" y1="78" x2="278" y2="78" stroke="#36312E" stroke-width="1"/>
     <text x="22" y="108" font-size="15" font-weight="600" fill="#E7E5E4">GitHub + website</text>

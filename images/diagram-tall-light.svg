@@ -62,7 +62,7 @@
   </g>
   <text x="300" y="248" text-anchor="middle" font-size="14" fill="#44403C">messages, replies, approvals</text>
   <rect x="218" y="264" width="164" height="26" rx="13" fill="#10B981" fill-opacity="0.12"/>
-  <text x="300" y="281" text-anchor="middle" font-size="12.5" font-weight="600" fill="#047857">end-to-end encrypted</text>
+  <text x="300" y="281" text-anchor="middle" font-size="12.5" font-weight="600" fill="#047857">private, encrypted</text>
 
   <!-- 3. YOUR COMPUTER (Outer Container) -->
   <rect x="60" y="344" width="480" height="444" rx="16" fill="#F4F0EC" stroke="#D6D0C8" stroke-width="1.5"/>
