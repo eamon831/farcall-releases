@@ -322,6 +322,12 @@
   .arch-section {
     margin: 0 0 72px;
   }
+  .demo-video video {
+    display: block;
+    width: 100%;
+    height: auto;
+    background: #000;
+  }
   /* The diagram SVGs carry their own light/dark background (images/diagram-*.svg). */
   figure {
     margin: 0;
