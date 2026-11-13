@@ -620,6 +620,11 @@
   .footer-note {
     max-width: 680px;
   }
+  .footer-legal {
+    flex-basis: 100%;
+    margin: 0;
+    font-size: 13px;
+  }
   .footer-links {
     display: flex;
     gap: 20px;
