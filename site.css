@@ -226,13 +226,14 @@
     color: var(--subtle);
     margin: 0;
   }
-  .aside a {
+  /* Links in running text: the aside's, the feature cards' and the FAQ answers' (2026-11-20). */
+  .aside a, .card p a, details p a {
     color: var(--muted);
     text-decoration: underline;
     text-underline-offset: 3px;
     text-decoration-color: var(--line);
   }
-  .aside a:hover { color: var(--fg); }
+  .aside a:hover, .card p a:hover, details p a:hover { color: var(--fg); }
 
   /* Phone Showcase Stage */
   .showcase {
